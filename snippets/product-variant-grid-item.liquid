@@ -38,7 +38,6 @@
     data-cc-animate="cc-fade-in-up" data-cc-animate-delay="{{ animate }}s"
   {% endif %}>
   <div class="prod-image-wrap {% if settings.product_hover_image and product.media.size > 1 %}prod-image-wrap--with-hover{% endif %}">
-    <small>variant | page: {{ page.title }}</small>
     <a href="{{ product.url | within: collection }}">
       {% render 'responsive-image', image: product.featured_media.preview_image %}
 
