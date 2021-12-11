@@ -6,20 +6,25 @@
   {% assign on_sale = true %}
 {% endif %}
 
-{% comment %}Is product sold out?{% endcomment %}
-{% assign sold_out = false %}
-{% for option in product.options %}
+{% comment %}Is product sold out? Fixes bug where theme showed sold out if first available variant was sold out{% endcomment %}
+{% if handle == 'bundles' and product.available %}
+{% comment %}Fixes bug where mbc bundles were always sold out {% endcomment %}
+  {% assign sold_out = false %}
+{% else %}
+  {% assign sold_out = false %}
+  {% for option in product.options %}
 
-      {% assign product_qty = 0 %}
-      {% for variant in product.variants %}
-        {% if variant.inventory_quantity > 0 %}
-          {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
-        {% endif %}
-      {% endfor %}
+        {% assign product_qty = 0 %}
+        {% for variant in product.variants %}
+          {% if variant.inventory_quantity > 0 %}
+            {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
+          {% endif %}
+        {% endfor %}
 
-{% endfor %}
-{% if product_qty <= 0 %}
-  {% assign sold_out = true %}
+  {% endfor %}
+  {% if product_qty <= 0 %}
+    {% assign sold_out = true %}
+  {% endif %}
 {% endif %}
 
 {% comment %}Calculate width based on theme settings{% endcomment %}
