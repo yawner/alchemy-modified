@@ -1,0 +1,29 @@
+{% if num_per_row == 2 %}{% capture col_class %}half{% endcapture %}
+{% elsif num_per_row == 3 %}{% capture col_class %}third{% endcapture %}
+{% elsif num_per_row == 5 %}{% capture col_class %}fifth{% endcapture %}
+{% else %}{% capture col_class %}quarter{% endcapture %}{% endif %}
+
+<div class="prod-block coll-block column {{ col_class }}"
+  {% if animate %}
+    {% assign animate = animate | times: 0.15 %}
+    data-cc-animate="cc-fade-in-up" data-cc-animate-delay="{{ animate }}s"
+  {% endif %}>
+
+  <div class="prod-image-wrap">
+    <a href="{{ collection.url }}">
+      {% if collection.image %}
+	      {% render 'responsive-image', image: collection.image %}
+      {% else %}
+	      {% render 'responsive-image', image: collection.products.first.featured_media.preview_image %}
+      {% endif %}
+    </a>
+  </div>
+
+  <div class="prod-caption">
+    <a href="{{ collection.url }}">
+      <div class="title">
+        {{ collection.title }}
+      </div>
+    </a>
+  </div>
+</div>

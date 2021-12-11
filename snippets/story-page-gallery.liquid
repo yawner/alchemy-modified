@@ -1,0 +1,44 @@
+<div class="column-{{ size }} img-block">
+  {% if link != blank %}
+  <a href="{{ link }}">
+    {% endif %}
+
+    {%- if image -%}
+      {%- render 'responsive-image', image: image, animate: true  -%}
+    {%- else -%}
+      {%- assign placeholder = "image" -%}
+      <span class="placeholder_wrapper">
+        {%- if caption == blank -%}
+          {{- placeholder | placeholder_svg_tag: "placeholder" -}}
+        {%- else -%}
+          {{- placeholder | placeholder_svg_tag: "placeholder dark" -}}
+        {%- endif -%}
+      </span>
+    {%- endif -%}
+
+    {%- unless tint_color contains ',0' -%}
+      <div class="image-tint" style="background-color: {{ tint_color }};opacity: {{ tint_opacity | divided_by: 100.00 }};"></div>
+    {%- endunless -%}
+
+    {%- if title != blank or subheading != blank or cta_text != blank -%}
+      <div class="overlay">
+        <div class="inner" style="{% if title != blank or subheading != blank or cta_text != blank %}color: {{ text_color }};{% endif %}">
+          <div class="innest">
+            {%- if title != blank -%}
+              <h2 class="h1 overlay__title" data-cc-animate data-cc-animate-delay="0.1s">{{ title | escape }}</h2>
+            {%- endif -%}
+            {%- if subheading != blank -%}
+              <div class="large-text overlay__subheading" data-cc-animate data-cc-animate-delay="0.2s">{{ subheading | escape }}</div>
+            {%- endif -%}
+            {%- if cta_text != blank -%}
+              <span class="overlay__link slide-button button" data-cc-animate data-cc-animate-delay="0.3s">{{ cta_text | escape }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {% if link != blank %}
+  </a>
+  {% endif %}
+</div>

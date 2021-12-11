@@ -1,0 +1,109 @@
+{%- assign collection = collections[section.settings.collection] -%}
+{%- assign max_products = section.settings.product_rows_int | times: section.settings.products_per_row_int -%}
+{% style %}
+  {% if section.settings.fc_bg_image %}
+	.fc-bg-image-{{ section.id }} {
+       background-image:url('{{ section.settings.fc_bg_image.src | img_url: '1920x' }}');
+       background-size: cover;
+	}
+    .content-main .fc-bg-image-{{ section.id }} .container {
+       background-color: transparent;
+    }
+    .fc-bg-image-{{ section.id }} .spaced-row {
+       margin-bottom: 0;
+       padding-bottom: 60px;
+    }
+  {% endif %}
+{% endstyle %}
+{% if section.settings.fc_bg_image %}
+<div class="fc-bg-image-{{ section.id }}">
+{% endif %}
+  <div class="homepage-products container" data-section-type="featured-collection">
+    {% if section.settings.title != blank %}
+      <h1 class="section-title-container section-title-container--larger-space h2 align-center" data-cc-animate>
+        {{ section.settings.title | link_to: collection.url }}
+      </h1>
+    {% endif %}
+
+    <div class="grid grid--row-gutters product-list">
+      {% unless section.settings.collection == blank %}
+        {% for product in collection.products limit: max_products %}
+          {% render 'product-grid-item', product: product, grid_show_vendor: section.settings.grid_show_vendor, products_per_row_int: section.settings.products_per_row_int, animate: forloop.index %}
+        {% endfor %}
+      {% else %}
+        {% for product in (1..max_products) %}
+          {% render 'onboarding-product-grid-item' %}
+        {% endfor %}
+      {% endunless %}
+    </div>
+
+    {% if section.settings.cta_text != blank %}
+      <div class="spaced-row align-center" data-cc-animate data-cc-animate-delay="0.2s">
+        <a class="button button--alt" href="{{ collection.url }}">{{ section.settings.cta_text }}</a>
+      </div>
+    {% endif %}
+  </div>
+{% if section.settings.fc_bg_image %}
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Featured collection",
+    "class": "section--collection section--no-spacing",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "fc_bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "products_per_row_int",
+        "min": 2,
+        "max": 5,
+        "step": 1,
+        "label": "Number of products per row",
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "product_rows_int",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "label": "Number of rows",
+        "default": 1
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Button text",
+        "default": "See more"
+      },
+      {
+        "type": "checkbox",
+        "id": "grid_show_vendor",
+        "label": "Show product vendor",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured collection",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}

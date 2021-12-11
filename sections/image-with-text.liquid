@@ -1,0 +1,174 @@
+{% style %}
+  .section-id-{{ section.id }}{% unless section.settings.skip_container %} .image-with-text-section__inner{% endunless %} {
+    background-color: {{ section.settings.color_bg }};
+  }
+
+  {% unless section.settings.color_text contains ',0' %}
+  .section-id-{{ section.id }} {
+    color: {{ section.settings.color_text }};
+  }
+  {% endunless %}
+  {% unless section.settings.color_head contains ',0' %}
+  .section-id-{{ section.id }} .image-with-text-section__title,
+  .section-id-{{ section.id }} .feature-link,
+  .section-id-{{ section.id }} .feature-link:hover {
+    color: {{ section.settings.color_head }};
+  }
+  {% endunless %}
+{% endstyle %}
+<div class="image-with-text-section {% if section.settings.skip_container %}image-with-text-section--full-width{% else %}container container--not-mobile homepage-spaced-row-sm{% endif %} section-id-{{ section.id }}"
+     data-section-type="image-with-text"
+     data-cc-animate>
+  {%- capture image_html -%}
+    <div class="column half">
+      <div class="image-with-text-section__image">
+        {% if section.settings.image %}
+          <div class="image-with-text-section__image-image image-with-text-section__image-image--{{ section.id }}" data-cc-animate>
+            {% render 'responsive-image', image: section.settings.image %}
+          </div>
+        {% else %}
+          <div class="image-with-text-section__placeholder placeholder-image">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {%- endcapture -%}
+
+  <div class="image-with-text-section__inner">
+
+    <div class="grid image-with-text-section__wrapper image-with-text-section__layout-{{ section.settings.layout }}">
+
+      {% if section.settings.layout == 'left' %}{{ image_html }}{% endif %}
+
+      <div class="column half">
+        <div class="image-with-text-section__content image-with-text-section__text">
+          <div class="content content--align-{{ section.settings.text_alignment }}">
+            {% if section.settings.title != blank %}
+              <h2 class="image-with-text-section__title" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.1s">{{ section.settings.title | escape }}</h2>
+            {% endif %}
+            {% if section.settings.text != blank %}
+              <div data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.2s">
+                {{ section.settings.text }}
+              </div>
+            {% endif %}
+            {% if section.settings.button_text != blank %}
+              <div class="h2-margin-top" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.3s">
+                <a class="slide-button button" href="{{ section.settings.button_link }}">
+                  {{- section.settings.button_text -}}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.layout == 'right' %}{{ image_html }}{% endif %}
+    </div>
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Image with text",
+    "class": "section--image-with-text section--no-spacing",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "right"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection or blog post. Add details on availability, style or even provide a review.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text",
+        "default": "Shop"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Link URL"
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Background",
+        "default": "#f4f4f4"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text color",
+        "default": "#454f5b"
+      },
+      {
+        "type": "color",
+        "id": "color_head",
+        "label": "Heading and links color",
+        "default": "#212b36"
+      },
+      {
+        "type": "checkbox",
+        "id": "skip_container",
+        "label": "Full page width",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with text",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

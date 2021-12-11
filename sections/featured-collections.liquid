@@ -1,0 +1,82 @@
+{% style %}
+  .section-id-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+  }
+{% endstyle %}
+
+<div class="list-collections-section container section-id-{{ section.id }}" data-section-type="featured-collections">
+  {% if section.settings.title != blank %}
+    <h1 class="section-title-container section-title-container--larger-space h2 align-center" data-cc-animate>{{ section.settings.title | escape }}</h1>
+  {% endif %}
+
+  <div class="grid grid--row-gutters product-list">
+    {% if section.blocks.size > 0 %}
+
+      {% for block in section.blocks %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% unless collection == blank %}
+          {% render 'collection-grid-item', num_per_row: section.settings.collections_per_row_int, collection: collection, animate: forloop.index %}
+        {% else %}
+          {% render 'onboarding-collection-grid-item', num_per_row: section.settings.collections_per_row_int, collection: collection %}
+        {% endunless %}
+      {% endfor %}
+
+    {% else %}
+
+      {% for i in (1..section.settings.collections_per_row_int) %}
+        {% render 'onboarding-collection-grid-item', num_per_row: section.settings.collections_per_row_int %}
+      {% endfor %}
+
+    {% endif %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "class": "section--list-collections section--upper-space-req",
+    "max_blocks": 20,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Collection list"
+      },
+      {
+        "type": "range",
+        "id": "collections_per_row_int",
+        "min": 2,
+        "max": 5,
+        "step": 1,
+        "label": "Number of collections per row",
+        "default": 4
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection list",
+        "category": "Collection",
+        "settings": {
+          "title": "Collection list"
+        },
+        "blocks": [
+        ]
+      }
+    ]
+  }
+{% endschema %}

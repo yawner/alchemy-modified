@@ -1,0 +1,360 @@
+{%- capture title_html -%}
+  {% if settings.content_header_enable_breadcrumbs %}
+    <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+      <a class="breadcrumbs__crumb" href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
+      <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+      <a class="breadcrumbs__crumb" href="{{ blog.url }}">{{ blog.title }}</a>
+      <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+      <span class="breadcrumbs__crumb">{{ article.title }}</span>
+    </nav>
+  {% endif %}
+
+  <h1>{{ article.title }}</h1>
+
+  {% if section.settings.show_date %}
+    <div class="meta" data-cc-animate data-cc-animate-delay="0.1s">
+      <span class="published meta__item">
+        <time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_date_year' }}</time>
+      </span>
+    </div>
+  {% endif %}
+{%- endcapture -%}
+
+<div data-section-type="article-template">
+  {% if section.settings.header_image != blank %}
+    <div class="banner-image-container banner-under-header bg--{{ section.settings.header_image_position }}" data-cc-animate>
+      {% render 'responsive-background', image: section.settings.header_image, class: 'banner-image fixed-height' %}
+
+      <div class="banner-image-text feature-page-title {% if article.image != blank %}feature-page-title--article-image-overlap{% endif %} {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}">
+        {{ title_html }}
+      </div>
+    </div>
+  {% else %}
+    <div class="feature-page-title {% if article.image != blank %}feature-page-title--article-image-overlap{% endif %} {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}" data-cc-animate>
+      {{ title_html }}
+    </div>
+  {% endif %}
+
+  <div class="container">
+    <div id="main" class="content-main reading-width {% if settings.content_header_overlap  > 0 %}article-is-overlapping{% endif %} {% if section.settings.header_image == blank %}article-no-image{% endif %}" role="main">
+      {% paginate article.comments by 30 %}
+
+        <div class="article">
+
+          {% if article.image != blank %}
+          <div class="article-image" data-cc-animate data-cc-animate-delay="0.1s">
+            {% render 'responsive-image', image: article.image %}
+          </div>
+          {% endif %}
+
+          <div class="rte reading-width" data-cc-animate>
+            {{ article.content }}
+          </div>
+
+          <div class="reading-width spaced-row article-page-author-row" data-cc-animate>
+            {% if section.settings.show_author %}
+              <span class="author">{{ 'blogs.article.posted_by_html' | t: author: article.author  }}</span>
+            {% endif %}
+            {% if section.settings.show_sharing_icons %}
+              {% render 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+            {% endif %}
+          </div>
+
+          {% if section.settings.show_tags and article.tags.size > 0 %}
+            <div class="tag-pills reading-width spaced-row" data-cc-animate>
+              <h5 class="tag-pills__label">{{ 'blogs.article.find_similar' | t }}</h5>
+              {%- for tag in article.tags -%}
+                <a class="pill tag-pills__pill" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+              {%- endfor -%}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if blog.comments_enabled? %}
+
+          {%- assign number_of_comments = article.comments_count -%}
+          {%- comment -%}If a comment was just submitted, and it has no blank fields.{%- endcomment -%}
+          {%- if comment and comment.created_at -%}
+            {%- assign number_of_comments = article.comments_count | plus: 1 -%}
+          {%- endif -%}
+
+          <div id="comments" class="reading-width" data-cc-animate data-cc-animate-delay="0.1s">
+            {% if number_of_comments > 0 or comment and comment.status != blank %}
+              <div class="comment-header">
+                <h3>{{ 'blogs.comments.title' | t }}</h3>
+              </div>
+            {% endif %}
+
+            {% comment %}If a comment was just submitted with no blank field.{% endcomment %}
+            {% if comment and comment.status != blank %}
+            <p class="success feedback">
+              {%- if blog.moderated? -%}
+                {{- 'blogs.comments.success_moderated' | t -}}
+              {%- else -%}
+                {{- 'blogs.comments.success' | t -}}
+              {%- endif -%}
+            </p>
+            {% endif %}
+
+            {% if number_of_comments > 0 %}
+            <div>
+              {% comment %}If a comment was just submitted with no blank field, let's show it.{% endcomment %}
+              {% if comment and comment.status != blank and comment.status != 'pending' %}
+                {%- assign submitted_comment_id = comment.id -%}
+                <div id="{{ comment.id }}" class="comment light-spaced-row">
+                  <div class="comment-content">
+                    {{- comment.content -}}
+                  </div>
+                  <div class="comment-meta">
+                    <span class="comment-author">{{ 'blogs.comments.author_meta' | t: author: comment.author }}</span>
+                    <span class="comment-date">
+                      {%- assign comment_date = comment.created_at | date: format: 'month_date_year' -%}
+                      {{- 'blogs.comments.date_meta' | t: comment_date: comment_date -}}
+                    </span>
+                  </div>
+                </div>
+              {% endif %}
+              {% comment %}Showing the rest of the comments.{% endcomment %}
+              {% for comment in article.comments %}
+                {% if comment.id != submitted_comment_id %}
+                    <div id="{{ comment.id }}" class="comment light-spaced-row">
+                      <div class="comment-content">
+                        {{- comment.content -}}
+                      </div>
+                      <div class="comment-meta">
+                        <span class="comment-author">{{ 'blogs.comments.author_meta' | t: author: comment.author }}</span>
+                        <span class="comment-date">
+                          {%- assign comment_date = comment.created_at | date: format: 'month_date_year' -%}
+                          {{- 'blogs.comments.date_meta' | t: comment_date: comment_date -}}
+                        </span>
+                      </div>
+                    </div>
+                {% endif %}
+              {% endfor %}
+              </div>
+            {% endif %}
+
+            {% comment %}Comments are paginated.{% endcomment %}
+            {% render 'pagination', paginate: paginate %}
+
+            {% comment %}Comment submission form.{% endcomment %}
+            <div class="general-form spaced-row">
+              {% form article %}
+
+              <div class="comment-header">
+                <h3 id="add-comment-title">{{ 'blogs.comments.form_title' | t }}</h3>
+              </div>
+
+              {% if form.errors %}
+              <div class="errors lightly-spaced-row">
+                {{ form.errors | default_errors }}
+              </div>
+              {% endif %}
+
+              <div class="large_form">
+                <label for="comment-author">{{ 'blogs.comments.name' | t }}</label>
+                <input required{% if form.errors contains "author" %} class="error"{% endif %} type="text" name="comment[author]" id="comment-author" value="{{ form.author }}" />
+              </div>
+
+              <div class="large_form">
+                <label for="comment-email">{{ 'blogs.comments.email' | t }}</label>
+                <input required{% if form.errors contains "email" %} class="error"{% endif %} type="email" name="comment[email]" id="comment-email" value="{{ form.email }}" />
+              </div>
+
+              <div class="large_form">
+                <label for="comment-body">{{ 'blogs.comments.message' | t }}</label>
+                <textarea required{% if form.errors contains "body" %} class="error"{% endif %} name="comment[body]" id="comment-body">{{ form.body }}</textarea>
+              </div>
+
+              <div class="action_bottom">
+                <button class="button" type="submit">{{ 'blogs.comments.post' | t }}</button>
+              </div>
+
+              {% endform %}
+            </div>
+
+          </div>
+        {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>
+
+  {% if section.settings.show_featured_products %}
+    {% render 'content-products', content: article.content %}
+  {% endif %}
+
+  {% if blog.next_article or blog.previous_article %}
+    <div class="wide-next-prev">
+      <div class="container">
+        <h2 class="section-title-container" data-cc-animate><a href="{{ blog.url }}">{{ 'blogs.article.other_posts_title' | t }}</a></h2>
+        <div class="grid">
+          {% if blog.previous_article %}
+            <div class="column half" data-cc-animate data-cc-animate-delay="0.2s">
+              <div class="grid mini-article">
+                {% if blog.previous_article.image != blank %}
+                  <div class="column half">
+                    <div class="image-head">
+                      <a href="{{ blog.previous_article.url }}">
+                        {% render 'responsive-image', image: blog.previous_article.image %}
+                      </a>
+                    </div>
+                  </div>
+                {% endif %}
+
+                <div class="column {% if blog.previous_article.image != blank %}half{% else %}full{% endif %}">
+                  <div class="rte">
+                    <h4>{{ blog.previous_article.title | link_to: blog.previous_article.url }}</h4>
+                    <div class="mini-article__excerpt mini-article__excerpt--tablet-hide">
+                      {% if blog.previous_article.excerpt == blank %}
+                        <p>{{ blog.previous_article.content | strip_html | truncate: 150 }}</p>
+                      {% else %}
+                        {{ blog.previous_article.excerpt }}
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div>
+                    <a class="feature-link" href="{{ blog.previous_article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if blog.next_article %}
+            <div class="column half" data-cc-animate data-cc-animate-delay="0.3s">
+              <div class="grid mini-article">
+                {% if blog.next_article.image != blank %}
+                  <div class="column half">
+                    <div class="image-head">
+                      <a href="{{ blog.next_article.url }}">
+                        {% render 'responsive-image', image: blog.next_article.image %}
+                      </a>
+                    </div>
+                  </div>
+                {% endif %}
+
+                <div class="column {% if blog.next_article.image != blank %}half{% else %}full{% endif %}">
+                  <div class="rte">
+                    <h4>{{ blog.next_article.title | link_to: blog.next_article.url }}</h4>
+                    <div class="mini-article__excerpt mini-article__excerpt--tablet-hide">
+                      {% if blog.next_article.excerpt == blank %}
+                        <p>{{ blog.next_article.content | strip_html | truncate: 150 }}</p>
+                      {% else %}
+                        {{ blog.next_article.excerpt }}
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div>
+                    <a class="feature-link" href="{{ blog.next_article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Article page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_tags",
+        "label": "Show tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "label": "Show published date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_featured_products",
+        "label": "Show featured products",
+        "info": "Shows products that are linked in the article",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sharing_icons",
+        "label": "Show social sharing icons",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Header image"
+      },
+      {
+        "type": "paragraph",
+        "content": "Shown on all articles"
+      },
+      {
+        "type": "paragraph",
+        "content": "The height of the content header can be adjusted in Theme Settings > Layout"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "header_image_position",
+        "label": "Image alignment",
+        "info": "Used to keep the subject of your image in view",
+        "default": "center-center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top center"
+          },
+          {
+            "value": "top-right",
+            "label": "Top right"
+          },
+          {
+            "value": "center-left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center-right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom right"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

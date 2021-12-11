@@ -1,0 +1,88 @@
+{% case media.media_type %}
+  {% when 'image' %}
+    <div class="product-media product-media--image"
+         data-media-id="{{ media.id }}"
+         data-media-type="{{ media.media_type }}">
+
+      {% if prod_lightbox %}
+        <a class="main-img-link main-img-link--lightbox"
+           href="{{ media.preview_image | img_url: 'master' }}"
+           title=""
+          data-enable-zoom="{{ prod_lightbox_zoom }}">
+          {% render 'responsive-image', image: media.preview_image %}
+        </a>
+      {% else %}
+        {% render 'responsive-image', image: media.preview_image %}
+      {% endif %}
+    </div>
+
+  {% when 'video' %}
+
+    <div class="product-media product-media--video product-media--{{ media.id }} product-media--frame"
+         data-video-type="shopify"
+         data-media-id="{{ media.id }}"
+         data-media-type="{{ media.media_type }}"
+         data-enable-video-looping="{{ enable_video_looping }}"
+         style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%;">
+
+      {%- comment -%}
+        Load different image sizes depending on the breakpoint for background image overlay
+      {%- endcomment -%}
+      {% style %}
+        @media screen and (max-width: 320px) {
+          .product-media--{{ media.id }} .plyr__poster {
+            background-image: url({{ media.preview_image | img_url: '360x'}}) !important;
+          }
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 780px) {
+          .product-media--{{ media.id }} .plyr__poster {
+            background-image: url({{ media.preview_image | img_url: '900x'}}) !important;
+          }
+        }
+
+        @media screen and (min-width: 781px) and (max-width: 1080px) {
+          .product-media--{{ media.id }} .plyr__poster {
+            background-image: url({{ media.preview_image | img_url: '1080x'}}) !important;
+          }
+        }
+
+        @media screen and (min-width: 1081px) {
+          .product-media--{{ media.id }} .plyr__poster {
+            background-image: url({{ media.preview_image | img_url: '2048x'}}) !important;
+          }
+        }
+      {% endstyle %}
+
+      {{ media | video_tag: controls: true, class: 'media-video', image_size: '700x700' }}
+    </div>
+
+  {% when 'external_video' %}
+    <div class="product-media product-media--video product-media--frame"
+         data-media-type="{{ media.media_type }}"
+         data-video-type="external"
+         data-media-id="{{ media.id }}"
+         data-video-id="{{ media.external_id }}"
+         data-enable-video-looping="{{ enable_video_looping }}"
+         style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%;">
+      {{ media | external_video_tag }}
+    </div>
+
+  {% when 'model' %}
+    <div class="product-media product-media--model product-media--frame"
+         data-media-type="{{ media.media_type }}"
+         data-media-id="{{ media.id }}"
+         data-model="{{ media.model | json }}"
+         style="padding-top: 100%">
+        {{ media | model_viewer_tag: image_size: '700x700', reveal: 'interaction', toggleable: true, data-model-id: media.id}}
+    </div>
+
+  {% else %}
+      <div class="product-media product-media--frame"
+           data-media-type="{{ media.media_type }}"
+           data-media-id="{{ media.id }}"
+           style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%;">
+          {{ media | media_tag: class: 'media-item', image_size: '700x700' }}
+      </div>
+
+{% endcase %}

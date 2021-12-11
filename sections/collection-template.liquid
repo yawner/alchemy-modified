@@ -1,0 +1,325 @@
+<div data-section-type="collection-template">
+  {% capture header_content %}
+    {% if settings.content_header_enable_breadcrumbs %}
+      <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <a class="breadcrumbs__crumb" href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
+        <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+        <span class="breadcrumbs__crumb">{{ collection.title }}</span>
+      </nav>
+    {% endif %}
+
+    <h1>{{ collection.title }}</h1>
+
+    {% if collection.description != blank %}
+      <div class="rte reading-width align-center large-text" data-cc-animate  data-cc-animate-delay="0.1s">{{ collection.description }}</div>
+    {% endif %}
+  {% endcapture %}
+
+  {% if section.settings.body_img_coll_handled %}
+
+    {% assign coll_body_bg_url_base = 'collection-body-' %}
+    {% assign coll_body_bg_url_ext = '.jpg' %}
+    {% assign coll_body_bg_url = coll_body_bg_url_base | append: collection.handle | append: coll_body_bg_url_ext %}
+
+    {% style %}
+      body div#shopify-section-collection-template {
+        padding-top: 0;
+      }
+      body .collections-bg-image {
+         background-color: transparent;
+         background:url('{{ ["coll_body_bg_url"] | file_img_url: '1920x' }}') no-repeat fixed;
+         background-size: cover;
+         padding-top: 50px;
+      }
+    {% endstyle %}
+
+  {% endif %}
+
+  {% unless section.settings.body_img_coll_handled %}
+    {% if section.settings.collections_bg_image %}
+      {% style %}
+        body div#shopify-section-collection-template {
+          padding-top: 0;
+        }
+        body .collections-bg-image {
+           background-color: transparent;
+           background:url('{{ section.settings.collections_bg_image.src | img_url: '1920x' }}') no-repeat fixed;
+           background-size: cover;
+           padding-top: 50px;
+        }
+      {% endstyle %}
+    {% endif %}
+  {% endunless %}
+
+  {% if section.settings.body_img_coll_handled or section.settings.collections_bg_image %}
+  <div class="collections-bg-image">
+  {% endif %}
+    <div class="container">
+    <div id="main" class="content-main" role="main" data-cc-animate data-cc-animate-delay="0.1s">
+      {% paginate collection.products by section.settings.pagination_limit %}
+
+      {% if section.settings.show_tags or section.settings.coll_show_sort %}
+        <div class="mobile-filter-reveal align-center">
+          <div class="mobile-filter-reveal__inner">
+            <a href="#" class="feature-link filter-toggle-button">{{ 'collections.filtering.mobile_reveal' | t }}</a>
+          </div>
+        </div>
+
+        <div class="filters">
+          <div class="filters__inner">
+            {% if section.settings.show_tags %}
+              {%- if collection.url.size == 0 -%}
+                {%- assign collection_url = routes.all_products_collection_url -%}
+              {%- else -%}
+                {%- assign collection_url = collection.url -%}
+              {%- endif -%}
+
+              {%- assign show_tag_filter = false -%}
+              {%- capture tag_filter_html -%}
+                <span class="filter">
+                  <label for="filter-tag">{{ 'collections.filtering.filter' | t }}</label>
+                  <select id="filter-tag">
+                    <option value="{{ collection_url }}">{{ 'collections.filtering.all' | t }}</option>
+                    {%- for tag in collection.all_tags -%}
+                      {%- unless tag contains 'meta-' -%}
+                        {%- assign new_url = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first -%}
+                        <option value="{{ new_url }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
+                        {%- assign show_tag_filter = true -%}
+                      {%- endunless -%}
+                    {%- endfor -%}
+                  </select>
+                </span>
+              {%- endcapture -%}
+              {%- if show_tag_filter -%}{{ tag_filter_html }}{%- endif -%}
+            {% endif %}
+
+            {% if section.settings.coll_show_sort %}
+              <span class="filter">
+                <label for="sort-by">{{ 'collections.sorting.title' | t }}</label>
+                {%- assign current_sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                <select id="sort-by" data-initval="{{ current_sort_by }}">
+                  {% if section.settings.coll_show_feat or current_sort_by == 'manual' %}<option value="manual">{{ 'collections.sorting.featured' | t }}</option>{% endif %}
+                  <option value="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</option>
+                  <option value="price-descending">{{ 'collections.sorting.price_descending' | t }}</option>
+                  <option value="title-ascending">{{ 'collections.sorting.az' | t }}</option>
+                  <option value="title-descending">{{ 'collections.sorting.za' | t }}</option>
+                  <option value="created-descending">{{ 'collections.sorting.date_descending' | t }}</option>
+                  <option value="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</option>
+                  <option value="best-selling">{{ 'collections.sorting.best_selling' | t }}</option>
+                </select>
+              </span>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="grid grid--row-gutters product-list">
+        {% for product in collection.products %}
+          {% assign color_active = false %}
+          {% for option in product.options %}
+            {% if option == 'Color' %}
+               {% assign color_active = true %}
+            {% endif %}
+          {% endfor %}
+          {% if product.variants.size > 1 and color_active == true %}
+            {% for option in product.options %}
+               {% if option == 'Color' %}
+                 {% assign index = forloop.index0 %}
+                 {% assign colorlist = '' %}
+                 {% assign color = '' %}
+                 {% for variant in product.variants %}
+                   {% capture color %}
+                     {{ variant.options[index] }}
+                   {% endcapture %}
+
+                   {% unless colorlist contains color %}
+                      {% render 'product-variant-grid-item', product: variant, grid_show_vendor: section.settings.grid_show_vendor, products_per_row_int: section.settings.products_per_row_int, color: color %}
+                      {% capture tempList %}
+                        {{colorlist | append: color | append: " " }}
+                      {% endcapture %}
+                      {% assign colorlist = tempList %}
+                   {% endunless %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+          {% else %}     
+            {% render 'product-grid-item', product: product, grid_show_vendor: section.settings.grid_show_vendor, products_per_row_int: section.settings.products_per_row_int %}
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% render 'pagination', paginate: paginate %}
+
+      {% endpaginate %}
+    </div>
+  </div>
+  {% if section.settings.body_img_coll_handled or section.settings.collections_bg_image %}</div>{% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide_collection_header",
+        "label": "Hide collection header and title",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "products_per_row_int",
+        "min": 2,
+        "max": 5,
+        "step": 1,
+        "label": "Number of products per row",
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "pagination_limit",
+        "min": 8,
+        "max": 100,
+        "step": 2,
+        "label": "Products per page",
+        "default": 16
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tags",
+        "label": "Show tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "coll_show_sort",
+        "label": "Show sorting dropdown",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "coll_show_feat",
+        "label": "Show 'Featured' option in sorting dropdown",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "grid_show_vendor",
+        "label": "Show product vendor",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Header image"
+      },
+      {
+        "type": "paragraph",
+        "content": "Shown on all collection pages"
+      },
+      {
+        "type": "paragraph",
+        "content": "The height of the content header can be adjusted in Theme Settings > Layout"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "header_image_position",
+        "label": "Image alignment",
+        "info": "Used to keep the subject of your image in view",
+        "default": "center-center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top center"
+          },
+          {
+            "value": "top-right",
+            "label": "Top right"
+          },
+          {
+            "value": "center-left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center-right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom right"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Collection-specific header images"
+      },
+      {
+        "type": "checkbox",
+        "id": "head_img_coll_handled",
+        "label": "Enable",
+        "default": false
+      },
+      {
+        "type": "paragraph",
+        "content": "You will need to [upload an image file](\/admin\/settings\/files) with the filename 'collection-header-handle.jpg', where 'handle' is the [handle](http:\/\/docs.shopify.com\/themes\/liquid-variables\/handle) of the collection."
+      },
+      {
+        "type": "paragraph",
+        "content": "If you do this, you will need to upload an image for every collection on your store, or it will encounter missing-file errors."
+      },
+      {
+        "type": "header",
+        "content": "Collections body background image"
+      },
+      {
+        "type": "image_picker",
+        "id": "collections_bg_image",
+        "label": "Body background image for all collections."
+      },
+      {
+        "type": "header",
+        "content": "Collection-specific body background images"
+      },
+      {
+        "type": "paragraph",
+        "content": "Check the box below to have body background images tied to each collection. You will need to [upload a body image file](\/admin\/settings\/files) with the filename 'collection-body-handle.jpg', where 'handle' is the [handle](http:\/\/docs.shopify.com\/themes\/liquid-variables\/handle) of the collection. File must have .jpg extension."
+      },
+      {
+        "type": "paragraph",
+        "content": "Example: for the 'Jewelry' collection, you need to upload an image file with the filename: 'collection-body-jewelry.jpg'."
+      },
+      {
+        "type": "paragraph",
+        "content": "If you do this, you will need to upload a body image for every collection on your store, or it will encounter missing-file errors."
+      },
+      {
+        "type": "checkbox",
+        "id": "body_img_coll_handled",
+        "label": "Enable",
+        "default": false
+      }
+    ]
+  }
+{% endschema %}

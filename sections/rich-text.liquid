@@ -1,0 +1,116 @@
+{% style %}
+
+  {% unless section.settings.color_text contains ',0' %}
+  .section-id-{{ section.id }} {
+    color: {{ section.settings.color_text }};
+  }
+  {% endunless %}
+  {% unless section.settings.color_head contains ',0' %}
+  .section-id-{{ section.id }} .rich-text-section__title,
+  .section-id-{{ section.id }} a,
+  .section-id-{{ section.id }} a:hover,
+  .section-id-{{ section.id }} .feature-link,
+  .section-id-{{ section.id }} .feature-link:hover {
+    color: {{ section.settings.color_head }};
+  }
+  {% endunless %}
+  {% if section.settings.rt_bg_image %}
+	.rt-bg-image {
+       background-image:url('{{ section.settings.rt_bg_image.src | img_url: '1920x' }}');
+       background-size: cover;
+	}
+	.content-main .rt-bg-image .container {
+       background-color: transparent;
+	}
+	.rt-bg-image.overlap-candidate-container::before {
+       background-color: transparent;
+	}
+  {% else %}
+	  .section-id-{{ section.id }}::before,
+      .section-id-{{ section.id }} > .container {
+    	background-color: {{ section.settings.color_bg }}!important;
+      }
+  {% endif %}
+{% endstyle %}
+
+<div class="section-id-{{ section.id }} overlap-candidate-container {% if section.settings.rt_bg_image %}rt-bg-image{% endif %}" data-section-type="rich-text" data-cc-animate>
+  <div class="container {% unless section.settings.color_bg contains ',0' or section.settings.color_bg == settings.col_page_bg %}cf{% endunless %}">
+    <div class="rich-text-section">
+      <div class="rte reading-width align-center">
+        {% if section.settings.title != blank %}
+          <h2 class="rich-text-section__title">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+
+        <div>{{ section.settings.text }}</div>
+
+        {% if section.settings.link_text != blank %}
+          <div class="h2-margin-top">
+            <a class="feature-link" href="{{ section.settings.link_url }}">
+              {{- section.settings.link_text -}}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Rich text",
+    "class": "section--rich-text section--no-spacing",
+    "settings": [
+	  {
+        "type": "image_picker",
+        "id": "rt_bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Rich text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Use this text to share information about your store with your customers.</p><p>Describe product, share announcements, or welcome customers to your store.</p>"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link URL"
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Background color",
+        "default": "#f4f4f4"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text color",
+        "default": "#454f5b"
+      },
+      {
+        "type": "color",
+        "id": "color_head",
+        "label": "Heading and link color",
+        "default": "#212b36"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Rich text",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,482 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = product.selected_or_first_available_variant.featured_media.preview_image | default:product.featured_media.preview_image -%}
+{% if section.settings.header_image == blank and section.settings.header_title_show == false %}
+<style>
+.pageheader__layout::before {
+  border-bottom: 1px solid {{ settings.col_text | color_mix: settings.col_page_bg, 20 }};
+}
+.pageheader__contents .tier-appeared, .pageheader__contents .nav-rows::before {
+    border-top: none !important;
+}
+body:not(.has-banner):not(.scrolled-down) .pageheader__layout::before {
+  background-color: {{ settings.col_header_bg }};
+}
+</style>
+{% endif %}
+<div class="product {% unless current_variant.available %}variant-status--unavailable{% endunless %} {% if current_variant.available and current_variant.inventory_management == 'shopify' and current_variant.inventory_quantity < 1 %}variant-status--backorder{% endif %}" data-section-type="product-template">
+  {% capture breadcrumbs %}
+    <div class="breadcrumbs breadcrumbs--with-opposing-content" data-cc-animate>
+      <nav class="breadcrumbs__nav" role="navigation" aria-label="breadcrumbs">
+        {% if section.settings.prod_show_breadcrumbs %}
+        <a class="breadcrumbs__crumb" href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
+        <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+        {% if collection.url %}
+          <a class="breadcrumbs__crumb" href="{{ collection.url }}">{{ collection.title }}</a>
+          <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+        {% endif %}
+        <span class="breadcrumbs__crumb">{{ product.title }}</span>
+        {% endif %}
+      </nav>
+
+      {% if collection.previous_product or collection.next_product %}
+        <div class="breadcrumbs__opposing-content inline-next-prev">
+          {% if collection.previous_product %}
+            <span class="inline-next-prev__item">
+              <a class="inline-next-prev__link" href="{{ collection.previous_product }}">
+                <span class="inline-next-prev__icon">{% render 'svg-chevron-left' %}</span>
+                <span class="inline-next-prev__text">{{ 'products.product.previous' | t }}</span>
+              </a>
+            </span>
+          {% endif %}
+          {% if collection.next_product %}
+            <span class="inline-next-prev__item">
+              <a class="inline-next-prev__link" href="{{ collection.next_product }}">
+                <span class="inline-next-prev__text">{{ 'products.product.next' | t }}</span>
+                <span class="inline-next-prev__icon">{% render 'svg-chevron-right' %}</span>
+              </a>
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  {% endcapture %}
+
+  {% if section.settings.header_image != blank %}
+    <style>
+    .template-product .pageheader__contents { border: none }
+    {% if section.settings.header_title_show == false %}
+    .banner-image-container .feature-page-title { padding-bottom: 70px }
+    @media (max-width: 767px) {
+      .banner-image-container .feature-page-title {
+        padding-bottom: 0;
+      }
+    }
+    {% endif %}
+    </style>
+    <div class="banner-image-container banner-under-header">
+      {% render 'responsive-background', image: section.settings.header_image, class: 'banner-image fixed-height' %}
+
+      <div class="banner-image-text feature-page-title">
+        {{ breadcrumbs }}
+
+        {% if section.settings.header_title_show %}
+          <h1 data-cc-animate>{{ product.title }}</h1>
+        {% endif %}
+      </div>
+    </div>
+  {% elsif section.settings.header_title_show %}
+    <div class="feature-page-title">
+      {{ breadcrumbs }}
+      <h1 data-cc-animate>{{ product.title }}</h1>
+    </div>
+  {% else %}
+    {{ breadcrumbs }}
+  {% endif %}
+
+  <div class="container">
+    <div id="main" class="content-main {% if section.settings.header_image == blank and section.settings.header_title_show == false %}content-main--slim-header{% endif %}" role="main">
+      {% form 'product', product, data-ajax-add-to-cart: section.settings.enable_ajax_form, data-product-id: product.id, data-enable-history-state: true %}
+        <div class="product-grid">
+          <div class="product-grid__images">
+            <div class="product-photos product-photos--layout-{{ section.settings.image_layout }}">
+              <div class="main-wrapper" data-cc-animate  data-cc-animate-delay="0.1s">
+                <div class="main">
+
+                  {% for media in product.media %}
+                    {%-
+                      render 'media',
+                      media: media,
+                        prod_lightbox: section.settings.prod_lightbox,
+                        prod_lightbox_zoom: section.settings.prod_lightbox_zoom,
+                        enable_video_looping: section.settings.enable_video_looping
+                    -%}
+                  {% endfor %}
+
+                  {%- assign models = product.media | where: 'media_type', 'model' -%}
+                  {% if models.size > 0 %}
+                    <script type="application/json" class="model-json">
+                      {{- product.media | where: 'media_type', 'model' | json -}}
+                    </script>
+
+                      <button
+                              class="view-in-space"
+                              type="button"
+                              data-shopify-xr
+                              data-shopify-model3d-first-id="{{ models.first.id }}"
+                              data-shopify-model3d-id="{{ models.first.id }}"
+                              data-shopify-first-title="{{ product.title | escape }}"
+                              data-shopify-title="{{ product.title | escape }}"
+                              data-shopify-xr-hidden>
+                        {%- render 'icon-3d-badge-full-color' -%}
+                        <span class="view-in-space__text">{{ 'products.product.view_in_space' | t }}</span>
+                      </button>
+                  {% endif %}
+                </div>
+
+                {% if section.settings.image_layout == 'beside' and product.media.size > 1 %}
+                  <div class="load-all-thumbs-row spaced-row">
+                    <a class="load-all-thumbs feature-link" href="#">{{ 'products.product.expand_images' | t }}</a>
+                  </div>
+                {% endif %}
+              </div>
+
+              {% if product.media.size > 1 %}
+                <div class="thumbnails-outer" data-cc-animate  data-cc-animate-delay="0.1s">
+                  <div class="thumbnails">
+                    <div class="thumbnails-inner">
+
+                      {% for media in product.media %}
+                        <a class="thumb{% if media.preview_image.src == featured_image %} active{% endif %}  thumb--media-{{ media.media_type }}"
+                          title="{{ media.preview_image.alt | escape }}"
+                          href="{{ media.preview_image | img_url: 'master' }}"
+                          data-media-type="{{ media.media_type }}"
+                          data-media-id="{{ media.id }}">
+
+                          {% render 'responsive-image', image: media.preview_image %}
+
+                          {%- if media.media_type == 'video' or media.media_type =='external_video' -%}
+                            <div class="thumbnail__badge">
+                              {% render 'icon-video-badge-full-color' %}
+                            </div>
+                          {%- endif -%}
+
+                          {%- if media.media_type == 'model' -%}
+                            <div class="thumbnail__badge">
+                              {% render 'icon-3d-badge-full-color' %}
+                            </div>
+                          {%- endif -%}
+                        </a>
+                      {%- endfor -%}
+                      {% if section.settings.image_layout == 'under' %}
+                        <div class="load-all-thumbs-row spaced-row">
+                          <a class="load-all-thumbs feature-link" href="#">{{ 'products.product.expand_images' | t }}</a>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+
+                  <button class="thumbnails__prev">{% render 'svg-chevron-left' %}</button>
+                  <button class="thumbnails__next">{% render 'svg-chevron-right' %}</button>
+                </div>
+              {% endif %}
+            </div><!-- .product-photos -->
+          </div>
+
+          <div class="product-grid__detail">
+            <div class="product-main-detail" data-cc-animate data-cc-animate-delay="0.2s">
+              
+              <button id="frameUpButton" class="button" onclick="window.location.href='https://frameup.app/launch/{{shop.permanent_domain}}/{{product.handle}}/';" style="display: none; text-transform: none; height: 2.9em; padding-top:9px; width: 100%; background: white; border-color: black; color: black; font-size: 1em; margin-top: -40px; margin-bottom: 24px;"><img style="height: 1.5em; padding-bottom: 4px; margin-right: 4px; vertical-align: middle;" src="https://frameup.app/img/logo.svg"> View in AR</button>
+<script type="module" src="https://frameup.app/api/js/{{shop.permanent_domain}}/{{product.handle}}"></script>
+              
+              {% if section.settings.header_title_show == false %}
+              <h1 class="product-title h2">{{ product.title }}</h1>
+              {% endif %}
+
+              <div>
+                <div class="product-price product-price--large">
+                  <span class="product-price__amount theme-money">{{ current_variant.price | money }}</span>
+                  {% if current_variant.compare_at_price > current_variant.price %}
+                  <span class="product-price__compare theme-money">{{ current_variant.compare_at_price | money }}</span>
+                  {% endif %}
+
+                  {% render 'unit-price', variant: current_variant %}
+                </div>
+
+                {{ form | payment_terms }}
+
+                {%- if section.settings.show_tax_and_shipping -%}
+                  {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                    <div class="product-policies">
+                      {%- if shop.taxes_included -%}
+                        {{ 'products.product.include_taxes' | t }}
+                      {%- endif -%}
+                      {%- if shop.shipping_policy.body != blank -%}
+                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+
+              <div class="product-review-summary">
+                <a href="#shopify-product-reviews"><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span></a>
+              </div>
+              <div id="mbcBundleItems"></div>
+            </div>
+
+            {%- if section.settings.prod_show_brand and product.vendor != blank -%}
+              {%- comment -%}
+                Do we have a collection that has the same name as our product vendor name?
+                If we do, let's have the vendor link point to it.
+                If not, we will point to the automatic vendor collection.
+              {%- endcomment -%}
+              {%- assign product_vendor_handle = product.vendor | handle -%}
+              {%- if collections[product_vendor_handle].handle == product_vendor_handle -%}
+                {%- assign vendor_url = collections[product_vendor_handle].url -%}
+              {%- else -%}
+                {%- assign vendor_url = product.vendor | url_for_vendor -%}
+              {%- endif -%}
+              <div class="brand rte lightly-spaced-row" data-cc-animate data-cc-animate-delay="0.4s">{{ 'products.product.vendor' | t }} {{ product.vendor | link_to: vendor_url }}</div>
+            {%- endif -%}
+
+            {% if section.settings.description_position == 'up' %}
+              <div class="product-description rte spaced-row-bottom" data-cc-animate data-cc-animate-delay="0.4s">{{ product.description }}</div>
+            {% endif %}
+
+            <div class="product-form" data-cc-animate data-cc-animate-delay="0.5s">
+              {% if section.settings.prod_show_sku %}
+              <div class="sku"><span class="label label--inline">{{ 'products.product.sku' | t }}</span> <span class="sku__value">{{ current_variant.sku }}</span></div>
+              {% endif %}
+
+              <div class="option-selectors">
+                {% if product.variants.size > 1 %}
+                  {% for option in product.options_with_values %}
+                    <div class="selector-wrapper {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}hidden{% endif %}">
+                      <label {% if option.name == 'default' %}class="hidden"{% endif %} for="option-{{ option.name | handle }}">
+                        {{ option.name }}
+                      </label>
+                      <select id="option-{{ option.name | handle }}">
+                        {% for value in option.values %}
+                          <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>
+                            {{- value -}}
+                          </option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                  {% endfor %}
+
+                {% else %}
+
+                  {% unless product.has_only_default_variant %}
+                    <div class="single-variant-wrapper">
+                      {% for option in product.options %}
+                        {%- assign opt_idx = 'option' | append: forloop.index -%}
+                        <div class="single-variant-wrapper__row"><span class="label label--inline">{{ option }}:</span> {{ product.variants.first[opt_idx] }}</div>
+                      {% endfor %}
+                    </div>
+                  {% endunless %}
+                {% endif%}
+              </div>
+
+              <select name="id" class="original-selector" aria-label="{{ 'products.product.selector_label' | t | escape }}">
+                {% for variant in product.variants %}
+                <option value="{{ variant.id }}" {% if variant == current_variant %} selected="selected"{% endif %} data-stock="{% if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0 %}out{% endif %}">{{ variant.title | escape }}</option>
+                {% endfor %}
+              </select>
+
+              {% if product.available %}
+                <div class="quadd-wrapper {% if section.settings.enable_payment_button and product.selling_plan_groups == empty %}quadd-wrapper--with-payment-button{% endif %}">
+                  <div class="quantity-area" {% if product.type == 'mbcBundle' %}style="display: none"{% endif %}>
+                    <label for="quantity">{{ 'products.product.qty' | t }}</label> <input class="quantity select-on-focus" id="quantity" name="quantity" value="1" />
+                  </div>
+                  <div class="product-add" {% if product.type == 'mbcBundle' %}style="margin-top: 0"{% endif %}>
+                    <button class="button {% if section.settings.enable_payment_button and product.selling_plan_groups == empty %}button--alt{% endif %}" name="add" id="add" type="submit">{{ 'products.product.add_to_cart' | t }}</button>
+                    {% if section.settings.enable_payment_button %}
+                      {{ form | payment_button }}
+                    {% endif %}
+                  </div>
+                </div>
+              {% else %}
+                <h5 class="product-unavailable">{{ 'products.product.product_unavailable' | t }}</h5>
+              {% endif %}
+
+            </div><!-- .product-form -->
+
+            <div data-cc-animate data-cc-animate-delay="0.3s">
+              {%- if section.settings.show_pickup_availability -%}
+                {% render 'store-availability', product: product, current_variant: current_variant %}
+              {%- endif -%}
+
+              {% if product.available and section.settings.show_backorder_text == true %}
+                {% render 'backorder', variant: current_variant, product: product %}
+              {% endif %}
+
+              {% if section.settings.description_position == 'ub' %}
+                <div class="product-description rte spaced-row-bottom">{{ product.description }}</div>
+              {% endif %}
+
+              {% if section.settings.prod_show_sharing %}
+                {% render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+      {% endform %}
+
+      {% if section.settings.description_position == 'ua' %}
+        <div class="product-description rte spaced-row" data-cc-animate>{{ product.description }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Product page",
+    "settings": [
+      {
+        "type": "select",
+        "id": "description_position",
+        "label": "Description position",
+        "options": [
+          {
+            "value": "up",
+            "label": "Under price"
+          },
+          {
+            "value": "ub",
+            "label": "Under add to cart"
+          },
+          {
+            "value": "ua",
+            "label": "Under images and details"
+          }
+        ],
+        "default": "up"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tax_and_shipping",
+        "label": "Show tax and shipping information",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "prod_show_brand",
+        "label": "Show vendor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "prod_show_sku",
+        "label": "Show SKU",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "prod_show_sharing",
+        "label": "Show sharing icons",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "prod_show_breadcrumbs",
+        "label": "Show breadcrumbs",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "enable_ajax_form",
+        "label": "Cart type",
+        "default": "true",
+        "options": [
+          {
+            "value": "true",
+            "label": "Stay on the same page"
+          },
+          {
+            "value": "false",
+            "label": "Go to the cart page"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_payment_button",
+        "label": "Show dynamic checkout button",
+        "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_pickup_availability",
+        "label": "Show pickup availability",
+        "default": true,
+        "info": "Show customers where they can pick up the product. [Learn more](https://help.shopify.com/en/manual/shipping/setting-up-and-managing-your-shipping/local-methods/local-pickup)"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_backorder_text",
+        "label": "Show backorder text",
+        "default": true,
+        "info": "Only shows for products which use Shopify inventory tracking and are available to purchase when out of stock."
+      },
+      {
+        "type": "header",
+        "content": "Media"
+      },
+      {
+        "type": "paragraph",
+        "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+      },
+      {
+        "type": "select",
+        "id": "image_layout",
+        "label": "Thumbnail position",
+        "options": [
+          {
+            "value": "beside",
+            "label": "Beside main image"
+          },
+          {
+            "value": "under",
+            "label": "Underneath main image"
+          }
+        ],
+        "default": "under"
+      },
+      {
+        "type": "checkbox",
+        "id": "prod_lightbox",
+        "label": "Enable image lightbox",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "prod_lightbox_zoom",
+        "label": "Enable zoom within lightbox",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_video_looping",
+        "label": {
+          "en": "Enable video looping"
+        },
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_title_show",
+        "label": "Show title in header",
+        "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Image",
+        "info": "Shown on all products"
+      },
+      {
+        "type": "paragraph",
+        "content": "The height of the content header can be adjusted in Theme Settings > Layout"
+      }
+    ]
+  }
+{% endschema %}

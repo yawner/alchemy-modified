@@ -1,0 +1,280 @@
+<div id="section-{{ section.id }}" class="{% if section.settings.skip_container == false%}container{% endif %}
+{% if section.settings.skip_container == false %}homepage-spaced-row{% endif %}
+" data-section-type="background-video">
+
+  {% style %}
+    {%- if section.settings.height == 'fixed' -%}
+      #section-{{ section.id }} .video-container {
+        height: {{ section.settings.height_mobile }}px;
+      }
+    {%- endif -%}
+
+    #section-{{ section.id }} .overlay .inner {
+      color: {{ section.settings.text_color }};
+    }
+
+    @media (min-width: 768px) {
+      {%- if section.settings.height == 'fixed' -%}
+        #section-{{ section.id }} .video-container {
+          height: {{ section.settings.height_desktop }}px;
+        }
+      {%- endif -%}
+
+      #section-{{ section.id }} .overlay__title {
+        font-size: {{ section.settings.title_size }}px;
+      }
+    }
+  {% endstyle %}
+
+  <div class="height--{{ section.settings.height }} video-container video-container--background" data-video-id="{{ section.settings.video_url.id }}"
+       data-video-url="{%- if section.settings.video == blank -%}https://www.youtube.com/watch?v=_9VUPq3SxOc{%- else -%}{{ section.settings.video | escape }}{%- endif -%}"
+       data-video-autoplay="true"
+       data-video-loop="true">
+
+    <div class="video-container__video"></div>
+
+    {% if section.settings.placeholder_image %}
+      <div class="video-container__fallback rimage-outer-wrapper rimage-background lazyload fade-in"
+           data-bgset="{% render 'bgset', image: section.settings.placeholder_image %}"
+           data-sizes="auto"
+           data-parent-fit="cover">
+        <noscript>
+          <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: section.settings.placeholder_image.aspect_ratio | times: 100 }}%">
+            <img src="{{ section.settings.placeholder_image | img_url: '1024x1024' }}" alt="{{ section.settings.placeholder_image.alt | escape }}" class="rimage__image">
+          </div>
+        </noscript>
+      </div>
+    {% endif %}
+
+    {%- assign show_overlay_text = false -%}
+    {%- if section.settings.title != blank or section.settings.subheading != blank or section.settings.text != blank or section.settings.button_label != blank -%}
+      {%- assign show_overlay_text = true -%}
+    {%- endif -%}
+
+    {%- unless block.settings.tint_color contains ',0' -%}
+      <div class="image-tint" data-cc-animate data-cc-animate-duration="1.5s" data-cc-animate-offset="50%"
+           style="background-color: {{ section.settings.tint_color }};opacity: {{ section.settings.tint_opacity | divided_by: 100.00 }};"></div>
+    {%- endunless -%}
+
+    {%- if show_overlay_text -%}
+      <div class="video-container__overlay overlay">
+        <div class="inner overlay--v-{{ section.settings.text_alignment | split: ' ' | first }} overlay--h-{{ section.settings.text_alignment | split: ' ' | last }}">
+          <div class="innest">
+            {%- if section.settings.title != blank -%}
+              <h2 class="h1 overlay__title" data-cc-animate-delay=".1s" data-cc-animate="cc-fade-in-up">
+                {{- section.settings.title | newline_to_br -}}
+              </h2>
+            {%- endif -%}
+
+            {%- if section.settings.subheading != blank -%}
+              <div class="large-text overlay__subheading" data-cc-animate-delay=".2s" data-cc-animate="cc-fade-in-up">
+                {{- section.settings.subheading | escape -}}
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.text != blank -%}
+              <div class="rte overlay__text {% if section.settings.enlarge_text %}large-text{% endif %}" data-cc-animate-delay=".3s" data-cc-animate="cc-fade-in-up">
+                {{ section.settings.text }}
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.button_label != blank -%}
+              <a class="overlay__link button button--hollow" href="{{ section.settings.button_link }}" data-cc-animate-delay=".4s" data-cc-animate="cc-fade-in-up">{{ section.settings.button_label | escape }}</a>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Background video",
+    "class": "section--background-video section--no-spacing",
+    "settings": [
+      {
+        "id": "video",
+        "type": "text",
+        "label": "Video link",
+        "info": "Supports mp4, YouTube and Vimeo. Please read documentation before using. [Read more](https://cleancanvas.co.uk/support/general/background-video)",
+        "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "id": "placeholder_image",
+        "type": "image_picker",
+        "label": "Placeholder image",
+        "info": "Required. Shows while the video is loading, or if it cannot autoplay (e.g. on mobile)."
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      },
+      {
+        "id": "title",
+        "type": "textarea",
+        "label": "Heading",
+        "default": "Tell your story"
+      },
+      {
+        "type": "range",
+        "id": "title_size",
+        "min": 20,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "Heading text size",
+        "default": 60
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>with auto-playing, auto-looping videos</p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "enlarge_text",
+        "label": "Enlarge text",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "options": [
+          {
+            "value": "top left",
+            "label": "Top left"
+          },
+          {
+            "value": "top center",
+            "label": "Top center"
+          },
+          {
+            "value": "top right",
+            "label": "Top right"
+          },
+          {
+            "value": "center left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom right",
+            "label": "Bottom right"
+          }
+        ],
+        "default": "center center"
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "radio",
+        "id": "height",
+        "label": "Video height",
+        "default": "fixed",
+        "options": [
+          {
+            "value": "full",
+            "label": "Full screen"
+          },
+          {
+            "value": "fixed",
+            "label": "Fixed height"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "height_desktop",
+        "min": 200,
+        "max": 1000,
+        "step": 20,
+        "unit": "px",
+        "label": "Desktop fixed height",
+        "default": 600
+      },
+      {
+        "type": "range",
+        "id": "height_mobile",
+        "min": 100,
+        "max": 1000,
+        "step": 20,
+        "unit": "px",
+        "label": "Mobile fixed height",
+        "default": 500
+      },
+      {
+        "type": "checkbox",
+        "id": "skip_container",
+        "label": "Full page width",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Tint"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "tint_color",
+        "label": "Tint",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "tint_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Tint strength",
+        "default": 25
+      }
+    ],
+    "presets": [
+      {
+        "name": "Background video",
+        "category": "Video",
+        "settings": {
+          "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+        }
+      }
+    ]
+  }
+{% endschema %}

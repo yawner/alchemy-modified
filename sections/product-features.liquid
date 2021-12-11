@@ -1,0 +1,263 @@
+{% style %}
+  .section-id-{{ section.id }} {
+    background-color: {{ section.settings.color_bg }};
+    color: {{ section.settings.color_text }};
+  }
+  .section-id-{{ section.id }} .product-features__icon {
+    color: {{ section.settings.color_icon }};
+    width: {{ section.settings.icon_size }}px;
+  }
+
+  .section-id-{{ section.id }} .product-features__icon svg {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+  }
+{% endstyle %}
+
+{%- if section.settings.show -%}
+  <div class="section-id-{{ section.id }} spaced-row-bottom">
+    <div class="product-features align-center container large-content-row">
+      <h3 class="section-title-container h2 product-features__title" data-cc-animate>
+        {{ section.settings.heading | escape }}
+      </h3>
+
+      {%- capture col_class -%}
+        {%- if section.blocks.size == 4 -%}quarter
+        {%- elsif section.blocks.size == 3 -%}third
+        {%- elsif section.blocks.size == 2 -%}half
+        {%- else -%}full{%- endif -%}
+      {%- endcapture -%}
+
+      <div class="grid grid--row-gutters">
+        {%- for block in section.blocks -%}
+          {% assign animate_delay = forloop.index | times: 0.15 %}
+          <div class="column {{ col_class }}" data-cc-animate data-cc-animate-delay="{{ animate_delay }}s">
+            {%- if block.settings.url != blank -%}
+              <a href="{{ block.settings.url }}" class="product-features__link">
+            {%- endif -%}
+
+            <div class="product-features__icon">
+              {%- if block.settings.image != blank -%}
+                {%- render 'responsive-image', image: block.settings.image -%}
+              {%- else -%}
+                {% if block.settings.icon == 'svg-package' %}
+                  {% render 'svg-package' %}
+                {% elsif block.settings.icon == 'svg-support' %}
+                  {% render 'svg-support' %}
+                {% elsif block.settings.icon == 'svg-shield' %}
+                  {% render 'svg-shield' %}
+                {% elsif block.settings.icon == 'svg-return' %}
+                  {% render 'svg-return' %}
+                {% elsif block.settings.icon == 'svg-cart' %}
+                  {% render 'svg-cart' %}
+                {% elsif block.settings.icon == 'svg-beer' %}
+                  {% render 'svg-beer' %}
+                {% elsif block.settings.icon == 'svg-coffee' %}
+                  {% render 'svg-coffee' %}
+                {% elsif block.settings.icon == 'svg-draw' %}
+                  {% render 'svg-draw' %}
+                {% elsif block.settings.icon == 'svg-map-location' %}
+                  {% render 'svg-map-location' %}
+                {% elsif block.settings.icon == 'svg-send' %}
+                  {% render 'svg-send' %}
+                {% elsif block.settings.icon == 'svg-view' %}
+                  {% render 'svg-view' %}
+                {% elsif block.settings.icon == 'svg-bookmark' %}
+                  {% render 'svg-bookmark' %}
+                {% elsif block.settings.icon == 'svg-compass' %}
+                  {% render 'svg-compass' %}
+                {% elsif block.settings.icon == 'svg-heart-mobile' %}
+                  {% render 'svg-heart-mobile' %}
+                {% elsif block.settings.icon == 'svg-phone' %}
+                  {% render 'svg-phone' %}
+                {% elsif block.settings.icon == 'svg-world' %}
+                  {% render 'svg-world' %}
+                {% elsif block.settings.icon == 'svg-chat' %}
+                  {% render 'svg-chat' %}
+                {% elsif block.settings.icon == 'svg-credit-card' %}
+                  {% render 'svg-credit-card' %}
+                {% elsif block.settings.icon == 'svg-lock' %}
+                  {% render 'svg-lock' %}
+                {% elsif block.settings.icon == 'svg-salad' %}
+                  {% render 'svg-salad' %}
+                {% elsif block.settings.icon == 'svg-thumbs-up' %}
+                  {% render 'svg-thumbs-up' %}
+                {% endif %}
+              {%- endif -%}
+            </div>
+            <div class="product-features__caption">{{ block.settings.title }}</div>
+
+            {%- if block.settings.url != blank -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "Product features",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Show product features",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "range",
+        "id": "icon_size",
+        "min": 20,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "label": "Icon size",
+        "default": 25
+      },
+      {
+        "type": "color",
+        "id": "color_icon",
+        "label": "Icon color",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text color",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Background color",
+        "default": "#fff8f4"
+      }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Feature",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Text",
+            "default": "Feature"
+          },
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "svg-package",
+                "label": "Package"
+              },
+              {
+                "value": "svg-support",
+                "label": "Support"
+              },
+              {
+                "value": "svg-shield",
+                "label": "Shield"
+              },
+              {
+                "value": "svg-return",
+                "label": "Return"
+              },
+              {
+                "value": "svg-cart",
+                "label": "Cart"
+              },{
+                "value": "svg-beer",
+                "label": "Beer"
+              },
+              {
+                "value": "svg-coffee",
+                "label": "Coffee"
+              },
+              {
+                "value": "svg-draw",
+                "label": "Draw"
+              },
+              {
+                "value": "svg-map-location",
+                "label": "Map location"
+              },
+              {
+                "value": "svg-send",
+                "label": "Send"
+              },
+              {
+                "value": "svg-view",
+                "label": "View"
+              },
+              {
+                "value": "svg-bookmark",
+                "label": "Bookmark"
+              },
+              {
+                "value": "svg-compass",
+                "label": "Compass"
+              },
+              {
+                "value": "svg-heart-mobile",
+                "label": "Heart mobile"
+              },
+              {
+                "value": "svg-phone",
+                "label": "Phone"
+              },
+              {
+                "value": "svg-world",
+                "label": "World"
+              },
+              {
+                "value": "svg-chat",
+                "label": "Chat"
+              },
+              {
+                "value": "svg-credit-card",
+                "label": "Credit card"
+              },
+              {
+                "value": "svg-lock",
+                "label": "Lock"
+              },
+              {
+                "value": "svg-salad",
+                "label": "Salad"
+              },
+              {
+                "value": "svg-thumbs-up",
+                "label": "Thumbs up"
+              }
+            ],
+            "default": "svg-package"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Overrides icon when selected"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

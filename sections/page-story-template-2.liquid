@@ -1,0 +1,1804 @@
+<div data-section-type="nested-sections">
+  {% capture header_content %}
+    {% if settings.content_header_enable_breadcrumbs %}
+      <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <a class="breadcrumbs__crumb" href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
+        <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+        <span class="breadcrumbs__crumb">{{ page.title }}</span>
+      </nav>
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+    <div class="rte reading-width align-center large-text" data-cc-animate data-cc-animate-delay="0.1s">
+      {{ page.content }}
+    </div>
+  {% endcapture %}
+
+  {% if section.settings.show_page_content %}
+    <div class="banner-image-container banner-under-header bg--{{ section.settings.header_image_position }}" data-cc-animate>
+      {% if section.settings.header_image != blank %}
+        <div class="banner-image fixed-height rimage__image lazyload fade-in"
+            data-bgset="{% render 'bgset', image: section.settings.header_image %}"
+            data-sizes="auto"
+            data-parent-fit="cover">
+        </div>
+        <noscript>
+          <div class="banner-image fixed-height" style="background-image: url({{ section.settings.header_image | img_url: '2048x'}})"></div>
+        </noscript>
+      {% endif %}
+
+      <div class="banner-image-text feature-page-title {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}">
+        {{ header_content }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div id="main" class="content-main {% if section.settings.show_page_content == false%}has-text-banner{% endif %}">
+    <div data-section-type="nested-sections">
+      {% for block in section.blocks %}
+        {% if block.type == 'rich-text' %}
+          <div class="shopify-section section--rich-text section--no-spacing" {{ block.shopify_attributes }}>{% style %}
+  .section-id-{{ block.id }}::before,
+  .section-id-{{ block.id }} > .container {
+    background-color: {{ block.settings.color_bg }}!important;
+  }
+
+  {% unless block.settings.color_text contains ',0' %}
+  .section-id-{{ block.id }} {
+    color: {{ block.settings.color_text }};
+  }
+  {% endunless %}
+  {% unless block.settings.color_head contains ',0' %}
+  .section-id-{{ block.id }} .rich-text-section__title,
+  .section-id-{{ block.id }} a,
+  .section-id-{{ block.id }} a:hover,
+  .section-id-{{ block.id }} .feature-link,
+  .section-id-{{ block.id }} .feature-link:hover {
+    color: {{ block.settings.color_head }};
+  }
+  {% endunless %}
+{% endstyle %}
+
+<div class="section-id-{{ block.id }} overlap-candidate-container" data-nested-section-type="rich-text" data-cc-animate>
+  <div class="container {% unless block.settings.color_bg contains ',0' or block.settings.color_bg == settings.col_page_bg %}cf{% endunless %}">
+    <div class="rich-text-section">
+      <div class="rte reading-width align-center">
+        {% if block.settings.title != blank %}
+          <h2 class="rich-text-section__title">{{ block.settings.title | escape }}</h2>
+        {% endif %}
+
+        <div>{{ block.settings.text }}</div>
+
+        {% if block.settings.link_text != blank %}
+          <div class="h2-margin-top">
+            <a class="feature-link" href="{{ block.settings.link_url }}">
+              {{- block.settings.link_text -}}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+        {% elsif block.type == 'image-with-text' %}
+          <div class="shopify-section section--image-with-text section--no-spacing" {{ block.shopify_attributes }}>{% style %}
+  .section-id-{{ block.id }}{% unless block.settings.skip_container %} .image-with-text-section__inner{% endunless %} {
+    background-color: {{ block.settings.color_bg }};
+  }
+
+  {% unless block.settings.color_text contains ',0' %}
+  .section-id-{{ block.id }} {
+    color: {{ block.settings.color_text }};
+  }
+  {% endunless %}
+  {% unless block.settings.color_head contains ',0' %}
+  .section-id-{{ block.id }} .image-with-text-section__title,
+  .section-id-{{ block.id }} .feature-link,
+  .section-id-{{ block.id }} .feature-link:hover {
+    color: {{ block.settings.color_head }};
+  }
+  {% endunless %}
+{% endstyle %}
+<div class="image-with-text-section {% if block.settings.skip_container %}image-with-text-section--full-width{% else %}container container--not-mobile homepage-spaced-row-sm{% endif %} section-id-{{ block.id }}"
+     data-nested-section-type="image-with-text"
+     data-cc-animate>
+  {%- capture image_html -%}
+    <div class="column half">
+      <div class="image-with-text-section__image">
+        {% if block.settings.image %}
+          <div class="image-with-text-section__image-image image-with-text-section__image-image--{{ block.id }}" data-cc-animate>
+            {% render 'responsive-image', image: block.settings.image %}
+          </div>
+        {% else %}
+          <div class="image-with-text-section__placeholder placeholder-image">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {%- endcapture -%}
+
+  <div class="image-with-text-section__inner">
+
+    <div class="grid image-with-text-section__wrapper image-with-text-section__layout-{{ block.settings.layout }}">
+
+      {% if block.settings.layout == 'left' %}{{ image_html }}{% endif %}
+
+      <div class="column half">
+        <div class="image-with-text-section__content image-with-text-section__text">
+          <div class="content content--align-{{ block.settings.text_alignment }}">
+            {% if block.settings.title != blank %}
+              <h2 class="image-with-text-section__title" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.1s">{{ block.settings.title | escape }}</h2>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.2s">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+            {% if block.settings.button_text != blank %}
+              <div class="h2-margin-top" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.3s">
+                <a class="feature-link" href="{{ block.settings.button_link }}">
+                  {{- block.settings.button_text -}}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if block.settings.layout == 'right' %}{{ image_html }}{% endif %}
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+        {% elsif block.type == 'featured-collection' %}
+          <div class="shopify-section section--collection section--upper-space-req" {{ block.shopify_attributes }}>{%- assign collection = collections[block.settings.collection] -%}
+{%- assign max_products = block.settings.product_rows_int | times: block.settings.products_per_row_int -%}
+<div class="homepage-products container" data-nested-section-type="featured-collection">
+  {% if block.settings.title != blank %}
+    <h1 class="section-title-container section-title-container--larger-space h2 align-center" data-cc-animate>
+      {{ block.settings.title | link_to: collection.url }}
+    </h1>
+  {% endif %}
+
+  <div class="grid grid--row-gutters product-list">
+    {% unless block.settings.collection == blank %}
+      {% for product in collection.products limit: max_products %}
+        {% render 'product-grid-item', product: product, grid_show_vendor: block.settings.grid_show_vendor, products_per_row_int: block.settings.products_per_row_int, animate: forloop.index %}
+      {% endfor %}
+    {% else %}
+      {% for product in (1..max_products) %}
+        {% render 'onboarding-product-grid-item' %}
+      {% endfor %}
+    {% endunless %}
+  </div>
+
+  {% if block.settings.cta_text != blank %}
+    <div class="spaced-row align-center" data-cc-animate data-cc-animate-delay="0.2s">
+      <a class="button button--alt" href="{{ collection.url }}">{{ block.settings.cta_text }}</a>
+    </div>
+  {% endif %}
+</div>
+
+
+</div>
+
+        {% elsif block.type == 'featured-product' %}
+          <div class="shopify-section section--product section--upper-space-req" {{ block.shopify_attributes }}>{%- assign product = all_products[block.settings.product] -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = product.featured_media.preview_image -%}
+
+<div class="section-{{ block.id }} container featured-product product-detail strongly-spaced-row layout-content-with-image-{{ block.settings.layout }} layout-content-with-image--large-image valign-middle cf" data-nested-section-type="featured-product">
+  {% render 'structured-data-product', product: product, current_variant: current_variant %}
+  <div class="product {% unless current_variant.available %}variant-status--unavailable{% endunless %} {% if current_variant.available and current_variant.inventory_management == 'shopify' and current_variant.inventory_quantity < 1 %}variant-status--backorder{% endif %}" data-nested-section-type="product-template">
+    <div class="product-grid">
+      <div class="product-grid__images" data-cc-animate>
+        <div class="product-photos product-photos--layout-{{ block.settings.image_layout }}">
+          {% if product != blank %}
+            <div class="main-wrapper">
+              <div class="main">
+                {% for media in product.media %}
+                  {% if block.settings.prod_lightbox and media.media_type == 'image' %}
+                    <a href="{{ featured_image | img_url: 'master' }}">
+                  {% endif %}
+
+                  {%- render 'media', media: media, prod_lightbox: block.settings.prod_lightbox, enable_video_looping: block.settings.enable_video_looping -%}
+
+                  {% if block.settings.prod_lightbox and media.media_type == 'image' %}
+                    </a>
+                  {% endif %}
+                {% endfor %}
+
+                {%- assign models = product.media | where: 'media_type', 'model' -%}
+                {% if models.size > 0 %}
+                  <script type="application/json" class="model-json">
+                      {{- product.media | where: 'media_type', 'model' | json -}}
+                    </script>
+
+                  <button
+                          class="view-in-space"
+                          type="button"
+                          data-shopify-xr
+                          data-shopify-model3d-first-id="{{ models.first.id }}"
+                          data-shopify-model3d-id="{{ models.first.id }}"
+                          data-shopify-first-title="{{ product.title | escape }}"
+                          data-shopify-title="{{ product.title | escape }}"
+                          data-shopify-xr-hidden>
+                    {%- render 'icon-3d-badge-full-color' -%}
+                    <span class="view-in-space__text">{{ 'products.product.view_in_space' | t }}</span>
+                  </button>
+                {% endif %}
+              </div>
+            </div>
+
+            {% if product.media.size > 1 and block.settings.show_all_images %}
+              <div class="thumbnails-outer">
+                <div class="thumbnails">
+                  <div class="thumbnails-inner">
+                    {% for media in product.media %}
+                      <a class="thumb{% if media.preview_image.src == featured_image %} active{% endif %}  thumb--media-{{ media.media_type }}"
+                         title="{{ media.preview_image.alt | escape }}"
+                         href="{{ media.preview_image | img_url: 'master' }}"
+                         data-media-type="{{ media.media_type }}"
+                         data-media-id="{{ media.id }}">
+
+                        {% render 'responsive-image', image: media.preview_image %}
+
+                        {%- if media.media_type == 'video' or media.media_type =='external_video' -%}
+                          <div class="thumbnail__badge">
+                            {% render 'icon-video-badge-full-color' %}
+                          </div>
+                        {%- endif -%}
+
+                        {%- if media.media_type == 'model' -%}
+                          <div class="thumbnail__badge">
+                            {% render 'icon-3d-badge-full-color' %}
+                          </div>
+                        {%- endif -%}
+                      </a>
+                    {%- endfor -%}
+                  </div>
+                </div>
+
+                <button class="thumbnails__prev">{% render 'svg-chevron-left' %}</button>
+                <button class="thumbnails__next">{% render 'svg-chevron-right' %}</button>
+              </div>
+            {% endif %}
+          {% else %}
+            <div class="main-wrapper">
+              <div class="main">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder' }}
+              </div>
+            </div>
+
+            {% if block.settings.show_all_images %}
+              <div class="thumbnails">
+                <span class="thumb active">{{ 'product-2' | placeholder_svg_tag: 'placeholder' }}</span>
+                <span class="thumb">{{ 'product-3' | placeholder_svg_tag: 'placeholder' }}</span>
+                <span class="thumb">{{ 'product-4' | placeholder_svg_tag: 'placeholder' }}</span>
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="product-grid__detail" data-cc-animate data-cc-animate-delay="0.1s">
+      {% if product != blank %}
+        {% form 'product', product, data-ajax-add-to-cart: block.settings.enable_ajax_form, data-product-id: product.id, data-enable-history-state: false %}
+          <div class="product-main-detail">
+            <h1 class="product-title h2">{{ product.title | link_to: product.url }}</h1>
+
+            <div>
+              <div class="product-price product-price--large">
+                <span class="product-price__amount theme-money">{{ current_variant.price | money }}</span>
+                {% if current_variant.compare_at_price > current_variant.price %}
+                  <span class="product-price__compare theme-money">{{ current_variant.compare_at_price | money }}</span>
+                {% endif %}
+
+                {% render 'unit-price', variant: current_variant %}
+              </div>
+
+              {{ form | payment_terms }}
+
+              {%- if block.settings.show_tax_and_shipping -%}
+                {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                  <div class="product-policies">
+                    {%- if shop.taxes_included -%}
+                      {{ 'products.product.include_taxes' | t }}
+                    {%- endif -%}
+                    {%- if shop.shipping_policy.body != blank -%}
+                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+
+            <div class="product-review-summary">
+              <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+            </div>
+          </div>
+
+          <div class="product-description rte spaced-row-bottom">{{ block.settings.text }}</div>
+
+          <div class="product-form">
+            {% if block.settings.prod_show_sku %}
+            <div class="sku"><span class="label label--inline">{{ 'products.product.sku' | t }}</span> <span class="sku__value">{{ current_variant.sku }}</span></div>
+            {% endif %}
+
+            <div class="option-selectors">
+              {% if product.variants.size > 1 %}
+                {% for option in product.options_with_values %}
+                  <div class="selector-wrapper {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}hidden{% endif %}">
+                    <label {% if option.name == 'default' %}class="hidden"{% endif %} for="option-{{ option.name | handle }}">
+                      {{ option.name }}
+                    </label>
+                    <select id="option-{{ option.name | handle }}">
+                      {%- for value in option.values -%}
+                      <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>
+                        {{- value -}}
+                      </option>
+                      {%- endfor -%}
+                    </select>
+                  </div>
+                {% endfor %}
+
+              {% else %}
+
+                {% unless product.has_only_default_variant %}
+                  <div class="single-variant-wrapper">
+                    {% for option in product.options %}
+                      {% assign opt_idx = 'option' | append: forloop.index %}
+                      <div class="single-variant-wrapper__row"><span class="label label--inline">{{ option }}:</span> {{ product.variants.first[opt_idx] }}</div>
+                    {% endfor %}
+                  </div>
+                {% endunless %}
+              {% endif%}
+            </div>
+
+            <select name="id" class="original-selector" aria-label="{{ 'products.product.selector_label' | t | escape }}">
+              {% for variant in product.variants %}
+              <option value="{{ variant.id }}" {% if variant == current_variant %} selected="selected"{% endif %} data-stock="{% if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0 %}out{% endif %}">{{ variant.title | escape }}</option>
+              {% endfor %}
+            </select>
+
+            {% if product.available %}
+              <div class="quadd-wrapper {% if block.settings.enable_payment_button and product.selling_plan_groups == empty %}quadd-wrapper--with-payment-button{% endif %}">
+                {% if block.settings.show_quantity %}
+                <div class="quantity-area">
+                  <label for="quantity-{{ block.id }}">{{ 'products.product.qty' | t }}</label> <input class="quantity select-on-focus" id="quantity-{{ block.id }}" name="quantity" value="1" />
+                </div>
+                {% else %}
+                <input type="hidden" name="quantity" value="1"/>
+                {% endif %}
+                <div class="product-add">
+                  <button class="button {% if block.settings.enable_payment_button and product.selling_plan_groups == empty %}button--alt{% endif %}" name="add" type="submit">{{ 'products.product.add_to_cart' | t }}</button>
+                  {% if block.settings.enable_payment_button and product.selling_plan_groups == empty %}
+                    {{ form | payment_button }}
+                  {% endif %}
+                </div>
+              </div>
+              {% if block.settings.show_backorder_text == true %}
+                {% render 'backorder', variant: current_variant, product: product %}
+              {% endif %}
+
+            {% else %}
+              <h5 class="product-unavailable">{{ 'products.product.product_unavailable' | t }}</h5>
+            {% endif %}
+          </div><!-- .product-form -->
+
+
+        {% endform %}
+
+        <div class="lightly-spaced-row">{{ block.settings.link | link_to: product.url }}</div>
+
+      {% else %}
+        <div class="product-main-detail">
+          <h1 class="product-title h2">{{ 'onboarding.product.product_title' | t }}</h1>
+          <div class="product-price product-price--large">
+            <span class="product-price__amount theme-money">{{ 1234 | money }}</span>
+          </div>
+        </div>
+        <div class="product-description rte spaced-row-bottom">{{ block.settings.text }}</div>
+        <div class="product-form">
+          <div class="quadd-wrapper">
+            {% if block.settings.show_quantity %}
+            <div class="quantity-area">
+              <label for="quantity">{{ 'products.product.qty' | t }}</label> <input class="quantity select-on-focus" id="quantity" name="quantity" value="1" />
+            </div>
+            {% else %}
+            <input type="hidden" name="quantity" value="1"/>
+            {% endif %}
+            <div class="product-add">
+              <button class="button {% if block.settings.enable_payment_button and product.selling_plan_groups == empty %}button--alt{% endif %}" name="add" id="add" type="submit">{{ 'products.product.add_to_cart' | t }}</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lightly-spaced-row">{{ block.settings.link | link_to: '#' }}</div>
+      {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% unless product == blank %}
+  <script type="application/json" id="ProductJson-{{ product.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}
+
+</div>
+
+        {% elsif block.type == 'newsletter' %}
+          <div class="shopify-section section--newsletter section--no-spacing" {{ block.shopify_attributes }}>{% style %}
+  .section-id-{{ block.id }}::before,
+  .section-id-{{ block.id }} > .container {
+    background-color: {{ block.settings.color_bg }}!important;
+  }
+{% endstyle %}
+
+<div class="newsletter-section section-id-{{ block.id }} overlap-candidate-container" data-nested-section-type="newsletter" data-cc-animate>
+  <div class="container" data-cc-animate>
+    <div class="signup-section">
+      {% assign form_id = block.id | prepend: 'signup-form-' %}
+      {% form 'customer', id: form_id %}
+        <input type="hidden" name="contact[tags]" value="prospect,newsletter"/>
+
+        <div class="signup-icon" data-cc-animate>{% render 'svg-email' %}</div>
+
+        <h3>{{ block.settings.heading }}</h3>
+
+        <div class="input-and-button-row">
+          <div class="input-and-button-row__input-wrapper">
+            <input class="input-and-button-row__input" type="email" placeholder="{{ 'layout.signup.email' | t }}" value="" aria-label="{{ 'layout.signup.email' | t | escape }}" name="contact[email]" required />
+          </div>
+          <button class="button input-and-button-row__button" type="submit">{{ block.settings.button_text }}</button>
+        </div>
+
+        {% if block.settings.text != blank %}
+          <div class="rte reading-width">{{ block.settings.text }}</div>
+        {% endif %}
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+</div>
+
+        {% elsif block.type == 'map' %}
+          <div class="shopify-section section--map section--no-spacing" {{ block.shopify_attributes }}>{%- assign display_map = false -%}
+{%- if block.settings.api_key != blank and block.settings.map_address != blank -%}
+  {%- assign display_map = true -%}
+{%- endif -%}
+
+{% style %}
+  .section-id-{{ block.id }}::before {
+    background-color: {{ block.settings.color_bg }}!important;
+  }
+  {% if block.settings.background_image != blank %}
+  @media screen and (max-width: 749px) {
+    .section-id-{{ block.id }} .map-section__map-image {
+      padding-top: {{ 1 | divided_by: block.settings.background_image.aspect_ratio | times: 100}}%;
+    }
+  }
+  .section-id-{{ block.id }} .map-section__map-image {
+    background-position: {{ block.settings.background_position }};
+  }
+  {% endif %}
+{% endstyle %}
+
+<div class="section-id-{{ block.id }} overlap-candidate-container homepage-padded-row map-section{% if display_map %} map-section--display-map{% endif %}"
+     data-nested-section-type="map"
+     data-api-key="{{ block.settings.api_key }}"
+     data-map-style="{{ block.settings.map_style }}" data-cc-animate>
+  <div class="container">
+    <div class="map-section__wrapper grid">
+	    <div class="column half">
+	      <div class="map-section__content map-section__text">
+	        {% if block.settings.heading != blank %}
+	          <h2>{{ block.settings.heading | escape }}</h2>
+	        {% endif %}
+	        {% if block.settings.address != blank %}
+	          <div class="rte">{{ block.settings.address }}</div>
+	        {% endif %}
+	        {% if block.settings.button != blank and block.settings.map_address != blank %}
+	          <div class="spaced-row-top">
+	            <a href="https://maps.google.com?daddr={{ block.settings.map_address | escape }}" target="_blank" class="button button--alt">
+	              {% if block.settings.show_pin %}
+	                {% render 'svg-pin' %}
+	              {% endif %}
+	              <span>{{ block.settings.button | escape }}</span>
+	            </a>
+	          </div>
+	        {% endif %}
+	      </div>
+      </div>
+
+
+	    <div class="column half">
+	      <div class="map-section__content map-section__map">
+	        {% if block.settings.background_image %}
+	          <div class="map-section__map-image lazyload"
+	              data-bgset="{% render 'bgset', image: block.settings.background_image %}"
+	              data-sizes="auto"
+	              data-parent-fit="cover">
+	          </div>
+	          <noscript>
+	            <div class="map-section__map-image" style="background-image: url({{ block.settings.background_image | img_url: '400x400'}});"></div>
+	          </noscript>
+	        {% else %}
+	          <div class="map-section__placeholder placeholder-image">
+	            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+	          </div>
+	        {% endif %}
+	        {% if display_map %}
+	          <div class="map-section__map-container"
+	              id="Map-{{ block.id }}"
+	              data-address-setting="{{ block.settings.map_address | escape }}">
+	          </div>
+	        {% endif %}
+	      </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+        {% elsif block.type == 'video' %}
+          <div class="shopify-section section--video section--no-spacing" {{ block.shopify_attributes }}><div id="section-{{ block.id }}" class="{% if block.settings.skip_container == false%}container{% endif %}
+{% if block.settings.skip_container == false %}container container--not-mobile homepage-spaced-row-sm{% endif %}
+" data-nested-section-type="video">
+
+  {% style %}
+    #section-{{ block.id }} .overlay .inner {
+      color: {{ block.settings.text_color }};
+    }
+
+    #section-{{ block.id }} .video-container__play svg {
+      stroke: {{ block.settings.text_color }};
+    }
+
+    #section-{{ block.id }} .video-container__play svg polygon {
+      fill: {{ block.settings.text_color }};
+    }
+
+    @media (min-width: 768px) {
+      #section-{{ block.id }} .overlay__title {
+        font-size: {{ block.settings.title_size }}px;
+      }
+    }
+  {% endstyle %}
+
+  {% if block.settings.video_url != blank %}
+    <div class="video-container video-container--image video-container--modal-mobile" data-video-id="{{ block.settings.video_url.id }}"
+         data-cc-animate
+         data-video-url="{{ block.settings.video_url }}"
+         data-video-type="{{ block.settings.video_url.type }}"
+         data-video-autoplay="false"
+         data-video-loop="false">
+      <a class="video-container__stop" href="#" aria-label="{{ 'general.accessibility_labels.video_stop' | t | escape }}">{% render 'svg-x' %}</a>
+      <div class="video-container__video"></div>
+
+      <div class="video-container__cover">
+        {%- if block.settings.cover_image == blank -%}
+          <div class="placeholder-image placeholder--banner dark">
+            {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+          </div>
+        {%- else -%}
+          <div class="rimage-outer-wrapper rimage-background lazyload fade-in"
+               data-bgset="{% render 'bgset', image: block.settings.cover_image %}"
+               data-sizes="auto"
+               data-parent-fit="cover"
+               style="background-position: {{ block.settings.image_position }}">
+            <noscript>
+              <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: block.settings.cover_image.aspect_ratio | times: 100 }}%">
+                <img src="{{ block.settings.cover_image | img_url: '1024x1024' }}" alt="{{ block.settings.cover_image.alt | escape }}" class="rimage__image">
+              </div>
+            </noscript>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- unless block.settings.tint_color contains ',0' -%}
+        <div class="image-tint" style="background-color: {{ block.settings.tint_color }};opacity: {{ block.settings.tint_opacity | divided_by: 100.00 }};"></div>
+      {%- endunless -%}
+
+      <div class="video-container__overlay overlay">
+        <div class="inner overlay--v-{{ block.settings.text_alignment | split: ' ' | first }} overlay--h-{{ block.settings.text_alignment | split: ' ' | last }}">
+          <div class="innest">
+            <a href="#" class="video-container__play" aria-label="{{ 'general.accessibility_labels.video_play' | t | escape }}"
+               data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.1s">{% render 'svg-play' %}</a>
+
+            {%- if block.settings.video_title != blank -%}
+              <h2 class="h1 overlay__title" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.2s">
+                {{- block.settings.video_title | newline_to_br -}}
+              </h2>
+            {%- endif -%}
+
+            {%- if block.settings.subheading != blank -%}
+              <div class="large-text overlay__subheading" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.3s">
+                {{- block.settings.subheading | escape -}}
+              </div>
+            {%- endif -%}
+
+            {%- if block.settings.text != blank -%}
+              <div class="rte overlay__text {% if block.settings.enlarge_text %}large-text{% endif %}" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.4s">
+                {{ block.settings.text }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+
+</div>
+
+        {% elsif block.type == 'custom-html' %}
+          <div class="shopify-section section--custom-html" {{ block.shopify_attributes }}><div class="{% unless block.settings.skip_container %}container homepage-spaced-row{% endunless %}" data-cc-animate>
+    {{ block.settings.custom_html }}
+</div>
+
+</div>
+
+        {% elsif block.type == 'gallery' %}
+          <div class="shopify-section section--gallery section--no-spacing" {{ block.shopify_attributes }}>
+            <div
+              class="{% unless block.settings.skip_container %}container container--not-mobile homepage-spaced-row-sm{% endunless %}"
+
+              data-nested-section-type="gallery">
+
+              <div class="flexible-layout">
+                {% if block.settings.image1 != blank %}
+                  {% render 'story-page-gallery',
+                    image: block.settings.image1,
+                    tint_color: block.settings.tint_color1,
+                    tint_opacity: block.settings.tint_opacity1,
+                    link: block.settings.link1,
+                    size: block.settings.size1,
+                    title: block.settings.title1,
+                    subheading: block.settings.subheading1,
+                    cta_text: block.settings.cta_text1,
+                    text_color: block.settings.text_color1
+                  %}
+                {% endif %}
+
+                {% if block.settings.image2 != blank %}
+                  {% render 'story-page-gallery',
+                    image: block.settings.image2,
+                    tint_color: block.settings.tint_color2,
+                    tint_opacity: block.settings.tint_opacity2,
+                    link: block.settings.link2,
+                    size: block.settings.size2,
+                    title: block.settings.title2,
+                    subheading: block.settings.subheading2,
+                    cta_text: block.settings.cta_text2,
+                    text_color: block.settings.text_color2
+                  %}
+                {% endif %}
+
+                {% if block.settings.image3 != blank %}
+                  {% render 'story-page-gallery',
+                    image: block.settings.image3,
+                    tint_color: block.settings.tint_color3,
+                    tint_opacity: block.settings.tint_opacity3,
+                    link: block.settings.link3,
+                    size: block.settings.size3,
+                    title: block.settings.title3,
+                    subheading: block.settings.subheading3,
+                    cta_text: block.settings.cta_text3,
+                    text_color: block.settings.text_color3
+                  %}
+                {% endif %}
+
+                {% if block.settings.image4 != blank %}
+                  {% render 'story-page-gallery',
+                    image: block.settings.image4,
+                    tint_color: block.settings.tint_color4,
+                    tint_opacity: block.settings.tint_opacity4,
+                    link: block.settings.link4,
+                    size: block.settings.size4,
+                    title: block.settings.title4,
+                    subheading: block.settings.subheading4,
+                    cta_text: block.settings.cta_text4,
+                    text_color: block.settings.text_color4
+                  %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Story page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_page_content",
+        "label": "Show page content",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Header image"
+      },
+      {
+        "type": "paragraph",
+        "content": "Shown on all story pages"
+      },
+      {
+        "type": "paragraph",
+        "content": "The height of the content header can be adjusted in Theme Settings > Layout"
+      },
+      {
+        "type": "select",
+        "id": "header_image_position",
+        "label": "Image alignment",
+        "info": "Used to keep the subject of your image in view",
+        "default": "center-center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top center"
+          },
+          {
+            "value": "top-right",
+            "label": "Top right"
+          },
+          {
+            "value": "center-left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center-right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom right"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        
+  "name": "Custom HTML",
+  "type": "custom-html",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "skip_container",
+      "label": "Full page width",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "custom_html",
+      "label": "Custom HTML",
+      "default": "<h2>Talk about your brand</h2><p>Use HTML to format your text so it can be easily read. This text can be used to share information about your brand with customers.</p>"
+    }
+  ]
+
+      },
+      {
+        "type": "gallery",
+        "name": "Gallery",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "skip_container",
+            "label": "Full page width",
+            "default": false
+          },
+          {
+            "type": "header",
+            "content": "Image 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "tint_color1",
+            "label": "Tint",
+            "default": "#000000"
+          },
+          {
+            "type": "range",
+            "id": "tint_opacity1",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Tint strength",
+            "default": 25
+          },
+          {
+            "type": "url",
+            "id": "link1",
+            "label": "Link"
+          },
+          {
+            "type": "select",
+            "id": "size1",
+            "label": "Width",
+            "default": "half",
+            "options": [
+              {
+                "value": "quarter",
+                "label": "Quarter"
+              },
+              {
+                "value": "third",
+                "label": "Third"
+              },
+              {
+                "value": "half",
+                "label": "Half"
+              },
+              {
+                "value": "two-thirds",
+                "label": "Two-thirds"
+              },
+              {
+                "value": "full",
+                "label": "Full"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title1",
+            "label": "Heading",
+            "default": "Image text"
+          },
+          {
+            "type": "text",
+            "id": "subheading1",
+            "label": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "cta_text1",
+            "label": "Link text",
+            "default": "See more"
+          },
+          {
+            "type": "color",
+            "id": "text_color1",
+            "label": "Text color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "header",
+            "content": "Image 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "tint_color2",
+            "label": "Tint",
+            "default": "#000000"
+          },
+          {
+            "type": "range",
+            "id": "tint_opacity2",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Tint strength",
+            "default": 25
+          },
+          {
+            "type": "url",
+            "id": "link2",
+            "label": "Link"
+          },
+          {
+            "type": "select",
+            "id": "size2",
+            "label": "Width",
+            "default": "half",
+            "options": [
+              {
+                "value": "quarter",
+                "label": "Quarter"
+              },
+              {
+                "value": "third",
+                "label": "Third"
+              },
+              {
+                "value": "half",
+                "label": "Half"
+              },
+              {
+                "value": "two-thirds",
+                "label": "Two-thirds"
+              },
+              {
+                "value": "full",
+                "label": "Full"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title2",
+            "label": "Heading",
+            "default": "Image text"
+          },
+          {
+            "type": "text",
+            "id": "subheading2",
+            "label": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "cta_text2",
+            "label": "Link text",
+            "default": "See more"
+          },
+          {
+            "type": "color",
+            "id": "text_color2",
+            "label": "Text color",
+            "default": "#ffffff"
+          },
+
+
+          {
+            "type": "header",
+            "content": "Image 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "image3",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "tint_color3",
+            "label": "Tint",
+            "default": "#000000"
+          },
+          {
+            "type": "range",
+            "id": "tint_opacity3",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Tint strength",
+            "default": 25
+          },
+          {
+            "type": "url",
+            "id": "link3",
+            "label": "Link"
+          },
+          {
+            "type": "select",
+            "id": "size3",
+            "label": "Width",
+            "default": "half",
+            "options": [
+              {
+                "value": "quarter",
+                "label": "Quarter"
+              },
+              {
+                "value": "third",
+                "label": "Third"
+              },
+              {
+                "value": "half",
+                "label": "Half"
+              },
+              {
+                "value": "two-thirds",
+                "label": "Two-thirds"
+              },
+              {
+                "value": "full",
+                "label": "Full"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title3",
+            "label": "Heading",
+            "default": "Image text"
+          },
+          {
+            "type": "text",
+            "id": "subheading3",
+            "label": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "cta_text3",
+            "label": "Link text",
+            "default": "See more"
+          },
+          {
+            "type": "color",
+            "id": "text_color3",
+            "label": "Text color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "header",
+            "content": "Image 4"
+          },
+          {
+            "type": "image_picker",
+            "id": "image4",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "tint_color4",
+            "label": "Tint",
+            "default": "#000000"
+          },
+          {
+            "type": "range",
+            "id": "tint_opacity4",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Tint strength",
+            "default": 25
+          },
+          {
+            "type": "url",
+            "id": "link4",
+            "label": "Link"
+          },
+          {
+            "type": "select",
+            "id": "size4",
+            "label": "Width",
+            "default": "half",
+            "options": [
+              {
+                "value": "quarter",
+                "label": "Quarter"
+              },
+              {
+                "value": "third",
+                "label": "Third"
+              },
+              {
+                "value": "half",
+                "label": "Half"
+              },
+              {
+                "value": "two-thirds",
+                "label": "Two-thirds"
+              },
+              {
+                "value": "full",
+                "label": "Full"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title4",
+            "label": "Heading",
+            "default": "Image text"
+          },
+          {
+            "type": "text",
+            "id": "subheading4",
+            "label": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "cta_text4",
+            "label": "Link text",
+            "default": "See more"
+          },
+          {
+            "type": "color",
+            "id": "text_color4",
+            "label": "Text color",
+            "default": "#ffffff"
+          }
+        ]
+      },
+      {
+        
+  "name": "Featured collection",
+  "type": "featured-collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row_int",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "label": "Number of products per row",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "product_rows_int",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Number of rows",
+      "default": 1
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "See more"
+    },
+    {
+      "type": "checkbox",
+      "id": "grid_show_vendor",
+      "label": "Show product vendor",
+      "default": false
+    }
+  ]
+
+      },
+      {
+        
+  "name": "Featured product",
+  "type": "featured-product",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tax_and_shipping",
+      "label": "Show tax and shipping information",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity",
+      "label": "Show quantity",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "enable_ajax_form",
+      "label": "Cart type",
+      "default": "true",
+      "options": [
+        {
+          "value": "true",
+          "label": "Stay on the same page"
+        },
+        {
+          "value": "false",
+          "label": "Go to the cart page"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_payment_button",
+      "label": "Show dynamic checkout button",
+      "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_backorder_text",
+      "label": "Show backorder text",
+      "default": true,
+      "info": "Only shows for products which use Shopify inventory tracking and are available to purchase when out of stock."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description",
+      "default": "<p>Pair some text with a product to highlight features.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link",
+      "label": "Read more",
+      "default": "Read more &rarr;"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+    },
+    {
+      "type": "select",
+      "id": "image_layout",
+      "label": "Thumbnail position",
+      "options": [
+        {
+          "value": "beside",
+          "label": "Beside main image"
+        },
+        {
+          "value": "under",
+          "label": "Underneath main image"
+        }
+      ],
+      "default": "under"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_all_images",
+      "label": "Show thumbnails",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": {
+        "en": "Enable video looping"
+      },
+      "default": false
+    }
+  ]
+
+      },
+      {
+        
+  "name": "Image with text",
+  "type": "image-with-text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Image alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to give focus to your chosen product, collection or blog post. Add details on availability, style or even provide a review.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Link text",
+      "default": "Shop"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text color",
+      "default": "#454f5b"
+    },
+    {
+      "type": "color",
+      "id": "color_head",
+      "label": "Heading and links color",
+      "default": "#212b36"
+    },
+    {
+      "type": "checkbox",
+      "id": "skip_container",
+      "label": "Full page width",
+      "default": false
+    }
+  ]
+
+      },
+      {
+        
+  "name": "Map",
+  "type": "map",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our store"
+    },
+    {
+      "type": "richtext",
+      "id": "address",
+      "label": "Address and hours",
+      "default": "<p>123 Fake St.<br>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm<br>Saturday, 11am - 9pm<br>Sunday, 11am - 5pm</p>"
+    },
+    {
+      "id": "map_address",
+      "type": "text",
+      "label": "Map address",
+      "info": "Google Maps will find the exact location",
+      "default": "80 Spadina Ave, Toronto"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Map link label",
+      "default": "Directions"
+    },
+    {
+      "id": "show_pin",
+      "type": "checkbox",
+      "label": "Show pin",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background color",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "header",
+      "content": "Map"
+    },
+    {
+      "id": "api_key",
+      "type": "text",
+      "label": "Google Maps API key",
+      "info": "You’ll need to [register a Google Maps API Key](https://help.shopify.com/manual/using-themes/troubleshooting/map-section-api-key) to display the map"
+    },
+    {
+      "type": "select",
+      "id": "map_style",
+      "label": "Map style",
+      "default": "silver",
+      "options": [
+        {
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Silver",
+          "value": "silver"
+        },
+        {
+          "label": "Retro",
+          "value": "retro"
+        },
+        {
+          "label": "Dark",
+          "value": "dark"
+        },
+        {
+          "label": "Night",
+          "value": "night"
+        },
+        {
+          "label": "Aubergine",
+          "value": "aubergine"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Image",
+      "info": "Displayed if the map isn’t loaded"
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Image position",
+      "default": "center center",
+      "options": [
+        {
+          "label": "Top left",
+          "value": "top left"
+        },
+        {
+          "label": "Top center",
+          "value": "top center"
+        },
+        {
+          "label": "Top right",
+          "value": "top right"
+        },
+        {
+          "label": "Middle left",
+          "value": "center left"
+        },
+        {
+          "label": "Middle center",
+          "value": "center center"
+        },
+        {
+          "label": "Middle right",
+          "value": "center right"
+        },
+        {
+          "label": "Bottom left",
+          "value": "bottom left"
+        },
+        {
+          "label": "Bottom center",
+          "value": "bottom center"
+        },
+        {
+          "label": "Bottom right",
+          "value": "bottom right"
+        }
+      ]
+    }
+  ]
+
+      },
+      {
+        
+  "name": "Newsletter",
+  "type": "newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Subscribe to our newsletter"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Subheading",
+      "default": "<p>Promotions, new products and sales - directly to your inbox</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background color",
+      "default": "#f4f4f4"
+    }
+  ]
+
+      },
+      {
+        
+  "name": "Rich text",
+  "type": "rich-text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Rich text"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Use this text to share information about your store with your customers.</p><p>Describe product, share announcements, or welcome customers to your store.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background color",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text color",
+      "default": "#454f5b"
+    },
+    {
+      "type": "color",
+      "id": "color_head",
+      "label": "Heading and link color",
+      "default": "#212b36"
+    }
+  ]
+
+      },
+      {
+        
+  "name": "Video",
+  "type": "video",
+  "settings": [
+    {
+      "id": "video_url",
+      "type": "video_url",
+      "label": "Video link",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "info": "Supports YouTube and Vimeo",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "id": "video_title",
+      "type": "textarea",
+      "label": "Heading",
+      "default": "Video"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading text size",
+      "default": 60
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair text with a video to draw attention to an important detail of your brand or product line.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "enlarge_text",
+      "label": "Enlarge text",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "top left",
+          "label": "Top left"
+        },
+        {
+          "value": "top center",
+          "label": "Top center"
+        },
+        {
+          "value": "top right",
+          "label": "Top right"
+        },
+        {
+          "value": "center left",
+          "label": "Middle left"
+        },
+        {
+          "value": "center center",
+          "label": "Middle center"
+        },
+        {
+          "value": "center right",
+          "label": "Middle right"
+        },
+        {
+          "value": "bottom left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "bottom right",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "center center"
+    },
+    {
+      "id": "cover_image",
+      "type": "image_picker",
+      "label": "Cover image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image alignment",
+      "info": "Used to keep the subject of your image in view",
+      "default": "center center",
+      "options": [
+        {
+          "value": "top left",
+          "label": "Top left"
+        },
+        {
+          "value": "top center",
+          "label": "Top center"
+        },
+        {
+          "value": "top right",
+          "label": "Top right"
+        },
+        {
+          "value": "center left",
+          "label": "Middle left"
+        },
+        {
+          "value": "center center",
+          "label": "Middle center"
+        },
+        {
+          "value": "center right",
+          "label": "Middle right"
+        },
+        {
+          "value": "bottom left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "bottom right",
+          "label": "Bottom right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "skip_container",
+      "label": "Full page width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Tint"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tint_color",
+      "label": "Tint",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "tint_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Tint strength",
+      "default": 25
+    }
+  ]
+
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,186 @@
+{% style %}
+{%- for block in section.blocks -%}
+  {%- if block.settings.title != blank or block.settings.subheading != blank or block.settings.cta_text != blank -%}
+  .block-{{ block.id }} .overlay .inner {
+    color: {{ block.settings.text_color }};
+  }
+  {%- endif -%}
+{%- endfor -%}
+{% endstyle %}
+
+<div class="{% unless section.settings.skip_container %}container container--not-mobile homepage-spaced-row-sm{% endunless %}" data-section-type="gallery" data-cc-animate>
+  <div class="flexible-layout">
+    {% for block in section.blocks %}
+    <div class="column-{{ block.settings.size }} img-block block-{{ block.id }}" {{ block.shopify_attributes }}>
+
+      {% if block.settings.link != blank %}
+      <a href="{{ block.settings.link }}">
+        {% endif %}
+
+        {%- if block.settings.image -%}
+          {%- render 'responsive-image', image: block.settings.image, animate: true -%}
+        {%- else -%}
+          {%- assign placeholder = "image" -%}
+          <span class="placeholder_wrapper">
+            {%- if block.settings.caption == blank -%}
+              {{- placeholder | placeholder_svg_tag: "placeholder" -}}
+            {%- else -%}
+              {{- placeholder | placeholder_svg_tag: "placeholder dark" -}}
+            {%- endif -%}
+          </span>
+        {%- endif -%}
+
+        {%- unless block.settings.tint_color contains ',0' -%}
+          <div class="image-tint" style="background-color: {{ block.settings.tint_color }};opacity: {{ block.settings.tint_opacity | divided_by: 100.00 }};"></div>
+        {%- endunless -%}
+
+        {%- if block.settings.title != blank or block.settings.subheading != blank or block.settings.cta_text != blank -%}
+        <div class="overlay">
+          <div class="inner">
+            <div class="innest">
+              {%- if block.settings.title != blank -%}
+                <h2 class="h1 overlay__title" data-cc-animate data-cc-animate-delay="0.1s">{{ block.settings.title | escape }}</h2>
+              {%- endif -%}
+              {%- if block.settings.subheading != blank -%}
+                <div class="large-text overlay__subheading" data-cc-animate data-cc-animate-delay="0.2s">{{ block.settings.subheading | escape }}</div>
+              {%- endif -%}
+              {%- if block.settings.cta_text != blank -%}
+                <span class="slide-button button" data-cc-animate data-cc-animate-delay="0.3s">{{ block.settings.cta_text | escape }}</span>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+        {%- endif -%}
+
+        {% if block.settings.link != blank %}
+      </a>
+      {% endif %}
+
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Gallery",
+    "class": "section--gallery section--no-spacing",
+    "max_blocks": 20,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "skip_container",
+        "label": "Full page width",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "tint_color",
+            "label": "Tint",
+            "default": "#000000"
+          },
+          {
+            "type": "range",
+            "id": "tint_opacity",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Tint strength",
+            "default": 25
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "select",
+            "id": "size",
+            "label": "Width",
+            "default": "half",
+            "options": [
+              {
+                "value": "quarter",
+                "label": "Quarter"
+              },
+              {
+                "value": "third",
+                "label": "Third"
+              },
+              {
+                "value": "half",
+                "label": "Half"
+              },
+              {
+                "value": "two-thirds",
+                "label": "Two-thirds"
+              },
+              {
+                "value": "full",
+                "label": "Full"
+              }
+            ]
+          },
+          {
+            "type": "header",
+            "content": "Overlay"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Image text"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "cta_text",
+            "label": "Link text",
+            "default": "See more"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#ffffff"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Gallery",
+        "category": "Image",
+        "blocks": [
+          {
+            "type": "image"
+          },
+           {
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

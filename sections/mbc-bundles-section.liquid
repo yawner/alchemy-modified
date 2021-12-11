@@ -1,0 +1,821 @@
+<div {% if section.settings.container_class != blank %}class="{{ section.settings.container_class }}"{% endif %}>
+  <div id="mbc-bundle-theme-extension-{{ section.id }}"></div>
+</div>
+
+<script>
+;(function e() {
+    window.MBC_BUNDLES_THEME_EXTENSION = window.MBC_BUNDLES_THEME_EXTENSION || []
+    window.MBC_BUNDLES_THEME_EXTENSION.push({
+        sectionId: {{ section.id | json }},
+        isInitialized: false,
+        rootElementId: '#mbc-bundle-theme-extension-{{ section.id }}',
+        settings: {
+          sideBarBgColor: {{ section.settings.side_bar_bg_color | json }},
+          sideBarTitleColor: {{ section.settings.side_bar_title_color | json }},
+          sideBarTitleFontSize: {{ section.settings.side_bar_title_font_size | json }},
+          sideBarTitleFontWeight: {{ section.settings.side_bar_title_font_weight | json }},
+
+          sideBarSaleColor: {{ section.settings.side_bar_sale_color | json }},
+          sideBarSaleText: {{ section.settings.side_bar_sale_text | json }},
+          sideBarSaleFontSize: {{ section.settings.side_bar_sale_font_size | json }},
+          sideBarSaleFontWeight: {{ section.settings.side_bar_sale_font_weight | json }},
+
+          sideBarPriceColor: {{ section.settings.side_bar_price_color | json }},
+          sideBarPriceFontSize: {{ section.settings.side_bar_price_font_size | json }},
+          sideBarPriceFontWeight: {{ section.settings.side_bar_price_font_weight | json }},
+
+          sideBarComparePriceColor: {{ section.settings.side_bar_compare_price_color | json }},
+          sideBarComparePriceFontSize: {{ section.settings.side_bar_compare_price_font_size | json }},
+          sideBarComparePriceFontWeight: {{ section.settings.side_bar_compare_price_font_weight | json }},
+
+          sideBarButtonBgColor: {{ section.settings.side_bar_button_bg_color | json }},
+          sideBarButtonColor: {{ section.settings.side_bar_button_color | json }},
+          sideBarButtonFontSize: {{ section.settings.side_bar_button_font_size | json }},
+          sideBarButtonFontWeight: {{ section.settings.side_bar_button_font_weight | json }},
+          sideBarButtonAtcText: {{ section.settings.side_bar_button_atc_text | json }},
+          sideBarButtonAddingText: {{ section.settings.side_bar_button_adding_text | json }},
+          sideBarButtonPreOrderText: {{ section.settings.side_bar_button_pre_order_text | json }},
+          sideBarButtonPrevBundleText: {{ section.settings.side_bar_button_prev_bundle_text | json }},
+          sideBarButtonNextBundleText: {{ section.settings.side_bar_button_next_bundle_text | json }},
+          sideBarButtonPrevProduct: {{ section.settings.side_bar_button_prev_product | json }},
+          sideBarButtonNextProduct: {{ section.settings.side_bar_button_next_product | json }},
+
+          sideBarCartSuccessMessage: {{ section.settings.side_bar_cart_success_message | json }},
+          sideBarCartLinkText: {{ section.settings.side_bar_cart_link_text | json }},
+          sideBarCartSuccessMessageColor: {{ section.settings.side_bar_cart_success_message_color | json }},
+          sideBarCartErrorMessageColor: {{ section.settings.side_bar_cart_error_message_color | json }},
+          sideBarCartMessageFontSize: {{ section.settings.side_bar_cart_message_font_size | json }},
+          sideBarCartMessageFontWeight: {{ section.settings.side_bar_cart_message_font_weight | json }},
+
+          itemBorderColor: {{ section.settings.item_border_color | json }},
+          itemBorderWidth: {{ section.settings.item_border_width | json }},
+
+          itemTitleColor: {{ section.settings.item_title_color | json }},
+          itemTitleFontSize: {{ section.settings.item_title_font_size | json }},
+          itemTitleFontWeight: {{ section.settings.item_title_font_weight | json }},
+
+          itemPriceFreeText: {{ section.settings.item_price_free_text | json }},
+          itemPriceColor: {{ section.settings.item_price_color | json }},
+          itemPriceFontSize: {{ section.settings.item_price_font_size | json }},
+          itemPriceFontWeight: {{ section.settings.item_price_font_weight | json }},
+
+          itemComparePriceColor: {{ section.settings.item_compare_price_color | json }},
+          itemComparePriceFontSize: {{ section.settings.item_compare_price_font_size | json }},
+          itemComparePriceFontWeight: {{ section.settings.item_compare_price_font_weight | json }},
+
+          itemQtyBadgeText: {{ section.settings.item_qty_badge_text | json }},
+          itemQtyBadgeColor: {{ section.settings.item_qty_badge_color | json }},
+          itemQtyBadgeFontSize: {{ section.settings.item_qty_badge_font_size | json }},
+          itemQtyBadgeFontWeight: {{ section.settings.item_qty_badge_font_weight | json }},
+          itemQtyBadgeBackgroundColor: {{ section.settings.item_qty_badge_background_color | json }},
+
+          itemSelectColor: {{ section.settings.item_select_color | json }},
+          itemSelectFontSize: {{ section.settings.item_select_font_size | json }},
+          itemSelectFontWeight: {{ section.settings.item_select_font_weight | json }},
+          itemSelectBorderColor: {{ section.settings.item_select_border_color | json }},
+          itemSelectBorderWidth: {{ section.settings.item_select_border_width | json }},
+
+          itemSeparatorColor: {{ section.settings.item_separator_color | json }}
+        },
+        bundles: [
+          {% for block in section.blocks %}
+            {
+              id: {{ block.settings.bundle_id | json }},
+              productsPerView: {{ block.settings.productsPerView | json }},
+              title: {{ block.settings.title | json }}
+            }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+    })
+
+    if (!document.querySelector('[src^="https://apps-bundles-cluster.makebecool.com/js/theme-extension.js"]')) {
+        const script = document.createElement('script')
+
+        script.type = 'text/javascript'
+        script.defer = true
+        script.src = `https://apps-bundles-cluster.makebecool.com/js/theme-extension.js?v=1638731826514`
+
+        document.getElementsByTagName('head')[0].appendChild(script)
+    }
+})();
+</script>
+
+{% schema %}
+  {
+    "name": "MBC Bundles Widget",
+    "settings": [
+	  {
+        "type": "header",
+        "content": "Widget container"
+      },
+	  {
+        "type": "text",
+        "id": "container_class",
+      	"label": "Container class"
+      },
+
+
+
+      {
+        "type": "header",
+        "content": "Side bar"
+      },
+	  {
+        "type": "color",
+        "id": "side_bar_bg_color",
+      	"label": "Side bar background color",
+		"default": "#313131"
+      },
+
+
+
+ 	  {
+        "type": "paragraph",
+        "content": "Title"
+      },
+	  {
+        "type": "color",
+        "id": "side_bar_title_color",
+      	"label": "Side bar title color",
+		"default": "#ffffff"
+      },
+	  {
+        "type": "number",
+        "id": "side_bar_title_font_size",
+      	"label": "Side bar title font size",
+		"default": 16
+      },
+      {
+        "type": "select",
+        "id": "side_bar_title_font_weight",
+        "label": "Side bar title font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+	 	  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "700"
+      },
+
+
+
+ 	  {
+        "type": "paragraph",
+        "content": "Sale"
+      },
+	  {
+        "type": "text",
+        "id": "side_bar_sale_text",
+      	"label": "Side bar sale text",
+		"default": "Save"
+      },
+	  {
+        "type": "color",
+        "id": "side_bar_sale_color",
+      	"label": "Side bar sale color",
+		"default": "#ffffff"
+      },
+	  {
+        "type": "number",
+        "id": "side_bar_sale_font_size",
+      	"label": "Side bar sale font size",
+		"default": 16
+      },
+      {
+        "type": "select",
+        "id": "side_bar_sale_font_weight",
+        "label": "Side bar sale font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+	  	  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "700"
+      },
+
+
+
+ 	  {
+        "type": "paragraph",
+        "content": "Price"
+      },
+	  {
+        "type": "color",
+        "id": "side_bar_price_color",
+      	"label": "Side bar price color",
+		"default": "#ffffff"
+      },
+	  {
+        "type": "number",
+        "id": "side_bar_price_font_size",
+      	"label": "Side bar price font size",
+		"default": 16
+      },
+      {
+        "type": "select",
+        "id": "side_bar_price_font_weight",
+        "label": "Side bar price font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+		  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "400"
+      },
+
+
+
+	  {
+        "type": "paragraph",
+        "content": "Compare at price"
+      },
+ 	  {
+        "type": "color",
+        "id": "side_bar_compare_price_color",
+      	"label": "Side bar compare at price color",
+		"default": "#C8C8C8"
+      },
+	  {
+        "type": "number",
+        "id": "side_bar_compare_price_font_size",
+      	"label": "Side bar compare at price font size",
+		"default": 14
+      },
+      {
+        "type": "select",
+        "id": "side_bar_compare_price_font_weight",
+        "label": "Side bar compare at price font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+	      {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "400"
+      },
+
+
+
+	  {
+        "type": "paragraph",
+        "content": "Buttons"
+      },
+	  {
+        "type": "text",
+        "id": "side_bar_button_atc_text",
+      	"label": "Side bar button atc text",
+		"default": "Add to cart"
+      },
+	  {
+        "type": "text",
+        "id": "side_bar_button_adding_text",
+      	"label": "Side bar button adding text",
+		"default": "Adding..."
+      },
+ 	  {
+        "type": "text",
+        "id": "side_bar_button_pre_order_text",
+      	"label": "Side bar button pre order text",
+		"default": "Pre order"
+      },
+	  {
+        "type": "text",
+        "id": "side_bar_button_prev_bundle_text",
+      	"label": "Side bar button prev bundle text",
+		"default": "Prev bundle"
+      },
+	  {
+        "type": "text",
+        "id": "side_bar_button_next_bundle_text",
+      	"label": "Side bar button next bundle text",
+		"default": "Next bundle"
+      },
+      {
+        "type": "html",
+        "id": "side_bar_button_prev_product",
+        "label": "Side bar button pre product",
+		"default": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z\"></path></svg>"
+      },
+	  {
+        "type": "html",
+        "id": "side_bar_button_next_product",
+        "label": "Side bar button next product",
+		"default": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z\"></path></svg>"
+      },
+	  {
+        "type": "color",
+        "id": "side_bar_button_bg_color",
+      	"label": "Side bar button background color",
+		"default": "#ffffff"
+      },
+	  {
+        "type": "color",
+        "id": "side_bar_button_color",
+      	"label": "Side bar button color",
+		"default": "#313131"
+      },
+      {
+        "type": "number",
+        "id": "side_bar_button_font_size",
+      	"label": "Side bar button font size",
+		"default": 14
+      },
+      {
+        "type": "select",
+        "id": "side_bar_button_font_weight",
+        "label": "Side bar button font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+		  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "400"
+      },
+
+
+
+ 	  {
+        "type": "paragraph",
+        "content": "Cart message"
+      },
+ 	  {
+        "type": "text",
+        "id": "side_bar_cart_success_message",
+      	"label": "Side bar cart success message",
+		"default": "Success: Added to cart!"
+      },
+	  {
+        "type": "text",
+        "id": "side_bar_cart_link_text",
+      	"label": "Side bar cart link text",
+		"default": "View cart"
+      },
+ 	  {
+        "type": "color",
+        "id": "side_bar_cart_success_message_color",
+      	"label": "Side bar cart success message color",
+		"default": "#ffffff"
+      },
+	  {
+        "type": "color",
+        "id": "side_bar_cart_error_message_color",
+      	"label": "Side bar cart error message color",
+		"default": "#ffffff"
+      },
+	  {
+        "type": "number",
+        "id": "side_bar_cart_message_font_size",
+      	"label": "Side bar cart message font size",
+		"default": 12
+      },
+      {
+        "type": "select",
+        "id": "side_bar_cart_message_font_weight",
+        "label": "Side bar cart message font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+		  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "400"
+      },
+
+
+
+	  {
+        "type": "header",
+        "content": "Product item"
+      },
+	  {
+        "type": "paragraph",
+        "content": "Border"
+      },
+	  {
+        "type": "color",
+        "id": "item_border_color",
+      	"label": "Item border color",
+		"default": "#DDDDDD"
+      },
+	  {
+        "type": "number",
+        "id": "item_border_width",
+      	"label": "Item border width",
+		"default": 1
+      },
+
+
+
+	  {
+        "type": "paragraph",
+        "content": "Title"
+      },
+	  {
+        "type": "color",
+        "id": "item_title_color",
+      	"label": "Item title color",
+		"default": "#313131"
+      },
+	  {
+        "type": "number",
+        "id": "item_title_font_size",
+      	"label": "Item title font size",
+		"default": 18
+      },
+	  {
+        "type": "select",
+        "id": "item_title_font_weight",
+        "label": "Item title font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+		  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "700"
+      },
+
+
+
+	  {
+        "type": "paragraph",
+        "content": "Price"
+      },
+	  {
+        "type": "text",
+        "id": "item_price_free_text",
+      	"label": "Item price free text",
+		"default": "free"
+      },
+	  {
+        "type": "color",
+        "id": "item_price_color",
+      	"label": "Item price color",
+		"default": "#313131"
+      },
+	  {
+        "type": "number",
+        "id": "item_price_font_size",
+      	"label": "Item price font size",
+		"default": 14
+      },
+	  {
+        "type": "select",
+        "id": "item_price_font_weight",
+        "label": "Item price font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+		  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "400"
+      },
+
+
+
+	  {
+        "type": "paragraph",
+        "content": "Compare at price"
+      },
+	  {
+        "type": "color",
+        "id": "item_compare_price_color",
+      	"label": "Item compare at price color",
+		"default": "#C8C8C8"
+      },
+	  {
+        "type": "number",
+        "id": "item_compare_price_font_size",
+      	"label": "Item compare at price font size",
+		"default": 14
+      },
+	  {
+        "type": "select",
+        "id": "item_compare_price_font_weight",
+        "label": "Item compare at price font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+		  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "400"
+      },
+
+
+
+	  {
+        "type": "paragraph",
+        "content": "QTY badge"
+      },
+	  {
+        "type": "text",
+        "id": "item_qty_badge_text",
+      	"label": "Item qty badge text",
+		"default": "items"
+      },
+	  {
+        "type": "color",
+        "id": "item_qty_badge_color",
+      	"label": "Item qty badge color",
+		"default": "#ffffff"
+      },
+	  {
+        "type": "color",
+        "id": "item_qty_badge_background_color",
+      	"label": "Item qty badge background color",
+		"default": "#313131"
+      },
+	  {
+        "type": "number",
+        "id": "item_qty_badge_font_size",
+      	"label": "Item qty badge font size",
+		"default": 8
+      },
+	  {
+        "type": "select",
+        "id": "item_qty_badge_font_weight",
+        "label": "Item qty badge font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+		  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "400"
+      },
+
+
+
+	  {
+        "type": "paragraph",
+        "content": "Select"
+      },
+	  {
+        "type": "color",
+        "id": "item_select_color",
+      	"label": "Item select color",
+		"default": "#313131"
+      },
+	  {
+        "type": "number",
+        "id": "item_select_font_size",
+      	"label": "Item select font size",
+		"default": 14
+      },
+	  {
+        "type": "select",
+        "id": "item_select_font_weight",
+        "label": "Item select font weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "value": "500",
+            "label": "500"
+          },
+		  {
+            "value": "600",
+            "label": "600"
+          },
+		  {
+            "value": "700",
+            "label": "700"
+          }
+        ],
+        "default": "400"
+      },
+	  {
+        "type": "color",
+        "id": "item_select_border_color",
+      	"label": "Item select border color",
+		"default": "#313131"
+      },
+	  {
+        "type": "number",
+        "id": "item_select_border_width",
+      	"label": "Item select border width",
+		"default": 1
+      },
+
+
+
+	  {
+        "type": "paragraph",
+        "content": "Separator"
+      },
+	  {
+        "type": "color",
+        "id": "item_separator_color",
+      	"label": "Item separator color",
+		"default": "#313131"
+      }
+	],
+    "blocks": [
+      {
+        "type": "bundle_id",
+        "name": "Bundle ID",
+        "settings": [
+          {
+            "type": "number",
+            "id": "bundle_id",
+            "label": "ID",
+            "info": "Combo Products, By Products"
+          },
+          {
+            "type": "range",
+            "id": "productsPerView",
+            "label": "Products per row",
+            "min": 1,
+            "max": 4,
+            "step": 1,
+            "default": 2
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Frequently bought together"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+      	"name": "MBC Bundles Widget",
+      	"category": "MBC Bundles APP"
+      }
+    ]
+  }
+{% endschema %}

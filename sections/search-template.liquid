@@ -1,0 +1,201 @@
+<div data-section-type="search-template">
+  {% capture header_content %}
+    {% if settings.content_header_enable_breadcrumbs %}
+      <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <a class="breadcrumbs__crumb" href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
+        <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+        <span class="breadcrumbs__crumb">{{ 'general.search.title' | t }}</span>
+      </nav>
+    {% endif %}
+
+    <h1>{{ 'general.search.title' | t }}</h1>
+  {% endcapture %}
+
+  {% if section.settings.header_image != blank %}
+    <div class="banner-image-container banner-under-header bg--{{ section.settings.header_image_position }}" data-cc-animate>
+      {% render 'responsive-background', image: section.settings.header_image, class: 'banner-image fixed-height' %}
+
+      <div class="banner-image-text feature-page-title {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}">
+        {{ header_content }}
+      </div>
+    </div>
+  {% else %}
+    <div class="feature-page-title {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}" data-cc-animate>
+      {{ header_content }}
+    </div>
+  {% endif %}
+
+  <div class="container">
+    <div id="main" class="content-main" role="main" data-cc-animate data-cc-animate-delay="0.1s">
+
+      <div class="content-row reading-width">
+        <form action="{{ routes.search_url }}" method="get" class="search-form" role="search" autocomplete="off">
+          <input type="hidden" name="type" value="{{ settings.search_type }}" />
+          <input type="hidden" name="options[prefix]" value="last" />
+
+          <div class="input-and-button-row">
+            <div class="input-and-button-row__input-wrapper input-with-clear">
+              <input class="input-and-button-row__input" type="text" name="q" value="{{ search.terms | escape }}" autocomplete="off" placeholder="{{ 'general.search.placeholder' | t }}" />
+            </div>
+            <button type="submit" class="button input-and-button-row__button">{{ 'general.search.submit' | t }}</button>
+          </div>
+        </form>
+
+        {% if search.performed %}
+          {% if search.results_count == 0 %}
+            <div class="lightly-spaced-row align-center">{{ 'general.search.no_results' | t: terms: search.terms }}</div>
+          {% else %}
+            <div class="lightly-spaced-row align-center">{{ 'general.search.results_with_count' | t: count: search.results_count }}</div>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      {% comment %}
+      search.performed is false when accessing the /search page without a 'q' parameter set
+      in the URL. A shop-owner can link to the /search page from one of his link lists.
+      It is important to show a search form on that page if search.performed is false.
+      {% endcomment %}
+
+      {% if search.performed %}
+        {% paginate search.results by section.settings.pagination_limit %}
+
+          {% comment %}
+          Common pitfall to avoid: search.results should never be accessed before the opening
+          paginate tag. Move the opening and closing paginate tags to the very top and bottom of your
+          search.liquid template if you need to.
+          If you fail to do the above, the pagination of search results will be broken.
+          search.results_count is fine to access in or out of the paginate block.
+          {% endcomment %}
+
+          {% if search.results_count > 0 %}
+            <div class="grid grid--row-gutters">
+              {% for item in search.results %}
+                {% if item.object_type == 'product' %}
+                  {% assign product = item %}
+                  {% render 'product-grid-item', product: product, grid_show_vendor: section.settings.grid_show_vendor, products_per_row_int: section.settings.products_per_row_int %}
+                {% else %}
+
+                  {% assign num_per_row = section.settings.products_per_row_int | plus: 0 %}
+                  {% if num_per_row == 2 %}{% capture col_class %}half{% endcapture %}
+                  {% elsif num_per_row == 3 %}{% capture col_class %}third{% endcapture %}
+                  {% elsif num_per_row == 5 %}{% capture col_class %}fifth{% endcapture %}
+                  {% else %}{% capture col_class %}quarter{% endcapture %}{% endif %}
+
+                  <div class="column reveal_candidate mini-article {{ col_class }}">
+                    {% if item.object_type == 'article' and item.image %}
+                      <div class="image-head img-block lightly-spaced-row-bottom">
+                        {% render 'responsive-image', image: item.image %}
+                      </div>
+                    {% endif %}
+                    <h4>{{ item.title | link_to: item.url }}</h4>
+                    <div class="rte mini-article__excerpt mini-article__excerpt--tablet-hide">
+                      <p>{{ item.content | strip_html | truncatewords: 20 | highlight: search.terms }}</p>
+                    </div>
+                    <div>
+                      <a href="{{ item.url }}" class="feature-link">{{ 'blogs.article.read_more' | t }}</a>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% render 'pagination', paginate: paginate %}
+
+        {% endpaginate %}
+
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Search page",
+    "settings": [
+      {
+        "type": "range",
+        "id": "products_per_row_int",
+        "min": 2,
+        "max": 5,
+        "step": 1,
+        "label": "Number of products per row",
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "pagination_limit",
+        "min": 8,
+        "max": 50,
+        "step": 2,
+        "label": "Products per page",
+        "default": 16
+      },
+      {
+        "type": "checkbox",
+        "id": "grid_show_vendor",
+        "label": "Show product vendor",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Header image"
+      },
+      {
+        "type": "paragraph",
+        "content": "The height of the content header can be adjusted in Theme Settings > Layout"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "header_image_position",
+        "label": "Image alignment",
+        "info": "Used to keep the subject of your image in view",
+        "default": "center-center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top center"
+          },
+          {
+            "value": "top-right",
+            "label": "Top right"
+          },
+          {
+            "value": "center-left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center-right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom right"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

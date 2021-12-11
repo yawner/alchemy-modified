@@ -1,0 +1,43 @@
+<div class="feature-page-title" data-cc-animate>
+	<h1>{{ 'customer.register.title' | t }}</h1>
+</div>
+
+<div class="container">
+  <div id="main" class="content-main" role="main">
+		<div class="general-form" data-cc-animate  data-cc-animate-delay="0.1s">
+			<div id="customer">
+				<!-- Create Customer -->
+				<div id="create-customer">
+					{% form 'create_customer' %}
+						{{ form.errors | default_errors }}
+
+						<div class="clearfix large_form">
+							<label for="first_name" class="login">{{ 'customer.register.first_name' | t }}</label>
+							<input type="text" value="" name="customer[first_name]" id="first_name" class="large" size="30" />
+						</div>
+
+						<div class="clearfix large_form">
+							<label for="last_name" class="login">{{ 'customer.register.last_name' | t }}</label>
+							<input type="text" value="" name="customer[last_name]" id="last_name" class="large" size="30" />
+						</div>
+
+						<div class="clearfix large_form">
+							<label for="email" class="login">{{ 'customer.register.email' | t }}</label>
+							<input type="email" value="" name="customer[email]" id="email" class="large" size="30" />
+						</div>
+
+						<div class="clearfix large_form">
+							<label for="password" class="login">{{ 'customer.register.password' | t }}</label>
+							<input type="password" value="" name="customer[password]" id="password" class="large password" size="30" />
+						</div>
+
+						<div class="action_bottom">
+							<button class="button" type="submit">{{ 'customer.register.submit' | t }}</button>
+							<span class="note">{{ 'customer.register.or' | t }} <a href="{{ routes.root_url }}">{{ 'customer.register.cancel' | t }}</a></span>
+						</div>
+					{% endform %}
+				</div><!-- /#create-customer -->
+			</div>
+		</div>
+	</div>
+</div>

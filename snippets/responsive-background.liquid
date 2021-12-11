@@ -1,0 +1,8 @@
+<div class="{{ class }} rimage__image lazyload{% if manual_image_load %}--manual{% endif %} fade-in"
+    data-bgset="{% render 'bgset', image: image %}"
+    data-sizes="auto"
+    data-parent-fit="cover">
+</div>
+<noscript>
+  <div class="{{ class }}" style="background-image: url({{ image | img_url: '2048x'}})"></div>
+</noscript>

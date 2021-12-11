@@ -1,0 +1,35 @@
+{%- assign products_html = '' %}
+{%- assign all_product_handles = '' | split: ' ' -%}
+{%- assign split_content = content | split: 'href="' -%}
+
+{%- for chunk in split_content -%}
+  {%- assign this_href = chunk | split: '"' | first -%}
+  {%- if this_href contains '/products/' -%}
+    {%- assign chunk_handle = this_href | split: '/' | last | split: '?' | first -%}
+    {%- unless all_product_handles contains chunk_handle -%}
+      {%- capture products_html -%}
+        {{- products_html -}}
+        <div class="prod-block column quarter" data-lazy-product-handle="{{ chunk_handle }}"></div>
+      {%- endcapture -%}
+    {%- endunless -%}
+  {%- endif -%}
+  {%- assign add_product_handle = chunk_handle | split: ' ' -%}
+  {%- assign all_product_handles = all_product_handles | concat: add_product_handle -%}
+{%- endfor -%}
+
+{% if products_html != blank %}
+  <div class="content-products">
+    <div class="container">
+      {% capture title %}{{ 'blogs.article.featured_products_title' | t }}{% endcapture %}
+      {% if title != blank %}
+        <h2 class="content-products__title section-title-container">{{ title }}</h2>
+      {% endif %}
+
+      <div class="content-products__products">
+        <div class="grid grid--row-gutters product-list">
+          {{ products_html }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

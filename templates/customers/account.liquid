@@ -1,0 +1,68 @@
+<div class="feature-page-title" data-cc-animate>
+  <h1>{{ 'customer.account.title' | t }}</h1>
+  <div>
+    <a href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t  }}</a>&nbsp;&nbsp;&nbsp;
+    <a href="{{ routes.root_url }}">{{ 'customer.general.return' | t }}</a>
+  </div>
+</div>
+
+<div class="container">
+  <div id="main" class="content-main" role="main">
+    <div class="reading-width" data-cc-animate  data-cc-animate-delay="0.1s">
+      <div id="customer_sidebar">
+        <div id="customer_detail" class="group">
+          <h5 class="name">{{ customer.name }}</h5>
+          <p class="email note">{{ customer.email }}</p>
+          <div class="address note">
+            {% if customer.default_address != nil %}
+              <div>{{ customer.default_address.address1 }}</div>
+              {% if customer.default_address.address2 != "" %}
+                <div>{{ customer.default_address.address2 }}</div>
+              {% endif %}
+              <div>{{ customer.default_address.city}}, {% if address.province_code %}{{customer.default_address.province_code}}, {% endif %}{{customer.default_address.country}}</div>
+              <div>{{ customer.default_address.zip}}</div>
+              <div>{{ customer.default_address.phone }}</div>
+            {% endif %}
+            <a id="view_address" href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="spaced-row-top">
+        {% paginate customer.orders by 20 %}
+          <div class="order-table">
+            {% if customer.orders.size != 0 %}
+              <table class="responsive-table">
+                <thead>
+                  <tr>
+                    <th class="order_number">{{ 'customer.orders.order_number' | t }}</th>
+                    <th class="date">{{ 'customer.orders.date' | t }}</th>
+                    <th class="payment_status">{{ 'customer.orders.payment_status' | t }}</th>
+                    <th class="fulfillment_status">{{ 'customer.orders.fulfillment_status' | t }}</th>
+                    <th class="total">{{ 'customer.orders.total' | t }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for order in customer.orders %}
+                  <tr class="{% cycle 'odd', 'even' %} {% if order.cancelled %}cancelled_order{% endif %}">
+                    <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                    <td data-label="{{ 'customer.orders.date' | t }}"><span class="note">{{ order.created_at | date: format: 'month_date_year' }}</span></td>
+                    <td data-label="{{ 'customer.orders.payment_status' | t }}"><span class="status_{{ order.financial_status }}">{{ order.financial_status_label }}</span></td>
+                    <td data-label="{{ 'customer.orders.fulfillment_status' | t }}"><span class="status_{{ order.fulfillment_status }}">{{ order.fulfillment_status_label }}</span></td>
+                    <td data-label="{{ 'customer.orders.total' | t }}"><span class="total money">{{ order.total_price | money }}</span></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% else %}
+              <p>{{ 'customer.orders.none' | t }}</p>
+            {% endif %}
+          </div>
+
+          {% render 'pagination', paginate: paginate %}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</div>

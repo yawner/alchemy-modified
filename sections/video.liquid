@@ -1,0 +1,273 @@
+<div id="section-{{ section.id }}" class="{% if section.settings.skip_container == false%}container{% endif %}
+{% if section.settings.skip_container == false %}container container--not-mobile homepage-spaced-row-sm{% endif %}
+" data-section-type="video">
+
+  {% style %}
+    #section-{{ section.id }} .overlay .inner {
+      color: {{ section.settings.text_color }};
+    }
+
+    #section-{{ section.id }} .video-container__play svg {
+      stroke: {{ section.settings.text_color }};
+    }
+
+    #section-{{ section.id }} .video-container__play svg polygon {
+      fill: {{ section.settings.text_color }};
+    }
+
+    @media (min-width: 768px) {
+      #section-{{ section.id }} .overlay__title {
+        font-size: {{ section.settings.title_size }}px;
+      }
+    }
+  {% endstyle %}
+
+  {% if section.settings.video_url != blank %}
+    <div class="video-container video-container--image video-container--modal-mobile" data-video-id="{{ section.settings.video_url.id }}"
+         data-cc-animate
+         data-video-url="{{ section.settings.video_url }}"
+         data-video-type="{{ section.settings.video_url.type }}"
+         data-video-autoplay="false"
+         data-video-loop="false">
+      <a class="video-container__stop" href="#" aria-label="{{ 'general.accessibility_labels.video_stop' | t | escape }}">{% render 'svg-x' %}</a>
+      <div class="video-container__video"></div>
+
+      <div class="video-container__cover">
+        {%- if section.settings.cover_image == blank -%}
+          <div class="placeholder-image placeholder--banner dark">
+            {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+          </div>
+        {%- else -%}
+          <div class="rimage-outer-wrapper rimage-background lazyload fade-in"
+               data-bgset="{% render 'bgset', image: section.settings.cover_image %}"
+               data-sizes="auto"
+               data-parent-fit="cover"
+               style="background-position: {{ section.settings.image_position }}">
+            <noscript>
+              <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: section.settings.cover_image.aspect_ratio | times: 100 }}%">
+                <img src="{{ section.settings.cover_image | img_url: '1024x1024' }}" alt="{{ section.settings.cover_image.alt | escape }}" class="rimage__image">
+              </div>
+            </noscript>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- unless block.settings.tint_color contains ',0' -%}
+        <div class="image-tint" style="background-color: {{ section.settings.tint_color }};opacity: {{ section.settings.tint_opacity | divided_by: 100.00 }};"></div>
+      {%- endunless -%}
+
+      <div class="video-container__overlay overlay">
+        <div class="inner overlay--v-{{ section.settings.text_alignment | split: ' ' | first }} overlay--h-{{ section.settings.text_alignment | split: ' ' | last }}">
+          <div class="innest">
+            <a href="#" class="video-container__play" aria-label="{{ 'general.accessibility_labels.video_play' | t | escape }}"
+               data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.1s">{% render 'svg-play' %}</a>
+
+            {%- if section.settings.video_title != blank -%}
+              <h2 class="h1 overlay__title" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.2s">
+                {{- section.settings.video_title | newline_to_br -}}
+              </h2>
+            {%- endif -%}
+
+            {%- if section.settings.subheading != blank -%}
+              <div class="large-text overlay__subheading" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.3s">
+                {{- section.settings.subheading | escape -}}
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.text != blank -%}
+              <div class="rte overlay__text {% if section.settings.enlarge_text %}large-text{% endif %}" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.4s">
+                {{ section.settings.text }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Video",
+    "class": "section--video section--no-spacing",
+    "settings": [
+      {
+        "id": "video_url",
+        "type": "video_url",
+        "label": "Video link",
+        "accept": ["youtube", "vimeo"],
+        "info": "Supports YouTube and Vimeo",
+        "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      },
+      {
+        "id": "video_title",
+        "type": "textarea",
+        "label": "Heading",
+        "default": "Video"
+      },
+      {
+        "type": "range",
+        "id": "title_size",
+        "min": 20,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "Heading text size",
+        "default": 60
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair text with a video to draw attention to an important detail of your brand or product line.</p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "enlarge_text",
+        "label": "Enlarge text",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "options": [
+          {
+            "value": "top left",
+            "label": "Top left"
+          },
+          {
+            "value": "top center",
+            "label": "Top center"
+          },
+          {
+            "value": "top right",
+            "label": "Top right"
+          },
+          {
+            "value": "center left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom right",
+            "label": "Bottom right"
+          }
+        ],
+        "default": "center center"
+      },
+      {
+        "id": "cover_image",
+        "type": "image_picker",
+        "label": "Cover image"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Image alignment",
+        "info": "Used to keep the subject of your image in view",
+        "default": "center center",
+        "options": [
+          {
+            "value": "top left",
+            "label": "Top left"
+          },
+          {
+            "value": "top center",
+            "label": "Top center"
+          },
+          {
+            "value": "top right",
+            "label": "Top right"
+          },
+          {
+            "value": "center left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom right",
+            "label": "Bottom right"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "skip_container",
+        "label": "Full page width",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Tint"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "tint_color",
+        "label": "Tint",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "tint_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Tint strength",
+        "default": 25
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video",
+        "category": "Video",
+        "settings": {
+          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+        }
+      }
+    ]
+  }
+{% endschema %}

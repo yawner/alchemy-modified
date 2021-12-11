@@ -1,0 +1,17 @@
+{% include 'product-content.zipifypages', contentprt: 'header' %}{% section 'product-template' %}
+
+{% section 'product-features' %}
+
+<div class="container" data-cc-animate>
+  <div id="shopify-product-reviews" class="theme-product-reviews-full" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
+</div>
+
+{% section 'product-recommendations' %}
+
+<script type="application/json" id="ProductJson-{{ product.id }}">
+  {{ product | json }}
+</script>
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% render 'structured-data-product', product: product, current_variant: current_variant %}
+{% include 'product-content.zipifypages', contentprt: 'footer' %}

@@ -1,0 +1,152 @@
+<div data-section-type="list-collections-template">
+  {% capture header_content %}
+    {% if settings.content_header_enable_breadcrumbs %}
+      <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <a class="breadcrumbs__crumb" href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
+        <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+        <span class="breadcrumbs__crumb">{{ 'collections.collection_list.title' | t }}</span>
+      </nav>
+    {% endif %}
+
+    <h1>{{ 'collections.collection_list.title' | t }}</h1>
+  {% endcapture %}
+
+  {% if section.settings.header_image != blank %}
+    <div class="banner-image-container banner-under-header bg--{{ section.settings.header_image_position }}" data-cc-animate>
+      {% render 'responsive-background', image: section.settings.header_image, class: 'banner-image fixed-height' %}
+
+      <div class="banner-image-text feature-page-title {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}">
+        {{ header_content }}
+      </div>
+    </div>
+  {% else %}
+    <div class="feature-page-title {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}" data-cc-animate>
+      {{ header_content }}
+    </div>
+  {% endif %}
+
+  <div class="container">
+    <div id="main" class="content-main" role="main">
+
+      {% if section.settings.show_all_collections %}
+
+        {% paginate collections by 12 %}
+          <div class="grid grid--row-gutters product-list">
+            {% for collection in collections %}
+              {% render 'collection-grid-item', num_per_row: 4, collection: collection %}
+            {% endfor %}
+          </div>
+          {% render 'pagination', paginate: paginate %}
+        {% endpaginate %}
+
+      {% else %}
+
+        <div class="grid grid--row-gutters product-list" data-cc-animate  data-cc-animate-delay="0.1s">
+          {% for block in section.blocks %}
+            {% assign collection = collections[block.settings.collection] %}
+
+            {% if block.settings.collection != empty %}
+              {% render 'collection-grid-item', num_per_row: 4, collection: collection %}
+            {% else %}
+              {% render 'onboarding-collection-grid-item', num_per_row: 4, collection: collection %}
+            {% endif %}
+
+          {% endfor %}
+        </div>
+
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "max_blocks": 48,
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header image"
+      },
+      {
+        "type": "paragraph",
+        "content": "The height of the content header can be adjusted in Theme Settings > Layout"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "header_image_position",
+        "label": "Image alignment",
+        "info": "Used to keep the subject of your image in view",
+        "default": "center-center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top center"
+          },
+          {
+            "value": "top-right",
+            "label": "Top right"
+          },
+          {
+            "value": "center-left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center-right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom right"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Collections"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_all_collections",
+        "label": "Show all collections",
+        "info": "Instead of the custom list below",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

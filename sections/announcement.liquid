@@ -1,0 +1,64 @@
+{%- if section.settings.show_announcement -%}
+  {%- unless template != 'index' and section.settings.announcement_home_only -%}
+    <style type="text/css">
+      .announcement {
+        background-color: {{ section.settings.announcement_bar_bg_color }};
+        color: {{ section.settings.announcement_bar_bg_text }};
+      }
+    </style>
+    <div id="announcement_bar" class="announcement" data-cc-animate>
+      {%- if section.settings.announcement_bar_link != blank -%}
+        <a href="{{ section.settings.announcement_bar_link }}">
+      {%- endif -%}
+      <div class="announcement__inner">
+        {{- section.settings.announcement_bar_text -}}
+      </div>
+      {%- if section.settings.announcement_bar_link != blank -%}
+        </a>
+      {%- endif -%}
+    </div>
+  {%- endunless -%}
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "Announcement",
+    "settings": [
+      {
+				"type": "checkbox",
+				"id": "show_announcement",
+				"label": "Show announcement",
+				"default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement_home_only",
+        "label": "Home page only",
+        "default": false
+      },
+      {
+				"type": "text",
+				"id": "announcement_bar_text",
+				"label": "Text"
+      },
+      {
+				"type": "url",
+				"id": "announcement_bar_link",
+				"label": "Link"
+      },
+      {
+				"type": "color",
+				"id": "announcement_bar_bg_color",
+				"label": "Background color",
+				"default": "#ffe2d1"
+      },
+      {
+				"type": "color",
+				"id": "announcement_bar_bg_text",
+				"label": "Text color",
+				"default": "#132625"
+      }
+		]
+  }
+{% endschema %}

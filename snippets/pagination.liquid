@@ -1,0 +1,34 @@
+{% if paginate.pages > 1 %}
+  {%- assign default_previous_text = 'general.pagination.previous' | t -%}
+  {%- assign default_next_text = 'general.pagination.next' | t -%}
+
+  <div class="pagination">
+    {% if paginate.previous.is_link %}
+      <span class="pagination__previous">
+        <a href="{{ paginate.previous.url }}" class="pagination__previous-link button button--alt">
+          {% render 'svg-chevron-left' %}
+          <span>{{ previous_text | default: default_previous_text }}</span>
+        </a>
+      </span>
+    {% endif %}
+
+    {% for part in paginate.parts %}
+      <span class="pagination__part{% if paginate.current_page == part.title %} pagination__part--active{% endif %}">
+        {%- if part.is_link -%}
+          <a class="pagination__part-link" href="{{ part.url }}">{{ part.title }}</a>
+        {%- else -%}
+          <span class="pagination__part-decoration">{{ part.title }}</span>
+        {%- endif -%}
+      </span>
+    {% endfor %}
+
+    {% if paginate.next.is_link %}
+      <span class="pagination__next">
+        <a href="{{ paginate.next.url }}" class="pagination__next-link button button--alt">
+          <span>{{ next_text | default: default_next_text }}</span>
+          {% render 'svg-chevron-right' %}
+        </a>
+      </span>
+    {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+<head>
+  <!-- Alchemy 3.1.12 -->
+
+  <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style">
+  {% render 'head-tag' %}
+
+  <meta name="theme-color" content="{{ settings.col_btn_bg }}">
+
+  <title>
+    {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% render 'social-meta-tags' %}
+
+  {{ 'styles.css' | asset_url | stylesheet_tag }}
+
+  {% render 'header-scripts.zipifypages', renderctx: 'thm' %}{{ content_for_header }}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', '');
+    window.theme = window.theme || {};
+    theme.money_format = {{ shop.money_format | json }};
+    theme.money_container = '.theme-money';
+    window.lazySizesConfig = window.lazySizesConfig || {
+      expFactor: 2.0
+    };
+    theme.strings = {
+      previous: {{ 'general.accessibility_labels.previous' | t | json }},
+      next: {{ 'general.accessibility_labels.next' | t | json }},
+      close: {{ 'general.accessibility_labels.close' | t | json }},
+      imageSlider: {{ 'general.slider.images' | t | json }},
+      addressError: {{ 'map.errors.address_error' | t | json }},
+      addressNoResults: {{ 'map.errors.address_no_results' | t | json }},
+      addressQueryLimit: {{ 'map.errors.address_query_limit_html' | t | json }},
+      authError: {{ 'map.errors.auth_error' | t | json }},
+      priceNonExistent: {{ 'products.variant.non_existent' | t | json }},
+      buttonDefault: {{ 'products.product.add_to_cart' | t | json }},
+      buttonNoStock: {{ 'products.variant.out_of_stock' | t | json }},
+      buttonNoVariant: {{ 'products.variant.non_existent' | t | json }},
+      products_product_unit_price_separator: {{ 'products.product.unit_price_separator' | t | json }},
+      productsListingFrom: {{ 'products.listing.from' | t | json }},
+      searchResultsPages: {{ 'general.quick_search.pages' | t | json }},
+      searchSeeAll: {{ 'layout.search.see_all' | t | json }},
+      cartTermsConfirmation: {{ 'cart.terms.confirmation' | t | json }},
+      addingToCart: {{ 'products.product.adding_to_cart' | t | json }},
+      addedToCart: {{ 'products.product.added_to_cart' | t | json }}
+    };
+    theme.routes = {
+      search_url: '{{ routes.search_url }}',
+      cart_add_url: '{{ routes.cart_add_url }}'
+    };
+    theme.enableOverlapTransition = {{ settings.enable_overlay_transition | json }};
+    theme.productImageAlign = {{ settings.product_image_align | json }};
+
+    theme.checkForBannerBehindHeader = function() {
+      var bodyClasses = document.body.classList;
+      var elBanner = document.querySelector('.banner-under-header');
+
+      if (elBanner) {
+        bodyClasses.add('has-banner');
+        bodyClasses.remove('has-text-banner', 'show-contrast-logo', 'no-banner');
+
+        if (document.querySelector('.pageheader__contents--overlap')) {
+          bodyClasses.add('header-overlapping');
+        }
+      } else {
+        var elTextBanner = document.querySelector('.feature-page-title');
+        
+        bodyClasses.remove('has-banner');
+        
+        if (elTextBanner) {
+          {% if settings.page_use_contrast_logo %}
+            bodyClasses.add('show-contrast-logo');
+          {% endif %}
+
+          bodyClasses.add('has-text-banner');
+        } else {
+          bodyClasses.add('no-banner');
+        }
+      }
+    }
+  </script>
+</head>
+
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if template contains 'customers' %} template-customer-area{% endif %}{% if settings.content_header_overlap > 0 %} content-overlaps{% endif %}" >
+{% if settings.enable_transition_in %}
+  <script>
+    document.body.classList.add("cc-animate-enabled");
+  </script>
+{% endif %}
+
+<a class="skip-link visually-hidden" href="#main">{{ 'general.accessibility_labels.skip_to_content' | t }}</a>
+
+  {% section 'announcement' %}
+
+  {% section 'header' %}
+
+  {% assign templates_with_layout = 'index,collection,product,cart,search,blog,article,page,page.contact,list-collections,page.list-collections' | split: ',' %}
+
+  {% unless templates_with_layout contains template or template contains 'customers' or template contains 'story' %}
+  <div class="container">
+    <div id="main" class="content-main" role="main">
+      {% endunless %}
+
+      {{ content_for_layout }}
+
+      {% unless templates_with_layout contains template or template contains 'customers' or template contains 'story' %}
+    </div>
+  </div>
+  {% endunless %}
+
+  <script>
+    theme.checkForBannerBehindHeader();
+  </script>
+
+  {% section 'popup' %}
+  {% section 'footer' %}
+
+  <div class="hidden">
+    {% form 'customer', id: 'signup-form-response' %}
+      {% if form.posted_successfully? %}
+        <div class="newsletter-response success">
+          <div class="h3 no-margin">{{ 'layout.signup.post_success' | t }}</div>
+        </div>
+      {% elsif form.errors %}
+        <div class="newsletter-response">
+          {% for field in form.errors %}
+            <p class="error">{{ field | capitalize }} - {{ form.errors.messages[field] }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endform %}
+  </div>
+
+  <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  
+  {% if settings.no_right_click %}
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+  {% endif %}
+
+  {% render 'body-end-tag' %}
+
+<!-- spurit_um-added -->
+{% render 'spurit_um-theme-snippet' %}
+<!-- /spurit_um-added -->
+
+{% render 'mbc-bundles' %} {% include 'smile-initializer' %}
+
+{% render 'page-footer.zipifypages', renderctx: 'thm', ocuapp: ocuapp %}</body>
+</html>

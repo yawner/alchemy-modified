@@ -1,0 +1,335 @@
+<div data-section-type="cart-template">
+  {% capture header_content %}
+    {% if settings.content_header_enable_breadcrumbs %}
+      <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <a class="breadcrumbs__crumb" href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
+        <span class="breadcrumbs__divider" aria-hidden="true">{% render 'svg-chevron-right' %}</span>
+        <span class="breadcrumbs__crumb">{{ 'cart.general.your_cart_title' | t }}</span>
+      </nav>
+    {% endif %}
+
+    <h1>{{ 'cart.general.your_cart_title' | t }}</h1>
+  {% endcapture %}
+
+  {% if section.settings.header_image != blank %}
+    <div class="banner-image-container banner-under-header bg--{{ section.settings.header_image_position }}" data-cc-animate>
+      {% render 'responsive-background', image: section.settings.header_image, class: 'banner-image fixed-height' %}
+
+      <div class="banner-image-text feature-page-title {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}">
+        {{ header_content }}
+      </div>
+    </div>
+  {% else %}
+    <div class="feature-page-title {% unless settings.content_header_enable_breadcrumbs %}feature-page-title--no-breadcrumb{% endunless %}" data-cc-animate>
+      {{ header_content }}
+    </div>
+  {% endif %}
+
+  <div class="container">
+    <div id="main" class="content-main {% if cart.item_count == 0 %}cart-is-empty{% endif %}" role="main" data-cc-animate data-cc-animate-delay="0.1s">
+
+      {% if cart.item_count > 0 %}
+
+      <form action="{{ routes.cart_url }}" method="post" id="cartform">
+
+        <ul class="cart-list">
+
+          <li class="head">
+            <div class="col-image">{{ 'cart.general.item' | t }}</div>
+            <div class="col-notimage">
+              <div class="col-desc"></div>
+              <div class="col-price">{{ 'cart.general.price' | t }}</div>
+              <div class="col-quantity">{{ 'cart.general.quantity' | t }}</div>
+              <div class="col-total">{{ 'cart.general.total' | t }}</div>
+              <div class="col-remove"><!-- Remove --></div>
+            </div>
+          </li>
+
+          {% for item in cart.items %}
+
+          {% comment %}
+          Determining the handle of the collection that was last seen for the 'continue shopping' link.
+          {% endcomment %}
+
+          {%- if forloop.first -%}
+            {%- capture collection_url -%}{{ item.product.collections.first.url }}{%- endcapture -%}
+            {%- if collection_url == empty or collection_url contains 'frontpage' -%}{% assign collection_url = routes.all_products_collection_url %}{%- endif -%}
+          {%- endif -%}
+
+          <li class="item">
+            <div class="col-image">
+              <a class="image" href="{{ item.url }}">
+                          {%- render 'responsive-image', image: item.image -%}
+              </a>
+            </div>
+            <div class="col-notimage">
+              <div class="col-desc">
+                <div class="title">
+                  <a href="{{ item.url }}">
+                    {{ item.product.title }}
+                    {% unless item.variant.title contains 'Default' %}
+                      <br/>{{ item.variant.title }}
+                    {% endunless %}
+                  </a>
+                </div>
+
+                {% if item.selling_plan_allocation %}
+                  <div class="subscription-description">
+                    <p>{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                  </div>
+                {% endif %}
+
+                {% if section.settings.show_backorder_text == true %}
+                  {% render 'backorder', variant: item.variant %}
+                {% endif %}
+                {% comment %}
+                Line Item Properties
+                {% endcomment %}
+                {%- if item.properties.size > 0 -%}
+                  <p>
+                    {%- for p in item.properties -%}
+                      {%- unless p.last == blank -%}
+                        {{ p.first }}:
+                        {% if p.last contains '/uploads/' %}
+                          <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                        {% else %}
+                          {{ p.last }}
+                        {% endif %}
+                        <br />
+                      {%- endunless -%}
+                    {%- endfor -%}
+                  </p>
+                {%- endif -%}
+              </div>
+              <div class="col-price">
+                {% if item.original_line_price > item.final_line_price %}
+                  <div class="original-price theme-money"><span class="Makebecool-theme-hook-DO-NOT-DELETE makebecool_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.original_price | money }}</div>
+                  <div class="theme-money"><span class="Makebecool-theme-hook-DO-NOT-DELETE makebecool_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.final_price | money }}</div>
+                {% else %}
+                  <div class="theme-money"><span class="Makebecool-theme-hook-DO-NOT-DELETE makebecool_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.final_price | money }}</div>
+                {% endif %}
+
+                {% render 'unit-price', variant: item %}
+
+                {% if item.line_level_discount_allocations.size > 0 %}
+                  <ul class="cart-discount-list">
+                  {% for discount_allocation in item.line_level_discount_allocations %}
+                    <li class="cart-discount">
+                      <div class="cart-discount__label">{{ discount_allocation.discount_application.title }}</div>
+                      <div class="cart-discount__amount theme-money">{{ discount_allocation.amount | money }}</div>
+                    </li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+              <div class="col-quantity">
+                <input class="quantity select-on-focus" type="text" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" aria-label="{{ 'cart.general.quantity' | t }}" />
+                <div class="remove">
+                  <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">{{ 'cart.general.remove' | t }}</a>
+                </div>
+              </div>
+              <div class="col-total">
+                {% if item.original_line_price != item.final_line_price %}
+                  <div class="original-price theme-money"><span class="Makebecool-theme-hook-DO-NOT-DELETE makebecool_cart_item_total" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.original_line_price | money }}</div>
+                  <div class="theme-money"><span class="Makebecool-theme-hook-DO-NOT-DELETE makebecool_cart_item_total" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.final_line_price | money }}</div>
+                {% else %}
+                  <div class="theme-money"><span class="Makebecool-theme-hook-DO-NOT-DELETE makebecool_cart_item_total" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.final_line_price | money }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+
+        </ul>
+
+        <div class="update-continue align-right align-center-mobile">
+          <input class="update textbutton" type="submit" name="update" value="{{ 'cart.general.update' | t }}" />
+          <span>&middot;</span>
+          <a class="continue" href="{{ collection_url }}">{{ 'cart.general.continue' | t }}</a>
+        </div>
+
+        <div class="under-cart grid">
+          <div class="column half align-center-mobile">
+            {% if section.settings.cart_note_show %}
+              <div class="note-area">
+                <label for="note">{{ 'cart.label.note' | t }}</label>
+                <textarea id="note" name="note">{{ cart.note }}</textarea>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="column half align-right align-center-mobile">
+            {%- if cart.cart_level_discount_applications != blank -%}
+              <ul class="cart-discount-list">
+                {%- for discount_application in cart.cart_level_discount_applications -%}
+                  <li class="cart-discount cart-discount--inline">
+                    <span class="cart-discount__label">{{ discount_application.title }}</span>
+                    <span class="cart-discount__amount theme-money">{{ discount_application.total_allocated_amount | money }}</span>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+            <div class="h2">
+              <span>{{ 'cart.general.subtotal' | t }}</span>
+              <span class="subtotal theme-money"><span class="Makebecool-theme-hook-DO-NOT-DELETE makebecool_cart_total" style="display:none !important;"></span>{{ cart.total_price | money }}</span>
+            </div>
+
+            {%- if section.settings.show_tax_and_shipping -%}
+              {%- capture taxes_shipping_checkout -%}
+                {%- if shop.taxes_included and shop.shipping_policy.body != blank -%}
+                  {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- elsif shop.taxes_included -%}
+                  {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
+                  {%- elsif shop.shipping_policy.body != blank -%}
+                  {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                {%- else -%}
+                  {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
+                {%- endif -%}
+              {%- endcapture -%}
+
+              <div class="comment cart-policies">{{ taxes_shipping_checkout }}</div>
+            {%- endif -%}
+
+            {% if section.settings.cart_terms_show %}
+            <div class="terms">
+              <label class="label--plain-text">
+                <input type="checkbox" id="terms" />
+                {% assign terms_url = pages[section.settings.cart_terms_page].url %}
+                <span>{{ 'cart.terms.agreement_html' | t: terms_url: terms_url }}</span>
+              </label>
+            </div>
+            {% endif %}
+
+            <!-- Route Code Edited 10/19/2021 -->
+            <div class="route-div"></div>    
+            <!-- Route Code End -->
+
+            <button type="submit" class="button checkout-btn" name="checkout">{{ 'cart.general.checkout' | t | escape }}</button>
+
+            {% if section.settings.show_additional_checkout_buttons and additional_checkout_buttons and section.settings.cart_terms_show == false %}
+              <div class="additional-checkout-buttons">
+                {{ content_for_additional_checkout_buttons }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+      </form>
+
+      {% else %}
+        <div class="align-center">
+          <h2>{{ 'cart.general.empty' | t }}</h2>
+          <div class="rte reading-width">
+            <p class="align-center"><a href="{{ routes.all_products_collection_url }}">{{ 'cart.general.continue_browsing' | t }}</a></p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Cart page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_terms_show",
+        "label": "Show Terms and Conditions checkbox",
+        "default": false,
+        "info": "Additional checkout buttons will be hidden"
+      },
+      {
+        "type": "page",
+        "id": "cart_terms_page",
+        "label": "Page for Terms and Conditions link"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_note_show",
+        "label": "Enable order notes",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tax_and_shipping",
+        "label": "Show tax and shipping information",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_additional_checkout_buttons",
+        "label": "Show additional checkout options",
+        "default": true,
+        "info": "Display other gateways and quick checkout buttons. [Read more](https://help.shopify.com/en/manual/payments/accelerated-checkouts)"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_backorder_text",
+        "label": "Show backorder text",
+        "default": true,
+        "info": "Only shows for products which use Shopify inventory tracking and are available to purchase when out of stock."
+      },
+      {
+        "type": "header",
+        "content": "Header image"
+      },
+      {
+        "type": "paragraph",
+        "content": "The height of the content header can be adjusted in Theme Settings > Layout"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "header_image_position",
+        "label": "Image alignment",
+        "info": "Used to keep the subject of your image in view",
+        "default": "center-center",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top center"
+          },
+          {
+            "value": "top-right",
+            "label": "Top right"
+          },
+          {
+            "value": "center-left",
+            "label": "Middle left"
+          },
+          {
+            "value": "center-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "center-right",
+            "label": "Middle right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom left"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom right"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

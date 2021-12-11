@@ -1,0 +1,97 @@
+{% if cta.settings.image1 != blank or cta.settings.title1 != blank or cta.settings.subheading1 != blank or cta.settings.button_label1 != blank %}
+  <li class="nav-ctas__cta nav-ctas__cta--first {% if cta.settings.image1 == blank %}nav-ctas__cta--no-image{% endif %}">
+    {%- unless cta.settings.cta_link1 == blank -%}<a data-cc-animate-click class="inner image-overlay image-overlay--bg-full" href="{{ cta.settings.cta_link1 }}">{% else %}<div class="inner image-overlay image-overlay--bg-full">{%- endunless -%}
+
+    {% if cta.settings.image1 != blank %}
+      <div class="rimage-outer-wrapper rimage-background lazyload fade-in"
+           style="padding-top:{{ 1 | divided_by: cta.settings.image1.aspect_ratio | times: 100 }}%"
+           data-bgset="{% render 'bgset', image: cta.settings.image1 %}"
+           data-sizes="auto"
+           data-parent-fit="cover">
+        <noscript>
+          <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: cta.settings.image1.aspect_ratio | times: 100 }}%">
+            <img src="{{ cta.settings.image1 | img_url: '1024x1024' }}" alt="{{ cta.settings.image1.alt | escape }}" class="rimage__image">
+          </div>
+        </noscript>
+      </div>
+
+      {%- unless settings.tint_color contains ',0' -%}
+        <div class="image-tint" style="background-color: {{ settings.tint_color }};opacity: {{ settings.tint_opacity | divided_by: 100.00 }};"></div>
+      {%- endunless -%}
+    {% endif %}
+
+    <div class="overlay {% if cta.settings.image1 == blank %}overlay--no-image{% endif %}">
+      <div class="inner overlay--v-{{ cta.settings.text_alignment1 | split: ' ' | first }} overlay--h-{{ cta.settings.text_alignment1 | split: ' ' | last }}" style="{% if cta.settings.image1 != blank %}color: {{ settings.text_color }};{% endif %}">
+        <div class="innest">
+          {%- if cta.settings.title1 != blank -%}
+            <h2 class="overlay__title">
+              {{ cta.settings.title1 | newline_to_br }}
+            </h2>
+          {%- endif -%}
+
+          {%- if cta.settings.subheading1 != blank -%}
+            <div class="overlay__subheading">
+              {{ cta.settings.subheading1 | escape }}
+            </div>
+          {% endif %}
+
+          {%- if cta.settings.button_label1 != blank -%}
+            <div class="overlay__link feature-link">
+              {{ cta.settings.button_label1 | escape }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+      {%- unless cta.settings.cta_link1 == blank -%}</a>{% else %}</div>{%- endunless -%}
+  </li>
+{% endif %}
+
+{% if cta.settings.image2 != blank or cta.settings.title2 != blank or cta.settings.subheading2 != blank or cta.settings.button_label2 != blank %}
+  <li class="nav-ctas__cta nav-ctas__cta--second {% if cta.settings.image2 == blank %}nav-ctas__cta--no-image{% endif %}">
+    {%- unless cta.settings.cta_link2 == blank -%}<a data-cc-animate-click href="{{ cta.settings.cta_link2 }}" class="inner image-overlay image-overlay--bg-full">{% else %}<div class="inner image-overlay image-overlay--bg-full">{%- endunless -%}
+
+    {% if cta.settings.image2 != blank %}
+      <div class="rimage-outer-wrapper rimage-background lazyload fade-in"
+           style="padding-top:{{ 1 | divided_by: cta.settings.image2.aspect_ratio | times: 100 }}%"
+           data-bgset="{% render 'bgset', image: cta.settings.image2 %}"
+           data-sizes="auto"
+           data-parent-fit="cover">
+        <noscript>
+          <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: cta.settings.image2.aspect_ratio | times: 100 }}%">
+            <img src="{{ cta.settings.image2 | img_url: '1024x1024' }}" alt="{{ cta.settings.image2.alt | escape }}" class="rimage__image">
+          </div>
+        </noscript>
+      </div>
+
+      {%- unless settings.tint_color contains ',0' -%}
+        <div class="image-tint" style="background-color: {{ settings.tint_color }};opacity: {{ settings.tint_opacity | divided_by: 100.00 }};"></div>
+      {%- endunless -%}
+    {% endif %}
+
+    <div class="overlay {% if cta.settings.image2 == blank %}overlay--no-image{% endif %}">
+      <div class="inner overlay--v-center overlay--h-center" style="{% if cta.settings.image2 != blank %}color: {{ settings.text_color }};{% endif %}">
+        <div class="innest">
+          {%- if cta.settings.title2 != blank -%}
+            <h2 class="overlay__title">
+              {{ cta.settings.title2 | newline_to_br }}
+            </h2>
+          {%- endif -%}
+
+          {%- if cta.settings.subheading2 != blank -%}
+            <div class="overlay__subheading">
+              {{ cta.settings.subheading2 | escape }}
+            </div>
+          {% endif %}
+
+          {%- if cta.settings.button_label2 != blank -%}
+            <div class="overlay__link feature-link">
+              {{ cta.settings.button_label2 | escape }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+    {%- unless cta.settings.cta_link2 == blank -%}</a>{% else %}</div>{%- endunless -%}
+  </li>
+{% endif %}

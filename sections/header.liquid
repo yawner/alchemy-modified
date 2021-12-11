@@ -1,0 +1,828 @@
+{%- capture logo_size -%}{{ section.settings.logo_width | default: 250 | times: 2 }}x{%- endcapture -%}
+
+{% style %}
+  {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
+  {%- assign logo_width = section.settings.logo_width | plus: 0 -%}
+  .pageheader .logo--image, .pageheader .logo .logo__image { max-width: {{ section.settings.logo_width }}px }
+  @media(min-width: 768px) {
+    .pageheader .logo--image, .pageheader .logo .logo__image { width: {{ section.settings.logo_width }}px; max-width: none; }
+  }
+
+  {%- assign min_icons_width = 132 -%}
+  {% if section.settings.logo_width > min_icons_width %}
+    {%- assign min_icons_width = section.settings.logo_width -%}
+    .pageheader__contents.pageheader__contents--inline--visible.pageheader__contents--inline--left-logo .header-items,
+    .pageheader__contents.pageheader__contents--inline--visible.pageheader__contents--inline--left-logo .logo {
+      flex-basis: {{ section.settings.logo_width }}px !important;
+    }
+  {% endif %}
+
+  .pageheader__contents.pageheader__contents--inline--left-logo:not(.pageheader__contents--inline--visible) .site-control__inline-links .nav-row {
+    min-width: calc(100vw - {{ min_icons_width | times: 2 | plus: 100 }}px);
+  }
+
+  {%- if section.settings.enable_sticky -%}
+    {%- if section.settings.enable_logo_shrink -%}
+      {%- assign smaller_logo_width = section.settings.logo_width | times: 0.75 | round -%}
+      .scrolled-down .pageheader .logo--image { width: {{ smaller_logo_width }}px }
+    {%- endif -%}
+    {%- if logo_height > 40 -%}
+      @media (max-width: 767px) {
+        .scrolled-down .pageheader .logo--image { max-width: {{ section.settings.logo_width | times: 0.65 | round }}px }
+      }
+    {%- endif -%}
+  {%- endif -%}
+
+  {% if logo_height == blank %}
+    {% assign breadcrumb_padding = 60 %}
+  {% else %}
+    {% assign breadcrumb_padding = logo_height | round | plus: 25 %}
+  {% endif %}
+  .feature-page-title .breadcrumbs { margin-top: {{ breadcrumb_padding  }}px {% if section.settings.enabled_header_overlap %}!important{% endif %} }
+
+  {%- if section.settings.enabled_header_overlap -%}
+    .banner-under-header .banner-image.flexible-height .overlay .innest { padding-top: {{ logo_height | round }}px }
+    @media (min-width: 768px) {
+      .banner-under-header .banner-image.fixed-height .overlay .innest { padding-top: {{ logo_height | round }}px; margin-bottom: {{ settings.content_header_overlap }}px }
+    }
+  {%- endif -%}
+
+{%- if section.settings.enable_sticky -%}
+  .shopify-section--header {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+{%- endif -%}
+{%- unless section.settings.enabled_header_overlap -%}
+  .banner-image-container .feature-page-title .breadcrumbs {
+    top: 0;
+  }
+  .has-banner .banner-image-container .feature-page-title {
+    margin-top: 0!important;
+    padding-top: 30px;
+  }
+
+  @media(max-width: 767px) {
+    .has-banner .banner-image-container .feature-page-title {
+      padding-bottom: 30px;
+    }
+  }
+{%- endunless -%}
+{% if section.settings.menu_bg_image %}
+	.open-menu .pageheader.main-menu-bg-image .main-menu-toggle:before {
+       background-color: transparent;
+    }
+    .main-menu-bg-image #main-menu {
+       background: transparent;
+       background-image:url('{{ section.settings.menu_bg_image.src | img_url: '720x' }}');
+       background-size: cover;
+	}
+{% endif %}
+{% endstyle %}
+
+{%- if template == 'password' or template == 'gift_card' -%}
+
+{% comment %} Password/gift card template logo {% endcomment %}
+<div id="pageheader" class="pageheader pageheader--minimal" itemscope itemtype="http://schema.org/Organization">
+  <header class="pageheader__contents">
+    <div class="logo logo--{% if section.settings.logo == blank %}text{% else %}image{% endif %}{% if logo_height > 60 %} logo--shrinks-on-scroll{% endif %}">
+      <meta itemprop="url" content="{{ shop.url }}">
+      <meta itemprop="name" content="{{ shop.name }}">
+      {% if section.settings.logo != blank %}
+      <span class="image">
+        <img src="{{ section.settings.logo | img_url: logo_size }}" alt="{{ section.settings.logo.alt | escape }}" itemprop="logo" />
+      </span>
+      {% else %}
+      <h1 class="text">{{ shop.name }}</h1>
+      {% endif %}
+    </div>
+  </header>
+</div>
+
+{%- else -%}
+
+<div data-section-type="header">
+  <div id="pageheader" class="pageheader{% if section.settings.menu_bg_image %} main-menu-bg-image{% endif %}" data-cc-animate>
+    {%- if section.settings.logo != blank and logo_height > 100 and section.settings.enable_sticky == false -%}
+      {%- assign header_alignment_class = ' pageheader__contents--top' -%}
+    {%- endif -%}
+
+    <header class="pageheader__contents
+      {% if section.settings.enable_sticky %}pageheader__contents--sticky{% endif %}
+      {% if section.settings.enabled_header_overlap %}pageheader__contents--overlap{% endif %}
+      {% if section.settings.enable_inline_links %}pageheader__contents--inline{% endif %}
+      {% if section.settings.menu_align_logo_left %}pageheader__contents--inline--left-logo{% endif %}
+      {{ header_alignment_class }}"
+      {% if section.settings.enable_inline_links %}data-nav-inline="true"{% endif %}
+      id="pageheader__contents">
+
+      <div class="pageheader__layout">
+        <div class="header-left">
+
+          {%- if section.settings.enable_inline_links -%}
+            <div class="site-control__inline-links">
+              <div class="nav-row multi-level-nav reveal-on-hover" role="navigation" aria-label="{{ 'general.navigation.main_navigation_aria_label' | t | escape }}">
+                <div class="tier-1">
+                  <ul>
+                    {% for link in linklists[section.settings.menu_linklist].links %}
+
+                      {%- assign has_mega_drop_down = true -%}
+                      {%- if link.links != blank -%}
+                        {%- for child_link in link.links -%}
+                          {%- if child_link.links == blank -%}
+                            {%- assign has_mega_drop_down = false -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      {%- else -%}
+                        {%- assign has_mega_drop_down = false -%}
+                      {%- endif -%}
+
+                      <li class="{% if link.active %}active{% endif %}{% if link.links != blank %} contains-children{% endif %}{% if has_mega_drop_down %} contains-mega-menu{% endif %}">
+                        <a href="{{ link.url }}" class="{% if link.active %}active{% endif %} {% if link.links != blank %}has-children{% endif %}" {% if link.links != blank %}aria-haspopup="true"{% endif %}>
+                          {{ link.title | strip }}
+                        </a>
+
+                        {% if link.links != blank %}
+
+                          {% assign num_ctas = 0 %}
+                          {% for block in section.blocks %}
+                            {% assign menu_item =  block.settings.menu_item | downcase %}
+                            {% assign link_title =  link.title | downcase %}
+                            {% if menu_item == link_title %}
+                              {% if block.settings.image1 != blank %}
+                                {% assign num_ctas = num_ctas | plus: 1 %}
+                              {% endif %}
+                              {% if block.settings.image2 != blank %}
+                                {% assign num_ctas = num_ctas | plus: 1 %}
+                              {% endif %}
+                              {% break %}
+                            {% endif %}
+                          {% endfor %}
+
+                          <ul {% if has_mega_drop_down %}
+                            class="nav-columns nav-columns--count-{{ link.links.size }}
+                      {% if link.links.size > 2 %} nav-columns--count-3-or-more {% endif %}
+                      {% if link.links.size > 5 %} nav-columns--count-6-or-more {% endif %}
+                      nav-columns--cta-count-{{ num_ctas }}"
+                          {% else %}
+                            class="nav-rows"
+                            {% endif %}>
+
+                            {% for child_link in link.links %}
+                              <li class="{% if child_link.active %}active{% endif %}{% if child_link.links != blank %} contains-children{% endif %}">
+                                <a href="{{ child_link.url }}" class="{% if child_link.links != blank %}has-children column-title{% endif %}" {% if child_link.links != blank %}aria-haspopup="true"{% endif %}>
+                                  {{ child_link.title | strip }}
+
+                                  {% if child_link.links != blank %}
+                                    <span class="arr arr--small">{% render 'svg-arrow-right' %}</span>
+                                  {% endif %}
+                                </a>
+
+                                {% if child_link.links != blank %}
+                                  <ul>
+                                    {% for child_child_link in child_link.links %}
+                                      <li class="{% if child_child_link.active %}active{% endif %}">
+                                        <a href="{{ child_child_link.url }}">{{ child_child_link.title | strip }}</a>
+                                      </li>
+                                    {% endfor %}
+                                  </ul>
+                                {% endif %}
+                              </li>
+                            {% endfor %}
+
+                            {% for block in section.blocks %}
+                              {% assign menu_item =  block.settings.menu_item | downcase %}
+                              {% assign link_title =  link.title | downcase %}
+                              {% if menu_item == link_title %}
+                                {% render 'nav-call-to-action', cta: block, settings: section.settings %}
+                              {% endif %}
+                            {% endfor %}
+                          </ul>
+
+                          {% if section.settings.contact_info_in_mega %}
+                            {% if section.settings.show_social_links or section.settings.contact_info_phone != blank or section.settings.contact_info_email != blank %}
+                              {% assign num_columns = 0 %}
+                              {% if section.settings.show_social_links %}
+                                {% assign num_columns = num_columns | plus: 1 %}
+                              {% endif %}
+                              {% if section.settings.contact_info_phone != blank %}
+                                {% assign num_columns = num_columns | plus: 1 %}
+                              {% endif %}
+                              {% if section.settings.contact_info_email != blank %}
+                                {% assign num_columns = num_columns | plus: 1 %}
+                              {% endif %}
+
+                              <div class="nav-contact-info nav-contact-info--{{ num_columns }}">
+                                {% if section.settings.show_social_links %}
+                                  <div class="nav-contact-info__block">
+                                    {% render 'social-icons', icon_setting: settings.social_custom_icon_alt, icon_size: 'x32' %}
+                                  </div>
+                                {% endif %}
+
+                                {% if section.settings.contact_info_phone != blank %}
+                                  <div class="nav-contact-info__block">
+                                    <span class="nav-contact-info__block__icon nav-contact-info__block__icon--phone">{% render 'svg-phone' %}</span>
+                                    {{ section.settings.contact_info_phone }}
+                                  </div>
+                                {% endif %}
+
+                                {% if section.settings.contact_info_email != blank %}
+                                  <div class="nav-contact-info__block">
+                                    <a href="mailto:{{ section.settings.contact_info_email }}">
+                                      <span class="nav-contact-info__block__icon nav-contact-info__block__icon--email">{% render 'svg-email' %}</span>
+                                      {{ section.settings.contact_info_email }}
+                                    </a>
+                                  </div>
+                                {% endif %}
+                              </div>
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+
+                  {% comment %}
+                    {% if shop.customer_accounts_enabled %}
+                      <ul class="account-links">
+                        {% if customer %}
+                          <li class="your-acct"><a href="{{ routes.account_url }}">{{ 'layout.customer.account' | t }}</a></li>
+                          <li class="logout"><a href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t  }}</a></li>
+                        {% else %}
+                          {% if section.settings.nav_show_reg %}
+                            <li class="register"><a href="{{ routes.account_register_url }}">{{ 'layout.customer.register' | t }}</a></li>
+                          {% endif %}
+                          <li class="login"><a href="{{ routes.account_login_url }}">{{ 'layout.customer.log_in' | t }}</a></li>
+                        {% endif %}
+                      </ul>
+                    {% endif %}
+                  {% endcomment %}
+
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+
+          <a href="#" class="main-menu-toggle" aria-controls="main-menu">
+            <div class="icon-burger">
+              <span class="line line-1"></span>
+              <span class="line line-2"></span>
+              <span class="line line-3"></span>
+            </div>
+            <span class="main-menu-toggle__text main-menu-toggle__text--menu">{{ 'layout.header.menu' | t }}</span>
+            <span class="main-menu-toggle__text main-menu-toggle__text--close">{{ 'general.accessibility_labels.close' | t }}</span>
+            <span class="main-menu-toggle__text main-menu-toggle__text--back">{{ 'layout.navigation.back' | t }}</span>
+          </a>
+
+          <div id="main-menu">
+            <div class="main-menu-inner">
+              <div class="main-menu-panel-wrapper">
+                <nav class="main-menu-panel" id="main-menu-panel" aria-label="{{ 'layout.header.menu_aria_label' | t | escape }}">
+
+                  <ul class="main-menu-links">
+                    {%- for link in linklists[section.settings.menu_linklist].links -%}
+                      <li class="main-menu-list-item{% if link.links != blank %} has-children{% endif %}{% if link.active %} active{% endif %}">
+                        <a class="main-menu-link" href="{{ link.url }}" {% if link.links != blank %}aria-haspopup="true" aria-controls="main-menu-panel-{{ forloop.index }}"{% endif %}>
+                          {{- link.title | strip -}}
+
+                          {%- if link.links != blank -%}
+                            <span class="child-indicator">
+                              {% render 'svg-arrow-right' %}
+                            </span>
+                          {%- endif -%}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+
+                    {% if shop.customer_accounts_enabled %}
+                      {% if customer %}
+                        <li class="main-menu-account-link main-menu-list-item"><a class="main-menu-link" href="{{ routes.account_url }}">{{ 'layout.customer.my_account' | t }}</a></li>
+                        <li class="main-menu-account-link main-menu-list-item"><a class="main-menu-link" href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a></li>
+                      {% else %}
+                        <li class="main-menu-account-link main-menu-list-item"><a class="main-menu-link" href="{{ routes.account_login_url }}">{{ 'layout.customer.log_in' | t }}</a></li>
+                      {% endif %}
+                    {% endif %}
+                  </ul>
+
+                  {% if section.blocks.size > 0 %}
+
+                    {% assign cta_count = 0 %}
+                    {% for block in section.blocks %}
+                      {% if block.settings.menu_item == blank %}
+                        {% if block.settings.image1 != blank or block.settings.title1 != blank or block.settings.subheading1 != blank or block.settings.button_label1 != blank %}
+                          {% assign cta_count = 1 %}
+                        {% endif %}
+
+                        {% if block.settings.image2 != blank or block.settings.title2 != blank or block.settings.subheading2 != blank or block.settings.button_label2 != blank %}
+                          {% assign cta_count = 2 %}
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+
+                    <ul class="nav-ctas nav-ctas--{{ cta_count }}">
+                      {% for block in section.blocks %}
+                        {% if block.settings.menu_item == blank %}
+                          {% render 'nav-call-to-action', cta: block, settings: section.settings %}
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+
+                  {% if section.settings.show_locale_selector or section.settings.show_currency_selector %}
+                    <div class="main-menu-section store-localization">
+                      {% render 'localization', input_prefix: 'header' %}
+                    </div>
+                  {% endif %}
+
+                  {% if section.settings.contact_info_phone != blank or section.settings.contact_info_email != blank %}
+                    <div class="nav-contact-info">
+                      {% if section.settings.contact_info_phone != blank %}
+                        <div class="nav-contact-info__block">
+                          <span class="nav-contact-info__block__icon nav-contact-info__block__icon--phone">{% render 'svg-phone' %}</span>
+                          {{ section.settings.contact_info_phone }}
+                        </div>
+                      {% endif %}
+
+                      {% if section.settings.contact_info_email != blank %}
+                        <div class="nav-contact-info__block">
+                          <a href="mailto:{{ section.settings.contact_info_email }}">
+                            <span class="nav-contact-info__block__icon nav-contact-info__block__icon--email">{% render 'svg-email' %}</span>
+                            {{ section.settings.contact_info_email }}
+                          </a>
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+
+                  {% if section.settings.menu_under_text != blank %}
+                    <div class="main-menu-section main-menu-section--footer">
+                      <div class="rte">{{ section.settings.menu_under_text }}</div>
+                    </div>
+                  {% endif %}
+
+                  {% if section.settings.show_social_links %}
+                    <div class="main-menu-section main-menu-section--socials">
+                      {% render 'social-icons', icon_setting: settings.social_custom_icon_alt, icon_size: 'x32' %}
+                    </div>
+                  {% endif %}
+                </nav>
+
+                {%- for link in linklists[section.settings.menu_linklist].links -%}
+                  {%- if link.links != blank -%}
+                    <div class="main-menu-panel main-menu-panel--child main-menu-panel--inactive-right" id="main-menu-panel-{{ forloop.index }}">
+                      <div class="main-menu-breadcrumbs">
+                        <span class="main-menu-breadcrumbs__item"><a class="main-menu-breadcrumbs__link" href="#main-menu-panel">{{ 'layout.header.menu_breadcrumb_home' | t }}</a></span>
+                        <span class="main-menu-breadcrumbs__divider">{% render 'svg-arrow-right' %}</span>
+                        <span class="main-menu-breadcrumbs__item">{{ link.title | strip }}</span>
+                      </div>
+                      <ul class="main-menu-links">
+                        {%- assign outer_forloop_index = forloop.index -%}
+                        {%- for child_link in link.links -%}
+                          <li class="main-menu-list-item{% if child_link.links != blank %} has-children{% endif %}{% if child_link.active %} active{% endif %}">
+                            <a class="main-menu-link" href="{{ child_link.url }}" {% if child_link.links != blank %}aria-haspopup="true" aria-controls="main-menu-panel-{{ outer_forloop_index }}-{{ forloop.index }}"{% endif %}>
+                              {{- child_link.title | strip -}}
+
+                              {%- if child_link.links != blank -%}
+                                <span class="child-indicator">
+                                  {% render 'svg-arrow-right' %}
+                                </span>
+                              {%- endif -%}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+
+                      {% if section.blocks.size > 0 %}
+
+                        {% assign cta_count = 0 %}
+                        {% for block in section.blocks %}
+                          {% assign nav_item = block.settings.menu_item | downcase %}
+                          {% assign thisLinkLowercase = link.title | downcase %}
+
+                          {% if thisLinkLowercase == nav_item %}
+                            {% if block.settings.image1 != blank or block.settings.title1 != blank or block.settings.subheading1 != blank or block.settings.button_label1 != blank %}
+                              {% assign cta_count = 1 %}
+                            {% endif %}
+
+                            {% if block.settings.image2 != blank or block.settings.title2 != blank or block.settings.subheading2 != blank or block.settings.button_label2 != blank %}
+                              {% assign cta_count = 2 %}
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+
+                        <ul class="nav-ctas nav-ctas--{{ cta_count }}">
+                          {% for block in section.blocks %}
+                            {% assign nav_item = block.settings.menu_item | downcase %}
+                            {% assign thisLinkLowercase = link.title | downcase %}
+
+                            {% if thisLinkLowercase == nav_item %}
+                              {% render 'nav-call-to-action', cta: block, settings: section.settings %}
+                            {% endif %}
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </div>
+
+                    {%- assign outer_forloop_index = forloop.index -%}
+                    {%- for child_link in link.links -%}
+                      {%- if child_link.links != blank -%}
+                        <div class="main-menu-panel main-menu-panel--child main-menu-panel--inactive-right" id="main-menu-panel-{{ outer_forloop_index }}-{{ forloop.index }}">
+                          <div class="main-menu-breadcrumbs">
+                            <span class="main-menu-breadcrumbs__item"><a class="main-menu-breadcrumbs__link" href="#main-menu-panel">{{ 'layout.header.menu_breadcrumb_home' | t }}</a></span>
+                            <span class="main-menu-breadcrumbs__divider">{% render 'svg-arrow-right' %}</span>
+                            <span class="main-menu-breadcrumbs__item"><a class="main-menu-breadcrumbs__link" href="#main-menu-panel-{{ outer_forloop_index }}">{{ link.title | strip }}</a></span>
+                            <span class="main-menu-breadcrumbs__divider">{% render 'svg-arrow-right' %}</span>
+                            <span class="main-menu-breadcrumbs__item">{{ child_link.title | strip }}</span>
+                          </div>
+                          <ul class="main-menu-links">
+                            {%- for grandchild_link in child_link.links -%}
+                              <li {% if grandchild_link.active %}class="active"{% endif %}>
+                                <a class="main-menu-link" href="{{ grandchild_link.url }}">
+                                  {{- grandchild_link.title | strip -}}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="focus-tint" aria-hidden="true" aria-label="{{ 'general.accessibility_labels.close' | t | escape }}"></a>
+        </div>
+
+        <div class="logo logo--{% if section.settings.logo == blank %}text{% else %}image{% endif %}{% if logo_height > 60 %} logo--shrinks-on-scroll{% endif %}" itemscope itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="{{ shop.name }}">
+          {%- if section.settings.logo != blank -%}
+          <a href="{{ routes.root_url }}" class="logo__image {% if section.settings.alt_logo %}has-contrast-image{% endif %}" itemprop="url">
+            <img src="{{ section.settings.logo | img_url: logo_size }}" alt="{{ section.settings.logo.alt | escape }}" itemprop="logo" />
+            {%- if section.settings.alt_logo -%}
+            <img class="logo__contrast-image" src="{{ section.settings.alt_logo | img_url: logo_size }}" alt="{{ section.settings.alt_logo.alt | escape }}" itemprop="logo" />
+            {%- endif -%}
+          </a>
+          {%- endif -%}
+
+          {%- if template == 'index' -%}
+          <h1 class="logo__text{% if section.settings.logo != blank %} hidden{% endif %}">
+            <a href="{{ routes.root_url }}" itemprop="url">{{ shop.name }}</a>
+          </h1>
+          {%- else -%}
+          <a class="logo__text{% if section.settings.logo != blank %} hidden{% endif %}" href="{{ routes.root_url }}" itemprop="url">{{ shop.name }}</a>
+          {%- endif -%}
+        </div>
+
+        <div class="header-items">
+          {% if section.settings.enable_inline_links %}
+            <span class="header-items__item header-items__account-link desktop-only">
+              {% if shop.customer_accounts_enabled %}
+                <a href="{{ routes.account_url }}" aria-label="{{ 'layout.customer.log_in' | t | escape }}">
+                  <span class="cart-link--icon cart-link--icon__account">{% render 'svg-account' %}</span>
+                </a>
+              {% endif %}
+            </span>
+          {% endif %}
+          <span class="header-items__item header-items__search-link">
+            <a href="{{ routes.search_url }}" class="header-search-toggle" aria-label="{{ 'layout.header.search' | t | escape }}">
+              {% render 'svg-search' %}
+            </a>
+          </span>
+          <span class="header-items__item header-items__cart-link">
+            <a href="{{ routes.cart_url }}" aria-label="{{ 'layout.header.cart' | t | escape }}">
+              <span class="cart-link--icon">{% render 'svg-cart' %}</span>
+              {% if cart.item_count > 0 %}<span class="cart__count">({{ cart.item_count }})</span>{% endif %}
+            </a>
+          </span>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="header-search">
+    <a href="#" class="header-search-toggle" aria-label="{{ 'general.accessibility_labels.close' | t | escape }}">{% render 'svg-x' %}</a>
+
+    <div class="header-search__content">
+      <h2 class="">{{ 'layout.search.title' | t }}</h2>
+      <form method="get" action="{{ routes.search_url }}" autocomplete="off">
+        <input type="hidden" name="type" value="{{ settings.search_type }}" />
+        <input type="hidden" name="options[prefix]" value="last" />
+        <div class="input-and-button-row">
+          <div class="input-and-button-row__input-wrapper input-with-clear">
+            <input class="input-and-button-row__input" type="text" name="q" placeholder="{{ 'layout.search.placeholder' | t | escape }}" aria-label="{{ 'layout.search.placeholder' | t | escape }}"  autocomplete="off" data-previous-value="">
+            <a class="input-with-clear__clear" href="#">{% render 'svg-close' %}</a>
+          </div>
+          <button class="button button--alt input-and-button-row__button" type="submit">{{ 'layout.search.submit' | t }}</button>
+        </div>
+      </form>
+      <div class="header-search__results-wrapper"
+           data-live-search-vendor="{{ settings.live_search_show_vendor }}"
+           data-live-search-meta="{{ settings.live_search_search_meta }}">
+        <div class="header-search__placeholder">
+          {%- for i in (1..5) -%}
+            <div class="search-result search-result--placeholder">
+              <div class="search-result__link">
+                <div class="search-result__image"></div>
+                <div class="search-result__detail">
+                  {%- if settings.live_search_show_vendor -%}
+                    <div class="search-result__vendor"></div>
+                  {%- endif -%}
+                  <div class="search-result__title"></div>
+                  <div class="search-result__price"></div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+        <div class="header-search__results"></div>
+      </div>
+
+      {% if section.settings.search_menu_linklist != blank and linklists[section.settings.search_menu_linklist].links.size > 0 %}
+        <div class="nav header-search__nav">
+          {%- if section.settings.search_menu_title != blank -%}
+            <h6 class="header-search__small-heading meta">{{ section.settings.search_menu_title }}</h6>
+          {%- endif -%}
+
+          <ul class="header-search__links">
+            {% for link in linklists[section.settings.search_menu_linklist].links %}
+            <li class="header-search__links__item"><a href="{{ link.url }}">{{ link.title | strip }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "Header",
+    "class": "shopify-section--header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "menu_bg_image",
+        "label": "Background image on main menu drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sticky",
+        "label": "Enable sticky header",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enabled_header_overlap",
+        "label": "Show header on top of banner images",
+        "default": true
+      },
+			{
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Image",
+        "info": "300 x 100px recommended"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 30,
+        "max": 250,
+        "step": 5,
+        "label": "Logo width",
+        "default": 100,
+        "unit": "px"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_logo_shrink",
+        "label": "Shrink logo on scroll down",
+        "default": true
+      },
+			{
+        "type": "header",
+        "content": "Contrast logo"
+      },
+			{
+        "type": "paragraph",
+        "content": "Optional logo used when over the header slideshow and images"
+      },
+			{
+        "type": "image_picker",
+        "id": "alt_logo",
+        "label": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+				"type": "link_list",
+				"id": "menu_linklist",
+				"label": "Menu",
+				"default": "main-menu"
+      },
+      {
+				"type": "richtext",
+				"id": "menu_under_text",
+				"label": "Side menu footer text"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_inline_links",
+        "label": "Show inline menu",
+        "info": "Links will only be shown on larger screens when they fit, otherwise the side menu link will be shown",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "menu_align_logo_left",
+        "label": "Keep the logo on the left",
+        "info": "Only applies to the inline menu",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Search"
+      },
+      {
+				"type": "text",
+				"id": "search_menu_title",
+				"label": "Quick links heading"
+      },
+      {
+				"type": "link_list",
+				"id": "search_menu_linklist",
+				"label": "Quick links menu"
+      },
+      {
+        "type": "header",
+        "content": "Contact information"
+      },
+      {
+        "type": "paragraph",
+        "content": "Shown in the side menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_links",
+        "label": "Show social icons",
+        "info": "These can be added in Theme Settings > Social media",
+        "default": false
+      },
+      {
+				"type": "text",
+				"id": "contact_info_phone",
+				"label": "Phone number"
+      },
+      {
+				"type": "text",
+				"id": "contact_info_email",
+				"label": "Email address",
+        "info": "This should be just an email address, no additional words."
+      },
+      {
+        "type": "checkbox",
+        "id": "contact_info_in_mega",
+        "label": "Show contact information in mega menus",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Language Selector",
+        "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_locale_selector",
+        "label": "Show language selector",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Currency Selector",
+        "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_currency_selector",
+        "label": "Show currency selector",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Menu promotion tint"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "tint_color",
+        "label": "Tint",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "tint_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Tint strength",
+        "default": 25
+      }
+		],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Menu promotion",
+        "settings": [
+          {
+            "type": "paragraph",
+            "content": "Promotions will be shown only when they fit on the screen. If you can't see all of your promotions, try making your browser window larger."
+          },
+          {
+            "type": "header",
+            "content": "Where to show"
+          },
+          {
+            "type": "text",
+            "id": "menu_item",
+            "label": "Menu item",
+            "info": "Enter a dropdown menu item title to display the menu promotion on, e.g. 'Shop'. If you leave this empty, the menu promotion will show on the first level of the side menu popup."
+          },
+          {
+            "type": "header",
+            "content": "Promotion 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "Image"
+          },
+          {
+            "type": "textarea",
+            "id": "title1",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "subheading1",
+            "label": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "button_label1",
+            "label": "Link text"
+          },
+          {
+            "type": "url",
+            "id": "cta_link1",
+            "label": "Link URL"
+          },
+          {
+            "type": "header",
+            "content": "Promotion 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Image"
+          },
+          {
+            "type": "textarea",
+            "id": "title2",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "subheading2",
+            "label": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "button_label2",
+            "label": "Link text"
+          },
+          {
+            "type": "url",
+            "id": "cta_link2",
+            "label": "Link URL"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
