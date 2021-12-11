@@ -42,7 +42,6 @@ File structure:
   src: url("https://fonts.shopifycdn.com/futura/futura_o4.9747e2e6ed2f11b894984527c927b42234e48815.woff2?h1=cnViZW5yb2phcy5jb20&hmac=140b81985aa4870f6eae7fb3e8fc32dfa11bea10de38f07adc651565ea480866") format("woff2"),
        url("https://fonts.shopifycdn.com/futura/futura_o4.d5edc6b1d9a050bbe0beb9093d73b883bf18c6c1.woff?h1=cnViZW5yb2phcy5jb20&hmac=4e5c9bc2a07808568fae5fa5f7a7d623b0499266fe8bbddfc4f69e0c6a7492a8") format("woff");
 }
-
 @font-face {
   font-family: Futura;
   font-weight: 700;
