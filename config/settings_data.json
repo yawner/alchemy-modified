@@ -1,1 +1,3409 @@
-{"current":{"col_text":"#000000","col_headings":"#000000","col_links":"#5c6ac4","col_page_bg":"#ffffff","col_stars":"#eeaf2e","col_header_text":"#ffffff","col_header_text_overlap":"#ffffff","col_header_bg":"#000000","col_nav_links":"#ffffff","col_nav_bg":"#152242","col_page_heading_text":"#000000","col_page_heading_bg":"#ffffff","col_search_bg":"#ffffff","col_search_text":"#ffffff","col_search_headings":"#000000","col_alt_text":"#000000","col_alt_text_bg":"rgba(0,0,0,0)","col_prod_sale":"rgba(0,0,0,0)","col_btn":"#ffffff","col_btn_bg":"#000000","col_label_sold_out":"#ffffff","col_label_sale":"#202e78","col_label_low_stock":"#000639","col_label_custom":"#50248f","col_popup_text":"#000000","font_override":true,"type_base_font":"futura_n4","type_heading_font":"din_neuzeit_grotesk_n3","type_nav_font":"neuzeit_s_n4","type_logo_font":"neuzeit_s_n4","font_size_base_int":15,"font_size_nav_int":32,"font_size_nav_inline_int":21,"logo_size_int":24,"button_shape":"sharp","button_border_width":"2","content_header_overlap":0,"content_header_min_height_mob":100,"content_header_min_height_desktop":100,"content_header_enable_breadcrumbs":false,"product_image_align":true,"product_hover_image":false,"label_sale_show":false,"label_soldout_show":true,"label_remain_show":false,"prod_stock_warn_limit_int":5,"product_label_position":"tl","social_twitter_url":"https:\/\/twitter.com\/rubenrojas?lang=en","social_facebook_url":"https:\/\/www.facebook.com\/rubenrojas","social_instagram_url":"https:\/\/www.instagram.com\/rubenrojas\/","social_youtube_url":"https:\/\/www.youtube.com\/channel\/UCbD0cSqe4Gf70FMFPZK160A","social_custom_icon_alt":"shopify:\/\/shop_images\/Ruben-logo-white_fc568f83-f1cd-45c7-8f16-8b63086116d7.png","social_custom_icon":"shopify:\/\/shop_images\/Ruben-Logo-black_4642c19c-0445-4d29-9937-22bee2cf5c06.png","social_custom_url":"https:\/\/rubenrojas.com","search_type":"product","live_search_show_vendor":false,"favicon":"shopify:\/\/shop_images\/Ruben-Logo-black_4642c19c-0445-4d29-9937-22bee2cf5c06.png","enable_transition_in":true,"enable_overlay_transition":true,"checkout_header_image":"","checkout_logo_image":"shopify:\/\/shop_images\/Ruben-Logo-black_4642c19c-0445-4d29-9937-22bee2cf5c06.png","checkout_logo_position":"center","checkout_logo_size":"small","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","col_page_heading_text_over_image":"#ffffff","share_image":"","show_multiple_currencies":true,"currency_format":"money_with_currency_format","supported_currencies":"INR GBP CAD USD AUD EUR","default_currency":"USD","sections":{"header":{"type":"header","blocks":{"44675a8c-f5cb-42a0-842b-d7c26b9d30ca":{"type":"image","disabled":true,"settings":{"menu_item":"","title1":"","subheading1":"","button_label1":"","cta_link1":"","title2":"","subheading2":"","button_label2":"","cta_link2":""}},"aa1efc46-cce8-4c26-b8f6-88678d2d5ec0":{"type":"image","disabled":true,"settings":{"menu_item":"","title1":"","subheading1":"","button_label1":"","cta_link1":"","title2":"","subheading2":"","button_label2":"","cta_link2":""}}},"block_order":["44675a8c-f5cb-42a0-842b-d7c26b9d30ca","aa1efc46-cce8-4c26-b8f6-88678d2d5ec0"],"settings":{"menu_bg_image":"shopify:\/\/shop_images\/Love-Ruben_9c272381-d766-4d3f-b532-e1d3facd0e4d.jpg","enable_sticky":true,"enabled_header_overlap":false,"logo":"shopify:\/\/shop_images\/Ruben-logo-white_fc568f83-f1cd-45c7-8f16-8b63086116d7.png","logo_width":135,"enable_logo_shrink":true,"alt_logo":"shopify:\/\/shop_images\/Ruben-Logo-black_4642c19c-0445-4d29-9937-22bee2cf5c06.png","menu_linklist":"main-menu-new","menu_under_text":"","enable_inline_links":true,"menu_align_logo_left":true,"search_menu_title":"","search_menu_linklist":"","show_social_links":true,"contact_info_phone":"","contact_info_email":"","contact_info_in_mega":false,"show_locale_selector":true,"show_currency_selector":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":25}},"footer":{"type":"footer","settings":{"footer_bg_image":"shopify:\/\/shop_images\/Love-bg.jpg","menu_linklist":"footer","menu_linklist_2":"","menu_linklist_3":"","footer_bg_color":"rgba(0,0,0,0)","show_menu_headings":false,"show_social":true,"show_text_area":false,"footer_color_text":"#000000","text_area_heading":"","text_area_text":"","show_payment_icons":false,"show_locale_selector":false,"show_currency_selector":true,"show_newsletter":false,"newsletter_heading":"Subscribe to our newsletter","newsletter_text":"","newsletter_button_text":"Subscribe"}},"collection-template":{"type":"collection-template","settings":{"hide_collection_header":false,"products_per_row_int":4,"pagination_limit":100,"show_tags":false,"coll_show_sort":true,"coll_show_feat":false,"grid_show_vendor":false,"header_image":"shopify:\/\/shop_images\/RR-signing-print.png","header_image_position":"center-center","head_img_coll_handled":false,"body_img_coll_handled":true}},"product-template":{"type":"product-template","settings":{"description_position":"ub","show_tax_and_shipping":true,"prod_show_brand":false,"prod_show_sku":false,"prod_show_sharing":true,"prod_show_breadcrumbs":true,"enable_ajax_form":"true","enable_payment_button":false,"show_pickup_availability":true,"show_backorder_text":true,"image_layout":"under","prod_lightbox":true,"prod_lightbox_zoom":true,"enable_video_looping":false,"header_title_show":false}},"1483635546290":{"type":"featured-blog","disabled":true,"settings":{"heading":"","blog":""}},"banner-index":{"type":"banner-index","blocks":{"0fa2bf39-9f62-42c2-bdd3-95c82c05df5e":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/DSC05046.jpg","image_url":"","tint_color":"#000000","tint_opacity":25,"color":"#ffffff","heading":"Slideshow","subheading":"Tell your story with images","button_1_text":"See more","button_1_url":"","button_2_text":"","button_2_url":""}},"1483959039059":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/RR-Hero-New.jpg","image_url":"shopify:\/\/collections\/black-rainbow-collection","tint_color":"#000000","tint_opacity":11,"color":"#ffffff","heading":"MAKE A STATEMENT","subheading":"THE BLACK RAINBOW COLLECTION","button_1_text":"SHOP NOW","button_1_url":"shopify:\/\/collections\/black-rainbow-collection","button_2_text":"","button_2_url":""}},"48707abd-3ea1-4679-99f1-30563e013e61":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Championship-hoodie-banner.png","image_url":"","tint_color":"#000000","tint_opacity":7,"color":"#ffffff","heading":"BE LEGENDARY","subheading":"INTRODUCING THE CHAMPIONSHIP HOODIE","button_1_text":"SHOP NOW","button_1_url":"shopify:\/\/products\/championship-hoodie","button_2_text":"","button_2_url":""}}},"block_order":["0fa2bf39-9f62-42c2-bdd3-95c82c05df5e","1483959039059","48707abd-3ea1-4679-99f1-30563e013e61"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-left-center","slide_mode":"fade","autoplay":false,"autoplay_speed":7,"slide_show_mobile_arrows":false,"head_img_height_fixed":false,"head_img_height_int":1000}},"announcement":{"type":"announcement","settings":{"show_announcement":true,"announcement_home_only":false,"announcement_bar_text":"FREE SHIPPING ON CLOTHING ORDERS GREATER THAN $135","announcement_bar_link":"https:\/\/rubenrojas.com\/pages\/black-friday-sale-2021","announcement_bar_bg_color":"#ff8ebd","announcement_bar_bg_text":"#000000"}},"1566482260946":{"type":"featured-images","blocks":{"1566482439149":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Shop_Women-New.jpg","tint_color":"#000000","tint_opacity":10,"link":"shopify:\/\/collections\/women","size":"third","title":"","subheading":"","cta_text":"SHOP WOMEN","text_color":"#ffffff"}},"1566482260946-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/ShopMenNew.jpg","tint_color":"#000000","tint_opacity":10,"link":"shopify:\/\/collections\/men","size":"third","title":"","subheading":"","cta_text":"SHOP MEN","text_color":"#ffffff"}},"a704148c-52d3-4bd0-bd8f-80802e183bb1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Humanity-print-website.jpg","tint_color":"#000000","tint_opacity":10,"link":"shopify:\/\/collections\/artwork","size":"third","title":"","subheading":"","cta_text":"SHOP ART","text_color":"#ffffff"}}},"block_order":["1566482439149","1566482260946-1","a704148c-52d3-4bd0-bd8f-80802e183bb1"],"settings":{"skip_container":true}},"1566493567944":{"type":"testimonials","disabled":true,"blocks":{"1566493567944-0":{"type":"testimonial","settings":{"star_rating":5,"testimonial":"Add customer reviews or press releases to showcase your store’s happy customers.","link":"","author_name":"Author’s name"}},"1568803947076":{"type":"testimonial","settings":{"star_rating":5,"testimonial":"Add customer reviews or press releases to showcase your store’s happy customers.","link":"","author_name":"Author’s name"}}},"block_order":["1566493567944-0","1568803947076"],"settings":{"title":"Testimonials","autoplay":false,"logo_height":40}},"1566494880243":{"type":"video","disabled":true,"settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","subheading":"","video_title":"Video","title_size":60,"text":"<p>Pair text with a video to draw attention to an important detail of your brand or product line.<\/p>","enlarge_text":false,"text_alignment":"center center","image_position":"center center","skip_container":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":0}},"1566496449350":{"type":"image-with-text","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/LTL-home.png","layout":"right","title":"FOR THE LOVE OF THE GAME","text":"","button_text":"Shop The Collection","button_link":"shopify:\/\/collections\/for-the-love-of-the-game","text_alignment":"center","color_bg":"#ffffff","color_text":"#3e5eab","color_head":"#139de1","skip_container":true}},"popup":{"type":"popup","settings":{"mode":"disabled","popup_delay_seconds":5,"popup_dismiss_for_days":30,"position":"center","title":"Sign up and save","text":"<p>Entice customers to sign up for your mailing list with discounts or exclusive offers.<\/p>","show_newsletter":true,"show_social_icons":true}},"cart-template":{"type":"cart-template","settings":{"cart_terms_show":false,"cart_terms_page":"","cart_note_show":true,"show_tax_and_shipping":true,"show_additional_checkout_buttons":true,"show_backorder_text":true,"header_image_position":"center-center"}},"162439492940bf49f1":{"type":"slideshow","blocks":{"1624394929a70973c0-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Ruben-Hero-Sand.jpg","image_url":"","tint_color":"#000000","tint_opacity":25,"color":"#ffffff","heading":"A NEW COLOR INSPIRED BY THE CALIFORNIA SANDS","subheading":"Check out the latest collection","button_1_text":"SHOP NOW","button_1_url":"shopify:\/\/collections\/all","button_2_text":"","button_2_url":""}}},"block_order":["1624394929a70973c0-0"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-center","slide_mode":"slide","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"skip_container":true,"head_img_height_fixed":false,"head_img_height_int":850}},"product-features":{"type":"product-features","settings":{"show":false,"heading":"","icon_size":25,"color_icon":"#333333","color_text":"#333333","color_bg":"#fff8f4"}},"product-recommendations":{"type":"product-recommendations","settings":{"recommendations_title":"YOU MAY ALSO LOVE","show_recommendations":true,"products_per_row_int":4,"grid_show_vendor":false}},"page-template":{"type":"page-template","settings":{"header_image_position":"center-center"}},"1624994489490e427d":{"type":"featured-images","blocks":{"1624994489490e427d-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Love-Ruben_9c272381-d766-4d3f-b532-e1d3facd0e4d.jpg","tint_color":"#000000","tint_opacity":25,"link":"","size":"full","title":"Love transcends all labels, colors, stigmas, you name it.","subheading":"","cta_text":"MEET RUBEN","text_color":"#ffffff"}}},"block_order":["1624994489490e427d-0"],"settings":{"skip_container":true}},"162561035400e8697e":{"type":"featured-images","disabled":true,"blocks":{"162561035315ef8012-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/love-background.jpg","tint_color":"#000000","tint_opacity":0,"link":"","size":"full","title":"Image text","subheading":"Hellooooooooo","cta_text":"","text_color":"#212b36"}}},"block_order":["162561035315ef8012-0"],"settings":{"skip_container":true}},"1625778928bfa4c2cd":{"type":"slideshow","disabled":true,"blocks":{"1625778928caf6de1c-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Its-A-New-Day.jpg","image_url":"","tint_color":"#000000","tint_opacity":25,"color":"#ffffff","heading":"Slideshow","subheading":"Tell your story with images","button_1_text":"","button_1_url":"","button_2_text":"","button_2_url":""}},"1625778928caf6de1c-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Black-Couch-You-Belong-Here.jpg","image_url":"","tint_color":"#000000","tint_opacity":25,"color":"#ffffff","heading":"Slideshow","subheading":"Tell your story with images","button_1_text":"Shop","button_1_url":"","button_2_text":"","button_2_url":""}},"63836bae-3950-410e-9ab8-6bdfb9f2f3cd":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Black-Couch-You-Belong-Here.jpg","image_url":"","tint_color":"#000000","tint_opacity":25,"color":"#ffffff","heading":"Slideshow","subheading":"Tell your story with images","button_1_text":"","button_1_url":"","button_2_text":"","button_2_url":""}}},"block_order":["1625778928caf6de1c-1","1625778928caf6de1c-0","63836bae-3950-410e-9ab8-6bdfb9f2f3cd"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-center","slide_mode":"fade","autoplay":true,"autoplay_speed":1,"slide_show_mobile_arrows":false,"skip_container":true,"head_img_height_fixed":true,"head_img_height_int":700}},"16257791464e8b17ac":{"type":"background-video","settings":{"video":"https:\/\/cdn.shopify.com\/s\/files\/1\/0169\/0425\/7590\/files\/Black-Couch-You-Belong-Here_7_1.mp4?v=1628734527","subheading":"THE INSPIRE COLLECTION","title":"","title_size":40,"text":"","enlarge_text":true,"button_label":"SHOP NOW","button_link":"shopify:\/\/collections\/inspire-collection","text_alignment":"bottom center","height":"fixed","height_desktop":1000,"height_mobile":380,"skip_container":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":29}},"1626207078ef47ce71":{"type":"featured-collection","disabled":true,"settings":{"title":"","collection":"for-the-love-of-the-game","products_per_row_int":4,"product_rows_int":1,"cta_text":"See more","grid_show_vendor":false}},"1626222944dd6c2445":{"type":"slideshow","blocks":{"1626222944dd6c2445-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/RR-Hero-New.jpg","image_url":"","tint_color":"#000000","tint_opacity":25,"color":"#ffffff","heading":"LOVE TRANSCENDS ALL LABELS","subheading":"THE BLACK RAINBOW COLLECTION IS HERE","button_1_text":"SHOP NOW","button_1_url":"shopify:\/\/collections\/black-rainbow-collection","button_2_text":"","button_2_url":""}}},"block_order":["1626222944dd6c2445-0"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-center","slide_mode":"slide","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"skip_container":true,"head_img_height_fixed":false,"head_img_height_int":700}},"1626222961e1629cc3":{"type":"featured-collection","disabled":true,"settings":{"title":"","collection":"black-rainbow-collection","products_per_row_int":4,"product_rows_int":1,"cta_text":"See more","grid_show_vendor":false}},"page-contact-template":{"type":"page-contact-template","settings":{"header_image_position":"center-center"}},"1626294922a84a5294":{"type":"newsletter","settings":{"heading":"SUBSCRIBE TO THE LOVE LETTER","text":"<p>Promotions, new products and sales - directly to your inbox<\/p>","button_text":"Subscribe","color_bg":"#000000"}},"16262949739f556d29":{"type":"featured-images","disabled":true,"blocks":{"16262949739f556d29-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Sets-hero.png","tint_color":"#000000","tint_opacity":12,"link":"","size":"full","title":"THE MORE LOVE THE BETTER","subheading":"","cta_text":"SHOP BUNDLES","text_color":"#ffffff"}},"16262949739f556d29-1":{"type":"image","disabled":true,"settings":{"tint_color":"#000000","tint_opacity":25,"link":"","size":"half","title":"Image text","subheading":"","cta_text":"See more","text_color":"#ffffff"}}},"block_order":["16262949739f556d29-0","16262949739f556d29-1"],"settings":{"skip_container":true}},"1628032205fa2ee49c":{"type":"image-with-text","settings":{"image":"shopify:\/\/shop_images\/OG-Love-Herro.png","layout":"left","title":"THE ORIGINAL LOVE COLLECTION","text":"","button_text":"Shop NOW","button_link":"shopify:\/\/collections\/original-love-collection","text_alignment":"center","color_bg":"#ffffff","color_text":"#000000","color_head":"#212b36","skip_container":true}},"1629843372d24dda7f":{"type":"slideshow","blocks":{"f83344e6-23f4-43ca-a666-2a70a261e8ec":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Sets-hero.png","image_url":"","tint_color":"#000000","tint_opacity":15,"color":"#ffffff","heading":"THE MORE LOVE THE BETTER","subheading":"","button_1_text":"SHOP BUNDLES","button_1_url":"shopify:\/\/collections\/bundles","button_2_text":"","button_2_url":""}}},"block_order":["f83344e6-23f4-43ca-a666-2a70a261e8ec"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-center","slide_mode":"slide","autoplay":false,"autoplay_speed":7,"slide_show_mobile_arrows":false,"skip_container":true,"head_img_height_fixed":false,"head_img_height_int":700}},"page-story-template":{"type":"page-story-template","blocks":{"1c8e2471-a894-4681-bd9b-960ecfcec2b0":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/Ruben-About-Hero.png","tint_color1":"#000000","tint_opacity1":24,"link1":"","size1":"full","title1":"INSPIRE OTHERS TO LIVE THROUGH LOVE","subheading1":"","cta_text1":"","text_color1":"#ffffff","tint_color2":"#000000","tint_opacity2":25,"link2":"","size2":"half","title2":"Image text","subheading2":"","cta_text2":"See more","text_color2":"#ffffff","tint_color3":"#000000","tint_opacity3":25,"link3":"","size3":"half","title3":"Image text","subheading3":"","cta_text3":"See more","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}},"5b338937-1ee3-4e6a-864c-a709d94f7a9a":{"type":"rich-text","settings":{"title":"It all started with one word — LOVE","text":"<p>Love is a noun, a verb, and a way of life.<\/p><p>We wake up every day and choose love. We want to change the way people treat each other, the world, and themselves. There’s a lot of talk about love and making the world a better place, but we’re actually taking and inspiring action. We’re not selling another ‘love’ shirt or piece of ‘love’ art. We’re reminding people that they matter with our words and actions, and we’re inviting you to join us.<\/p><p>This is an active state of caring. This is a movement of people who operate out of love, not fear. This is acting from the heart. This is Live Through Love.<\/p>","link_text":"","link_url":"","color_bg":"#000000","color_text":"#ffffff","color_head":"#ffffff"}},"861190ed-c772-4fd1-a1af-c47cbc207da6":{"type":"image-with-text","settings":{"image":"shopify:\/\/shop_images\/rubensmile.jpg","layout":"right","title":"MAKING AN IMPACT","text":"<p>By using the urban landscape as his canvas, Ruben encourages communities to change for the better through optimism and collaboration. These once vacant walls are now vibrant reminders that inspire those who see them to dream big, feel beautiful, live in possibility, and to love. Ruben’s murals can be seen in cities across the country and around the world from Paris to New York and Florida to Mississippi. <\/p>","button_text":"","button_link":"","text_alignment":"center","color_bg":"#f4f4f4","color_text":"#000000","color_head":"#000000","skip_container":true}},"b553027b-ed53-4f16-94d6-ca3143a98956":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/We_Spread.png","tint_color1":"#000000","tint_opacity1":6,"link1":"","size1":"full","title1":"WE SPREAD OUR MESSAGE THROUGH SEVERAL OFFERINGS","subheading1":"","cta_text1":"","text_color1":"#000000","tint_color2":"#000000","tint_opacity2":25,"link2":"","size2":"half","title2":"Image text","subheading2":"","cta_text2":"See more","text_color2":"#ffffff","tint_color3":"#000000","tint_opacity3":25,"link3":"","size3":"half","title3":"Image text","subheading3":"","cta_text3":"See more","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}},"09c6cd7c-2930-48a5-9a28-9546b069d162":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/Art-Mission.png","tint_color1":"#000000","tint_opacity1":11,"link1":"https:\/\/rubenrojas.com\/collections\/artwork","size1":"quarter","title1":"","subheading1":"","cta_text1":"ART","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/Clothing-mission.png","tint_color2":"#000000","tint_opacity2":10,"link2":"https:\/\/rubenrojas.com\/collections\/all","size2":"quarter","title2":"","subheading2":"","cta_text2":"CLOTHING","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/Murals-Mission.png","tint_color3":"#000000","tint_opacity3":10,"link3":"https:\/\/rubenrojas.com\/pages\/mural-locations","size3":"quarter","title3":"","subheading3":"","cta_text3":"MURALS","text_color3":"#ffffff","image4":"shopify:\/\/shop_images\/Book-Mission.png","tint_color4":"#000000","tint_opacity4":10,"link4":"https:\/\/rubenrojas.com\/pages\/book-1","size4":"quarter","title4":"","subheading4":"","cta_text4":"BOOK","text_color4":"#ffffff"}},"79283db0-66e2-4255-a8ef-360495b93b3a":{"type":"gallery","settings":{"skip_container":true,"tint_color1":"#000000","tint_opacity1":25,"link1":"","size1":"full","title1":"BEYOND MURALS","subheading1":"Ruben’s portfolio of work extends past empty wall canvases. He is a TED speaker, helping spread the message of art creating impact, a product designer and also a corporate consultant.","cta_text1":"","text_color1":"#ffffff","tint_color2":"#000000","tint_opacity2":25,"link2":"","size2":"two-thirds","title2":"Image text","subheading2":"","cta_text2":"Get in touch","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/104438818_1620591548105766_5346203510104963607_n.jpg","tint_color3":"#000000","tint_opacity3":49,"link3":"shopify:\/\/pages\/contact","size3":"full","title3":"LET'S ALL SHARE IN THE LOVE","subheading3":"","cta_text3":"GET IN TOUCH","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}}},"block_order":["1c8e2471-a894-4681-bd9b-960ecfcec2b0","5b338937-1ee3-4e6a-864c-a709d94f7a9a","861190ed-c772-4fd1-a1af-c47cbc207da6","b553027b-ed53-4f16-94d6-ca3143a98956","09c6cd7c-2930-48a5-9a28-9546b069d162","79283db0-66e2-4255-a8ef-360495b93b3a"],"settings":{"show_page_content":true,"header_image_position":"center-center"}},"page-story-template-artsy":{"type":"page-story-template-artsy","blocks":{"14477a88-21dc-44ae-b510-d52f23bb3dcb":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/ruben-book-standing.jpg","tint_color1":"#000000","tint_opacity1":25,"link1":"","size1":"full","title1":"IT ALL STARTED WITH ONE WORD — LOVE","subheading1":"","cta_text1":"SHOP NOW","text_color1":"#ffffff","tint_color2":"#000000","tint_opacity2":25,"link2":"","size2":"half","title2":"Image text","subheading2":"","cta_text2":"See more","text_color2":"#ffffff","tint_color3":"#000000","tint_opacity3":25,"link3":"","size3":"half","title3":"Image text","subheading3":"","cta_text3":"See more","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}},"34f22af6-bba8-41f7-887a-03a14a105fdb":{"type":"rich-text","settings":{"title":"LIVE THROUGH LOVE: THE BOOK","text":"<p>Poetry, philosophy, and personal reflection. A collection of empowering messages for when you need them most.<\/p><p><br\/><\/p><p>“If there’s one thing I’ve learned in my journey, it’s that it’s easy to question our belonging, worth, and value. I believe that each and every one of us belongs here and brings so much value to those around us. By living through love: showing it, sharing it, and wearing it, we are supporting each other to shift the pendulum toward love and away from fear.” –Ruben Rojas<\/p>","link_text":"","link_url":"","color_bg":"#000000","color_text":"#ffffff","color_head":"#fdfdfd"}},"f6b3463c-93c8-4c71-8ca5-62225c87499e":{"type":"custom-html","settings":{"skip_container":true,"custom_html":"<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/zEwvmWH23Ak\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>"}},"131fb874-7402-44f8-a72b-2a61378b3d77":{"type":"image-with-text","settings":{"image":"shopify:\/\/shop_images\/Book_Open_2.png","layout":"right","title":"DISCOVER SELF-LOVE","text":"<p>Within the pages of this easy-to-understand book, you’ll discover timeless wisdom in the poetry of Ruben’s words. You’ll not only fall in love with Ruben’s philosophy, but you’ll fall in love with yourself, and that is a life lesson that will last forever. <\/p>","button_text":"","button_link":"","text_alignment":"center","color_bg":"#f4f4f4","color_text":"#454f5b","color_head":"#212b36","skip_container":true}},"0b57ec39-d922-4a7a-bf37-5a9c1f2b81b7":{"type":"image-with-text","settings":{"image":"shopify:\/\/shop_images\/Book-Open.png","layout":"left","title":"WRITE YOURSELF A LOVE LETTER","text":"<p>Dive deep and write those love letters to yourself. There are no rules, especially when it comes to defining your own self-love. When you live through love, that perfect imperfection blooms vibrantly, and you can’t help but genuinely smile when you see your own reflection.<\/p>","button_text":"","button_link":"","text_alignment":"center","color_bg":"#f4f4f4","color_text":"#454f5b","color_head":"#212b36","skip_container":true}},"db437b75-4498-48b7-93f5-e0babc5a3a9f":{"type":"custom-html","disabled":true,"settings":{"skip_container":false,"custom_html":""}}},"block_order":["14477a88-21dc-44ae-b510-d52f23bb3dcb","34f22af6-bba8-41f7-887a-03a14a105fdb","f6b3463c-93c8-4c71-8ca5-62225c87499e","131fb874-7402-44f8-a72b-2a61378b3d77","0b57ec39-d922-4a7a-bf37-5a9c1f2b81b7","db437b75-4498-48b7-93f5-e0babc5a3a9f"],"settings":{"show_page_content":true,"header_image_position":"center-center"}},"1629940268d9c2c613":{"type":"background-video","disabled":true,"settings":{"video":"https:\/\/cdn.shopify.com\/s\/files\/1\/0169\/0425\/7590\/files\/fire_background_loop2_videvo2_1.mp4?v=1629494981","subheading":"","title":"TURN UP THE HEAT WITH LOVE","title_size":48,"text":"","enlarge_text":false,"button_label":"SHOP THE SET","button_link":"https:\/\/rubenrojas.com\/pages\/fuego-bundle?utm_source=Beautify%20List&utm_medium=email&utm_campaign=08%2F19%2F21%20-%20Fuego%20Drop%20%28XzKvek%29&_kx=GrsMtmh9TGTJRcdfZQ5Guv8NHXBez5YL1rEAOM3zI4jbiWNMh6fper_mR_ZSTCpP.KFXdHy","text_alignment":"center center","height":"fixed","height_desktop":1000,"height_mobile":260,"skip_container":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":25}},"page-story-projects-template":{"type":"page-story-projects-template","blocks":{"d3f3777b-7674-48bd-a7b3-e6dc62d93c88":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/love-house.png","tint_color1":"#000000","tint_opacity1":25,"link1":"shopify:\/\/pages\/love-house","size1":"third","title1":"Love House","subheading1":"","cta_text1":"Read More","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/Love-Lincoln.png","tint_color2":"#000000","tint_opacity2":22,"link2":"shopify:\/\/pages\/love-on-lincoln-1","size2":"third","title2":"Love on Lincoln","subheading2":"","cta_text2":"Read More","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/SummerofLove.png","tint_color3":"#000000","tint_opacity3":25,"link3":"shopify:\/\/pages\/love-on-lincoln","size3":"third","title3":"Summer of Love","subheading3":"","cta_text3":"Read More","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}},"ce26fe44-b0c8-4536-b90a-cfa189bea603":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/Forgive.png","tint_color1":"#000000","tint_opacity1":25,"link1":"shopify:\/\/pages\/forgive-forgiven","size1":"third","title1":"Forgive\/Forgiven","subheading1":"","cta_text1":"Read More","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/YouBelong.png","tint_color2":"#000000","tint_opacity2":25,"link2":"shopify:\/\/pages\/you-belong-here","size2":"third","title2":"You Belong Here","subheading2":"","cta_text2":"Read More","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/Dreamer_cc68ca79-7107-41c8-a4f1-0c507931b11d.png","tint_color3":"#000000","tint_opacity3":25,"link3":"shopify:\/\/pages\/dreamer","size3":"third","title3":"Dreamer","subheading3":"","cta_text3":"Read More","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}},"8760ac22-1f9b-4857-a461-6ef037b0a993":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/Now_4ever.png","tint_color1":"#000000","tint_opacity1":25,"link1":"shopify:\/\/pages\/now-forever","size1":"third","title1":"Now & Forever","subheading1":"","cta_text1":"Read More","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/Dowhatyoulove.png","tint_color2":"#000000","tint_opacity2":25,"link2":"shopify:\/\/pages\/do-what-you-love","size2":"third","title2":"Do What You Love","subheading2":"","cta_text2":"Read More","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/LoveRises.png","tint_color3":"#000000","tint_opacity3":25,"link3":"shopify:\/\/pages\/love-rises","size3":"third","title3":"Love Rises","subheading3":"","cta_text3":"Read More","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}}},"block_order":["d3f3777b-7674-48bd-a7b3-e6dc62d93c88","ce26fe44-b0c8-4536-b90a-cfa189bea603","8760ac22-1f9b-4857-a461-6ef037b0a993"],"settings":{"show_page_content":true,"header_image_position":"center-center"}},"page-story-projects-base-template":{"type":"page-story-projects-base-template","blocks":{"6f05125a-35ad-4ff8-afe9-7b6291c101ad":{"type":"rich-text","settings":{"title":"Click on any of the icons below to read feature articles covering Ruben Rojas and his 'Live Through Love' Movment","text":"","link_text":"","link_url":"","color_bg":"#ffffff","color_text":"#000000","color_head":"#000000"}},"a513904d-45e4-4e8f-9eed-4dd1e3e6b0a1":{"type":"gallery","settings":{"skip_container":false,"image1":"shopify:\/\/shop_images\/Medium.jpg","tint_color1":"#000000","tint_opacity1":0,"link1":"https:\/\/medium.com\/authority-magazine\/ruben-rojas-5-things-i-wish-someone-told-me-when-i-first-became-an-artist-ca51ed1869bf","size1":"quarter","title1":"","subheading1":"","cta_text1":"","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/Artist-Work-Ethic_52ea86b5-6426-4614-bac9-d58183b2120a.jpg","tint_color2":"#000000","tint_opacity2":0,"link2":"https:\/\/podcasts.apple.com\/us\/podcast\/artist-ruben-rojas\/id1570939201?i=1000534530033","size2":"quarter","title2":"","subheading2":"","cta_text2":"","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/AppNew_cbf6fdfc-308a-493a-892b-74c9e323c4bf.jpg","tint_color3":"#000000","tint_opacity3":0,"link3":"https:\/\/www.apparelnews.net\/news\/2021\/jul\/29\/ruben-rojas-falls-love-sharing-important-message-t\/","size3":"quarter","title3":"","subheading3":"","cta_text3":"","text_color3":"#ffffff","image4":"shopify:\/\/shop_images\/Eclair_dc0bf52e-a887-4a68-903e-4474c8c5da33.jpg","tint_color4":"#000000","tint_opacity4":0,"link4":"https:\/\/www.eclair-magazine.com\/ruben-rojas","size4":"quarter","title4":"","subheading4":"","cta_text4":"","text_color4":"#ffffff"}},"e8283fc2-b087-4946-88ab-f403a032e493":{"type":"gallery","settings":{"skip_container":false,"image1":"shopify:\/\/shop_images\/mensj.png","tint_color1":"#000000","tint_opacity1":0,"link1":"https:\/\/www.mensjournal.com\/features\/neighborhood-heroes-urban-artist-and-muralist-ruben-rojas\/","size1":"quarter","title1":"","subheading1":"","cta_text1":"","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/latimes.png","tint_color2":"#000000","tint_opacity2":0,"link2":"https:\/\/www.latimes.com\/lifestyle\/story\/2020-05-29\/17-options-matching-mask-outfits-summers-newest-fashion-trend","size2":"quarter","title2":"","subheading2":"","cta_text2":"","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/abc7.png","tint_color3":"#000000","tint_opacity3":0,"link3":"https:\/\/abc7.com\/community-events\/la-muralist-spreads-message-you-cant-quarantine-love\/6093804\/?fbclid=IwAR1s4GzpH54lq6J8Ne8utg_6DSLKzN8hxe8dmyZqY2ULtpm0azA86UoFHWA","size3":"quarter","title3":"","subheading3":"","cta_text3":"","text_color3":"#ffffff","image4":"shopify:\/\/shop_images\/lisashow.png","tint_color4":"#000000","tint_opacity4":0,"link4":"https:\/\/www.byuradio.org\/episode\/d404a781-1111-4c65-aebb-4d4d818b2db6\/d404a781-1111-4c65-aebb-4d4d818b2db6?playhead=2100&autoplay=true","size4":"quarter","title4":"","subheading4":"","cta_text4":"","text_color4":"#ffffff"}},"709d54fb-a7b0-4463-8f25-5d743dbf5ff6":{"type":"gallery","settings":{"skip_container":false,"image1":"shopify:\/\/shop_images\/inside.png","tint_color1":"#000000","tint_opacity1":0,"link1":"","size1":"quarter","title1":"","subheading1":"","cta_text1":"","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/smdp.png","tint_color2":"#000000","tint_opacity2":0,"link2":"https:\/\/www.smdp.com\/santa-monicas-mural-meistro\/175779","size2":"quarter","title2":"","subheading2":"","cta_text2":"","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/idla.png","tint_color3":"#000000","tint_opacity3":0,"link3":"https:\/\/www.identifyla.com\/thelatest\/fathers-day-gift-guide-2020","size3":"quarter","title3":"","subheading3":"","cta_text3":"","text_color3":"#ffffff","image4":"shopify:\/\/shop_images\/stupid.png","tint_color4":"#000000","tint_opacity4":0,"link4":"https:\/\/stupiddope.com\/2020\/04\/16\/creative-in-quarantine-with-bladezilla-x-life-through-love\/","size4":"quarter","title4":"","subheading4":"","cta_text4":"","text_color4":"#ffffff"}}},"block_order":["6f05125a-35ad-4ff8-afe9-7b6291c101ad","a513904d-45e4-4e8f-9eed-4dd1e3e6b0a1","e8283fc2-b087-4946-88ab-f403a032e493","709d54fb-a7b0-4463-8f25-5d743dbf5ff6"],"settings":{"show_page_content":true,"header_image_position":"center-center"}},"page-art-template":{"type":"page-art-template","blocks":{"2ff38814-fbe1-421e-9d65-6dec42be405c":{"type":"rich-text","settings":{"title":"ART IS LIFE. LIFE IS ART. All of the works on this page are one-of-a-kind originals by Ruben, inspired by his iconic murals and signature style. Sold pieces are for reference and can be commissioned for new work in that similar style. Due to the abstract nature of Ruben’s art, no two pieces will look alike.","text":"","link_text":"","link_url":"","color_bg":"#ffffff","color_text":"#000000","color_head":"#000000"}},"8909cbb9-9525-4043-aced-3901a9a1e3d2":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/ruben-book-standing-wide.jpg","tint_color1":"#000000","tint_opacity1":43,"link1":"","size1":"full","title1":"Image text","subheading1":"","cta_text1":"See more","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/Kobe-bannre.png","tint_color2":"#000000","tint_opacity2":41,"link2":"","size2":"full","title2":"Image text","subheading2":"","cta_text2":"See more","text_color2":"#ffffff","tint_color3":"#000000","tint_opacity3":25,"link3":"","size3":"half","title3":"Image text","subheading3":"","cta_text3":"See more","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}},"ec73385f-0179-48a8-8457-d8fd401689fd":{"type":"image-with-text","settings":{"image":"shopify:\/\/shop_images\/ruben-book-standing-wide.jpg","layout":"right","title":"Image with text","text":"<p>Pair large text with an image to give focus to your chosen product, collection or blog post. Add details on availability, style or even provide a review.<\/p>","button_text":"Shop","button_link":"","text_alignment":"center","color_bg":"#f4f4f4","color_text":"#454f5b","color_head":"#212b36","skip_container":true}}},"block_order":["2ff38814-fbe1-421e-9d65-6dec42be405c","8909cbb9-9525-4043-aced-3901a9a1e3d2","ec73385f-0179-48a8-8457-d8fd401689fd"],"settings":{"show_page_content":true,"header_image_position":"center-center"}},"page-story-art-template":{"type":"page-story-art-template","blocks":{"8e0f67db-9287-435e-a1ed-2f53751609e5":{"type":"rich-text","settings":{"title":"ART IS LIFE. LIFE IS ART.","text":"<p>You’ve seen his murals. Now, bring his message home. All of the works on this page are prints of originals by Ruben, inspired by his iconic murals and signature style.<\/p>","link_text":"","link_url":"","color_bg":"#282727","color_text":"#ffffff","color_head":"#ffffff"}},"4b599007-321d-4f98-a596-bf5e1fae7b78":{"type":"gallery","settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/kobe-block-small.png","tint_color1":"#000000","tint_opacity1":25,"link1":"","size1":"half","title1":"Kobe Collection","subheading1":"","cta_text1":"Shop Now","text_color1":"#ffffff","image2":"shopify:\/\/shop_images\/inspire-block-small.png","tint_color2":"#000000","tint_opacity2":25,"link2":"","size2":"half","title2":"Inspire Collection","subheading2":"","cta_text2":"Shop Now","text_color2":"#ffffff","image3":"shopify:\/\/shop_images\/Love-colored.png","tint_color3":"#000000","tint_opacity3":25,"link3":"","size3":"half","title3":"Signature Series","subheading3":"","cta_text3":"Shop Now","text_color3":"#ffffff","image4":"shopify:\/\/shop_images\/B_W.png","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Black & White","subheading4":"","cta_text4":"Shop Now","text_color4":"#ffffff"}}},"block_order":["8e0f67db-9287-435e-a1ed-2f53751609e5","4b599007-321d-4f98-a596-bf5e1fae7b78"],"settings":{"show_page_content":true,"header_image_position":"center-center"}},"page-story-template-mission":{"type":"page-story-template-mission","blocks":{"735360e0-7ae8-4b44-8744-4dcf25ff8380":{"type":"rich-text","settings":{"title":"MISSION","text":"<p>It all starts with one word: love. Love is a noun, a verb, and a way of life.<\/p><p><\/p><p>We wake up every day and choose love. We want to change the way people treat each other, the world, and themselves. There’s a lot of talk about love and making the world a better place, but we’re actually taking and inspiring action. We’re not selling another ‘love’ shirt or piece of ‘love’ art. We’re reminding people that they matter with our words and actions, and we’re inviting you to join us.<\/p><p><\/p><p>This is an active state of caring. This is a movement of people who operate out of love, not fear. This is acting from the heart. This is Live Through Love.<\/p>","link_text":"","link_url":"","color_bg":"#000000","color_text":"#ffffff","color_head":"#ffffff"}},"af2afe46-9fdb-42fb-bcbb-4a3d30dff62b":{"type":"gallery","disabled":true,"settings":{"skip_container":true,"image1":"shopify:\/\/shop_images\/B_W.png","tint_color1":"#000000","tint_opacity1":25,"link1":"","size1":"full","title1":"Image text","subheading1":"","cta_text1":"See more","text_color1":"#ffffff","tint_color2":"#000000","tint_opacity2":25,"link2":"","size2":"half","title2":"Image text","subheading2":"","cta_text2":"See more","text_color2":"#ffffff","tint_color3":"#000000","tint_opacity3":25,"link3":"","size3":"half","title3":"","subheading3":"","cta_text3":"See more","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}},"f31fcc53-128d-415f-9f48-c58d81234165":{"type":"gallery","settings":{"skip_container":false,"tint_color1":"#000000","tint_opacity1":25,"link1":"","size1":"half","title1":"Image text","subheading1":"","cta_text1":"See more","text_color1":"#ffffff","tint_color2":"#000000","tint_opacity2":25,"link2":"","size2":"half","title2":"Image text","subheading2":"","cta_text2":"See more","text_color2":"#ffffff","tint_color3":"#000000","tint_opacity3":25,"link3":"","size3":"half","title3":"Image text","subheading3":"","cta_text3":"See more","text_color3":"#ffffff","tint_color4":"#000000","tint_opacity4":25,"link4":"","size4":"half","title4":"Image text","subheading4":"","cta_text4":"See more","text_color4":"#ffffff"}},"fa34f13c-5363-4a0e-89c2-2b256273cc75":{"type":"image-with-text","settings":{"layout":"right","title":"Image with text","text":"","button_text":"Shop","button_link":"","text_alignment":"center","color_bg":"#f4f4f4","color_text":"#454f5b","color_head":"#212b36","skip_container":false}}},"block_order":["735360e0-7ae8-4b44-8744-4dcf25ff8380","af2afe46-9fdb-42fb-bcbb-4a3d30dff62b","f31fcc53-128d-415f-9f48-c58d81234165","fa34f13c-5363-4a0e-89c2-2b256273cc75"],"settings":{"show_page_content":true,"header_image_position":"center-center"}},"163466983383b42b4e":{"type":"slideshow","blocks":{"163466983383b42b4e-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Championship-hoodie-banner.png","image_url":"","tint_color":"#000000","tint_opacity":25,"color":"#ffffff","heading":"BE LEGENDARY","subheading":"SHOP THE CHAMPIONSHIP HOODIE WHILE SUPPLIES LAST","button_1_text":"BUY NOW","button_1_url":"shopify:\/\/products\/championship-hoodie","button_2_text":"","button_2_url":""}},"e1a0f756-df09-454b-a2ca-267fa2dd1ab2":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Ruben-Hero-Sand.jpg","image_url":"","tint_color":"#000000","tint_opacity":17,"color":"#ffffff","heading":"WALK WITH LOVE","subheading":"","button_1_text":"SHOP NOW","button_1_url":"","button_2_text":"","button_2_url":""}}},"block_order":["163466983383b42b4e-0","e1a0f756-df09-454b-a2ca-267fa2dd1ab2"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-left-center","slide_mode":"slide","autoplay":false,"autoplay_speed":7,"slide_show_mobile_arrows":false,"skip_container":true,"head_img_height_fixed":false,"head_img_height_int":1000}},"16377920476147bd20":{"type":"slideshow","blocks":{"16377920476147bd20-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/bag-hero.jpg","image_url":"","tint_color":"#000000","tint_opacity":16,"color":"#ffffff","heading":"CLASSIC. TIMELESS. ICONIC.","subheading":"THIS IS THE ULTIMATE LABEL:  THE LABEL OF LOVE","button_1_text":"SHOP NOW","button_1_url":"shopify:\/\/collections\/bags-totes","button_2_text":"","button_2_url":""}}},"block_order":["16377920476147bd20-0"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-right-center","slide_mode":"slide","autoplay":false,"autoplay_speed":7,"slide_show_mobile_arrows":false,"skip_container":true,"head_img_height_fixed":false,"head_img_height_int":650}},"1637792229e96eb06c":{"type":"featured-images","disabled":true,"blocks":{"1637792229e96eb06c-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/lux-bag1.png","tint_color":"#000000","tint_opacity":25,"link":"shopify:\/\/products\/love-bag","size":"half","title":"THE BLACK RAINBOW WEEKENDER","subheading":"","cta_text":"SHOP THE BAG","text_color":"#ffffff"}},"1637792229e96eb06c-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/weekender-bag.png","tint_color":"#000000","tint_opacity":17,"link":"shopify:\/\/products\/black-rainbow-carryall-tote","size":"half","title":"THE BLACK RAINBOW CARYALL","subheading":"","cta_text":"SHOP THE TOTE","text_color":"#ffffff"}}},"block_order":["1637792229e96eb06c-0","1637792229e96eb06c-1"],"settings":{"skip_container":true}},"16377923077427c8b1":{"type":"slideshow","blocks":{"16377923077427c8b1-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Love-skate-decks.png","image_url":"shopify:\/\/products\/love-skate-board","tint_color":"#000000","tint_opacity":25,"color":"#ffffff","heading":"DROP IN WITH LOVE","subheading":"Hand-painted 1 of 1 skatedecks","button_1_text":"SHOP NOW","button_1_url":"shopify:\/\/products\/love-skate-board","button_2_text":"","button_2_url":""}}},"block_order":["16377923077427c8b1-0"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-center-bottom","slide_mode":"slide","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"skip_container":true,"head_img_height_fixed":false,"head_img_height_int":700}},"163781156873539df6":{"type":"slideshow","disabled":true,"blocks":{"163781156873539df6-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/RubenBlackFriday-Hero.png","image_url":"https:\/\/rubenrojas.com\/pages\/black-friday-sale-2021","tint_color":"#000000","tint_opacity":20,"color":"#ffffff","heading":"","subheading":"","button_1_text":"ENTER HERE","button_1_url":"https:\/\/rubenrojas.com\/pages\/black-friday-sale-2021","button_2_text":"","button_2_url":""}}},"block_order":["163781156873539df6-0"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-center-bottom","slide_mode":"slide","autoplay":false,"autoplay_speed":7,"slide_show_mobile_arrows":false,"skip_container":true,"head_img_height_fixed":false,"head_img_height_int":450}},"16378128643ed3c851":{"type":"image-with-text","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/model-on-street.jpg","layout":"right","title":"Image with text","text":"<p>Pair large text with an image to give focus to your chosen product, collection or blog post. Add details on availability, style or even provide a review.<\/p>","button_text":"Shop","button_link":"","text_alignment":"center","color_bg":"#000000","color_text":"#454f5b","color_head":"#212b36","skip_container":false}},"1637813690b8a5e0fc":{"type":"slideshow","blocks":{"1637813690b8a5e0fc-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/monogram-sett.jpg","image_url":"","tint_color":"#000000","tint_opacity":17,"color":"#ffffff","heading":"LIVE THROUGH LOVE","subheading":"AND DO IT IN LUXURY","button_1_text":"SHOP NOW","button_1_url":"shopify:\/\/collections\/all","button_2_text":"","button_2_url":""}}},"block_order":["1637813690b8a5e0fc-0"],"settings":{"enable_carousel":false,"slide_inner_position":"inner-center","slide_mode":"slide","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"skip_container":true,"head_img_height_fixed":true,"head_img_height_int":950}}},"content_for_index":["1637813690b8a5e0fc","163781156873539df6","1628032205fa2ee49c","16377920476147bd20","1637792229e96eb06c","16377923077427c8b1","1629940268d9c2c613","162439492940bf49f1","1566494880243","1566482260946","1626222944dd6c2445","1626222961e1629cc3","16257791464e8b17ac","163466983383b42b4e","1566493567944","1483635546290","16262949739f556d29","1566496449350","1626207078ef47ce71","1629843372d24dda7f","1624994489490e427d","162561035400e8697e","1625778928bfa4c2cd","1626294922a84a5294","16378128643ed3c851"]},"presets":{"SwimClub":{"col_text":"#293b65","col_headings":"#152242","col_links":"#5c6ac4","col_page_bg":"#ffffff","col_stars":"#eeaf2e","col_header_text":"#152242","col_header_text_overlap":"#ffffff","col_header_bg":"#ffffff","col_nav_links":"#ffffff","col_nav_bg":"#152242","col_page_heading_text":"#152242","col_page_heading_bg":"#eeeeee","col_search_bg":"#ffffff","col_search_text":"#212b36","col_search_headings":"#000000","col_alt_text":"#1c1d1d","col_alt_text_bg":"rgba(0,0,0,0)","col_prod_sale":"rgba(0,0,0,0)","col_btn":"#ffffff","col_btn_bg":"#152242","col_label_sold_out":"#ffffff","col_label_sale":"#202e78","col_label_low_stock":"#000639","col_label_custom":"#50248f","type_base_font":"futura_n4","type_heading_font":"din_neuzeit_grotesk_n3","type_nav_font":"neuzeit_s_n4","type_logo_font":"neuzeit_s_n4","font_size_base_int":15,"font_size_nav_int":32,"font_size_nav_inline_int":15,"logo_size_int":24,"button_shape":"sharp","button_border_width":"2","content_header_overlap":0,"content_header_min_height_mob":240,"content_header_min_height_desktop":380,"content_header_enable_breadcrumbs":false,"product_image_align":true,"product_hover_image":true,"label_sale_show":true,"label_soldout_show":true,"label_remain_show":true,"prod_stock_warn_limit_int":5,"product_label_position":"tl","search_type":"product","live_search_show_vendor":false,"enable_transition_in":true,"enable_overlay_transition":true,"checkout_header_image":"","checkout_logo_position":"center","checkout_logo_size":"small","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","col_page_heading_text_over_image":"#ffffff","share_image":"","show_multiple_currencies":true,"currency_format":"money_with_currency_format","supported_currencies":"INR GBP CAD USD AUD EUR","default_currency":"USD","sections":{"header":{"type":"header","blocks":{"44675a8c-f5cb-42a0-842b-d7c26b9d30ca":{"type":"image","settings":{}}},"block_order":["44675a8c-f5cb-42a0-842b-d7c26b9d30ca"],"settings":{"enable_sticky":true,"enabled_header_overlap":true,"logo_width":125,"enable_logo_shrink":true,"enable_inline_links":true,"menu_align_logo_left":false,"show_social_links":true,"contact_info_in_mega":false,"show_locale_selector":true,"show_currency_selector":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":25}},"footer":{"type":"footer","settings":{"show_menu_headings":true,"show_social":false,"show_text_area":true,"show_payment_icons":true,"show_locale_selector":true,"show_currency_selector":true,"show_newsletter":true}},"collection-template":{"type":"collection-template","settings":{"products_per_row_int":3,"pagination_limit":16,"show_tags":true,"coll_show_sort":true,"coll_show_feat":false,"grid_show_vendor":false,"header_image_position":"center-center","head_img_coll_handled":false}},"product-template":{"type":"product-template","settings":{"description_position":"up","show_tax_and_shipping":true,"prod_show_brand":false,"prod_show_sku":false,"prod_show_sharing":true,"prod_show_breadcrumbs":true,"enable_ajax_form":"true","enable_payment_button":true,"show_pickup_availability":true,"show_backorder_text":true,"image_layout":"under","prod_lightbox":true,"prod_lightbox_zoom":true,"enable_video_looping":false,"header_title_show":false}},"1483632146786":{"type":"featured-collection","settings":{"products_per_row_int":3,"product_rows_int":1,"grid_show_vendor":false}},"1483635546290":{"type":"featured-blog","settings":{}},"banner-index":{"type":"banner-index","blocks":{"1483959039059":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":30,"color":"#ffffff"}},"1484143749669":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":48,"color":"#ffffff"}}},"block_order":["1483959039059","1484143749669"],"settings":{"enable_carousel":false,"slide_mode":"fade","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"head_img_height_fixed":true,"head_img_height_int":850}},"1484317010599":{"type":"rich-text","settings":{"color_bg":"#152242","color_text":"#e6f2ff","color_head":"#ffffff"}},"announcement":{"type":"announcement","settings":{"show_announcement":false,"announcement_home_only":false,"announcement_bar_bg_color":"#ffe2d1","announcement_bar_bg_text":"#132625"}},"1566482260946":{"type":"featured-images","blocks":{"1566482439149":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":29,"size":"third","text_color":"#ffffff"}},"1566482260946-1":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":20,"size":"third","text_color":"#ffffff"}},"1566482260946-0":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":0,"size":"third","text_color":"#ffffff"}}},"block_order":["1566482439149","1566482260946-1","1566482260946-0"],"settings":{"skip_container":true}},"1566493567944":{"type":"testimonials","blocks":{"1566493567944-0":{"type":"testimonial","settings":{"star_rating":5}},"1568803947076":{"type":"testimonial","settings":{"star_rating":5}}},"block_order":["1566493567944-0","1568803947076"],"settings":{"title":"Testimonials","autoplay":false,"logo_height":40}},"1566493825980":{"type":"slideshow-with-text","blocks":{"1566493825980-0":{"type":"image","settings":{}},"1566493825980-1":{"type":"image","settings":{}}},"block_order":["1566493825980-0","1566493825980-1"],"settings":{"slide_mode":"slide","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"color_bg":"#eeeeee"}},"1566494880243":{"type":"video","settings":{"title_size":60,"enlarge_text":false,"text_alignment":"center center","image_position":"center center","skip_container":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":0}},"1566496449350":{"type":"image-with-text","settings":{"layout":"right","text_alignment":"center","color_bg":"#eeeeee","color_text":"#454f5b","color_head":"#212b36","skip_container":true}},"popup":{"type":"popup","settings":{"mode":"disabled","popup_delay_seconds":5,"popup_dismiss_for_days":30,"position":"center","show_newsletter":true,"show_social_icons":true}},"cart-template":{"type":"cart-template","settings":{"cart_terms_show":false,"cart_terms_page":"","cart_note_show":true,"show_tax_and_shipping":true,"show_additional_checkout_buttons":true,"show_backorder_text":true,"header_image_position":"center-center"}}},"content_for_index":["1484317010599","1483632146786","1566482260946","1566493825980","1566493567944","1566494880243","1483635546290","1566496449350"]},"Driftwood":{"col_text":"#2a2928","col_headings":"#ff7c24","col_links":"#ff7c24","col_page_bg":"#fdfbfa","col_stars":"#e2af36","col_header_text":"#2a2928","col_header_text_overlap":"#ffffff","col_header_bg":"#ffffff","col_nav_links":"#ffffff","col_nav_bg":"#2a2928","col_page_heading_text":"#2a2928","col_page_heading_bg":"#ece9e7","col_search_bg":"#fdfbfa","col_search_text":"#25110e","col_search_headings":"#25110e","col_alt_text":"#25110e","col_alt_text_bg":"rgba(0,0,0,0)","col_prod_sale":"rgba(0,0,0,0)","col_btn":"#ff7c24","col_btn_bg":"#ffffff","col_label_sold_out":"#25110e","col_label_sale":"#ac353b","col_label_low_stock":"#454f5b","col_label_custom":"#a94400","col_popup_text":"#2a2928","type_base_font":"montserrat_n4","type_heading_font":"pacifico_n4","type_nav_font":"montserrat_n4","type_logo_font":"pacifico_n4","font_size_base_int":15,"font_size_nav_int":32,"font_size_nav_inline_int":15,"logo_size_int":24,"button_border_width":"2","content_header_overlap":0,"content_header_min_height_mob":200,"content_header_min_height_desktop":480,"content_header_enable_breadcrumbs":false,"product_image_align":true,"product_hover_image":true,"label_sale_show":true,"label_soldout_show":true,"label_remain_show":true,"prod_stock_warn_limit_int":5,"product_label_position":"tl","search_type":"product","live_search_show_vendor":false,"enable_transition_in":true,"enable_overlay_transition":true,"checkout_header_image":"","checkout_logo_image":"","checkout_logo_position":"left","checkout_logo_size":"medium","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","col_page_heading_text_over_image":"#ffffff","share_image":"","show_multiple_currencies":true,"currency_format":"money_with_currency_format","supported_currencies":"GBP CAD USD AUD EUR JPY","default_currency":"USD","sections":{"header":{"type":"header","blocks":{"4ef644de-5d0f-4176-a6f5-19dd593a7ac4":{"type":"image","settings":{}}},"block_order":["4ef644de-5d0f-4176-a6f5-19dd593a7ac4"],"settings":{"enable_sticky":true,"enabled_header_overlap":true,"logo_width":125,"enable_logo_shrink":true,"enable_inline_links":true,"menu_align_logo_left":false,"show_social_links":true,"contact_info_in_mega":false,"show_locale_selector":true,"show_currency_selector":true,"text_color":"#ffffff","tint_color":"#2a2928","tint_opacity":24}},"footer":{"type":"footer","settings":{"show_menu_headings":true,"show_social":false,"show_text_area":true,"show_payment_icons":true,"show_locale_selector":true,"show_currency_selector":true,"show_newsletter":false}},"product-template":{"type":"product-template","settings":{"description_position":"up","show_tax_and_shipping":true,"prod_show_brand":false,"prod_show_sku":true,"prod_show_sharing":true,"prod_show_breadcrumbs":true,"enable_ajax_form":"true","enable_payment_button":true,"show_pickup_availability":true,"show_backorder_text":true,"image_layout":"under","prod_lightbox":true,"prod_lightbox_zoom":true,"enable_video_looping":false,"header_title_show":false}},"1483632146786":{"type":"featured-collection","settings":{"products_per_row_int":3,"product_rows_int":1,"grid_show_vendor":false}},"1483635546290":{"type":"featured-blog","settings":{}},"banner-index":{"type":"banner-index","blocks":{"1588171097617":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":24,"color":"#ffffff"}},"1483959039059":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":27,"color":"#ffffff"}}},"block_order":["1588171097617","1483959039059"],"settings":{"enable_carousel":true,"slide_mode":"fade","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"head_img_height_fixed":true,"head_img_height_int":800}},"announcement":{"type":"announcement","settings":{"show_announcement":false,"announcement_home_only":false,"announcement_bar_text":"","announcement_bar_bg_color":"#ffe2d1","announcement_bar_bg_text":"#132625"}},"1568220025039":{"type":"image-with-text","settings":{"layout":"left","text_alignment":"center","color_bg":"#000000","color_text":"#ffffff","color_head":"#ff7c24","skip_container":true}},"1568221256952":{"type":"testimonials","blocks":{"1568221256952-0":{"type":"testimonial","settings":{"star_rating":5}},"1568221256952-1":{"type":"testimonial","settings":{"star_rating":5}},"1568221256952-2":{"type":"testimonial","settings":{"star_rating":5}},"1568221923940":{"type":"testimonial","settings":{"star_rating":5}}},"block_order":["1568221256952-0","1568221256952-1","1568221256952-2","1568221923940"],"settings":{"autoplay":true,"logo_height":60}},"1568285493882":{"type":"featured-collection","settings":{"products_per_row_int":3,"product_rows_int":1,"grid_show_vendor":false}},"1568294173115":{"type":"featured-collection","settings":{"products_per_row_int":2,"product_rows_int":1,"grid_show_vendor":false}},"popup":{"type":"popup","settings":{"mode":"enabled","popup_delay_seconds":5,"popup_dismiss_for_days":30,"position":"center","show_newsletter":true,"show_social_icons":true}},"1607515424f903c549":{"type":"slideshow-with-text","blocks":{"1607515424f903c549-1":{"type":"image","settings":{}},"33e74540-4d7f-49e4-b9e8-1828218cf521":{"type":"image","settings":{}},"1607515424f903c549-0":{"type":"image","settings":{}}},"block_order":["1607515424f903c549-1","33e74540-4d7f-49e4-b9e8-1828218cf521","1607515424f903c549-0"],"settings":{"slide_mode":"slide","autoplay":true,"autoplay_speed":6,"slide_show_mobile_arrows":true,"color_bg":"#ece9e7"}},"1607515457aa8d5d58":{"type":"slideshow","blocks":{"1607515457aa8d5d58-0":{"type":"image","settings":{"tint_color":"#2a2928","tint_opacity":16,"color":"#ffffff"}},"1607515457aa8d5d58-1":{"type":"image","settings":{"tint_color":"#2a2928","tint_opacity":24,"color":"#ffffff"}}},"block_order":["1607515457aa8d5d58-0","1607515457aa8d5d58-1"],"settings":{"enable_carousel":false,"slide_mode":"slide","autoplay":true,"autoplay_speed":8,"slide_show_mobile_arrows":true,"skip_container":true,"head_img_height_fixed":true,"head_img_height_int":700}},"16075154972a95bc96":{"type":"slideshow","blocks":{"16075154972a95bc96-0":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":0,"color":"#ffffff","heading":"","subheading":"","button_1_text":"","button_2_text":""}}},"block_order":["16075154972a95bc96-0"],"settings":{"enable_carousel":false,"slide_mode":"slide","autoplay":false,"autoplay_speed":7,"slide_show_mobile_arrows":false,"skip_container":true,"head_img_height_fixed":true,"head_img_height_int":700}}},"content_for_index":["1483632146786","1568285493882","1568220025039","1568221256952","1607515457aa8d5d58","1568294173115","1607515424f903c549","1483635546290","16075154972a95bc96"]},"CloudBreak":{"col_text":"#333029","col_headings":"#333029","col_links":"#fe7259","col_page_bg":"#ffffff","col_stars":"#f7c346","col_header_text":"#333029","col_header_text_overlap":"#ffffff","col_header_bg":"#ffffff","col_nav_links":"#333029","col_nav_bg":"#ffffff","col_page_heading_text":"#333029","col_page_heading_bg":"#ff8458","page_use_contrast_logo":false,"col_search_bg":"#ff8458","col_search_text":"#ffffff","col_search_headings":"#ffffff","col_alt_text":"#333029","col_alt_text_bg":"rgba(0,0,0,0)","col_prod_sale":"rgba(0,0,0,0)","col_btn":"#ffffff","col_btn_bg":"#000000","col_label_sold_out":"#565656","col_label_sale":"#ffffff","col_label_low_stock":"#000000","col_label_custom":"#0b3d65","type_base_font":"basic_commercial_n4","type_heading_font":"basic_commercial_n4","type_nav_font":"basic_commercial_soft_rounded_n4","type_logo_font":"basic_commercial_n7","font_size_base_int":17,"font_size_nav_int":48,"logo_size_int":24,"button_shape":"sharp","content_header_overlap":0,"content_header_enable_breadcrumbs":false,"product_image_align":true,"product_hover_image":true,"label_sale_show":true,"label_soldout_show":true,"label_remain_show":true,"prod_stock_warn_limit_int":5,"product_label_position":"tl","search_type":"product","live_search_show_vendor":false,"enable_transition_in":true,"enable_overlay_transition":true,"checkout_header_image":"","checkout_logo_position":"left","checkout_logo_size":"small","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","col_page_heading_text_over_image":"#ffffff","share_image":"","show_multiple_currencies":true,"currency_format":"money_with_currency_format","supported_currencies":"GBP CAD USD AUD EUR JPY","default_currency":"USD","sections":{"header":{"type":"header","settings":{"enable_sticky":true,"enabled_header_overlap":true,"logo_width":125,"enable_logo_shrink":true,"enable_inline_links":false,"menu_align_logo_left":false,"show_social_links":false,"contact_info_in_mega":false,"show_locale_selector":true,"show_currency_selector":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":25}},"footer":{"type":"footer","settings":{"show_menu_headings":true,"show_social":false,"show_text_area":true,"show_payment_icons":true,"show_locale_selector":true,"show_currency_selector":true,"show_newsletter":false}},"product-template":{"type":"product-template","settings":{"description_position":"up","show_tax_and_shipping":true,"prod_show_brand":false,"prod_show_sku":false,"prod_show_sharing":true,"prod_show_breadcrumbs":true,"enable_ajax_form":"true","enable_payment_button":true,"show_pickup_availability":true,"show_backorder_text":true,"image_layout":"under","prod_lightbox":true,"prod_lightbox_zoom":true,"enable_video_looping":false,"header_title_show":false}},"1483632146786":{"type":"featured-collection","settings":{"products_per_row_int":3,"product_rows_int":2,"grid_show_vendor":false}},"1483635546290":{"type":"featured-blog","settings":{}},"1483636244998":{"type":"featured-collection","settings":{"products_per_row_int":3,"product_rows_int":2,"grid_show_vendor":false}},"banner-index":{"type":"banner-index","blocks":{"25039bb3-e59f-41bd-86d0-8f9b21ebbe2f":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":15,"color":"#ffffff"}},"1569834942946":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":25,"color":"#ffffff"}},"1567762328783":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":40,"color":"#ffffff"}}},"block_order":["25039bb3-e59f-41bd-86d0-8f9b21ebbe2f","1569834942946","1567762328783"],"settings":{"enable_carousel":false,"slide_mode":"slide","autoplay":true,"autoplay_speed":8,"slide_show_mobile_arrows":true,"head_img_height_fixed":true,"head_img_height_int":700}},"1485871096463":{"type":"featured-images","blocks":{"1485871096463-0":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":12,"size":"half","text_color":"#ffffff"}},"1485871096463-1":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":11,"size":"half","text_color":"#ffffff"}}},"block_order":["1485871096463-0","1485871096463-1"],"settings":{"skip_container":true}},"announcement":{"type":"announcement","settings":{"show_announcement":false,"announcement_home_only":false,"announcement_bar_bg_color":"#ffe2d1","announcement_bar_bg_text":"#132625"}},"1567701568443":{"type":"slideshow-with-text","blocks":{"1567701568443-0":{"type":"image","settings":{}},"1567701568443-1":{"type":"image","settings":{}}},"block_order":["1567701568443-0","1567701568443-1"],"settings":{"slide_mode":"fade","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"color_bg":"#ff8458"}},"popup":{"type":"popup","settings":{"mode":"enabled","popup_delay_seconds":5,"popup_dismiss_for_days":30,"position":"bottom-left","show_newsletter":true,"show_social_icons":true}},"16075324323e13bc92":{"type":"featured-product","settings":{"show_tax_and_shipping":false,"show_quantity":false,"enable_ajax_form":"true","enable_payment_button":true,"show_backorder_text":true,"image_layout":"beside","show_all_images":true,"enable_video_looping":false}},"1607532697c1347a22":{"type":"background-video","settings":{"subheading":"","title":"","title_size":60,"text":"","enlarge_text":false,"button_label":"","text_alignment":"center center","height":"fixed","height_desktop":800,"height_mobile":500,"skip_container":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":25}}},"content_for_index":["1483632146786","1485871096463","1483636244998","1607532697c1347a22","16075324323e13bc92","1567701568443","1483635546290"]},"Seasons":{"col_text":"#4b0303","col_headings":"#330101","col_links":"#c05717","col_page_bg":"#ffffff","col_stars":"#f7c346","col_header_text":"#330101","col_header_text_overlap":"#ffffff","col_header_bg":"#fdf8f2","col_nav_links":"#fdf8f2","col_nav_bg":"#25110d","col_page_heading_text":"#330101","col_page_heading_bg":"#fcf0e0","col_search_bg":"#fdf8f2","col_search_text":"#4b0303","col_search_headings":"#330101","col_alt_text":"#4b0303","col_alt_text_bg":"rgba(0,0,0,0)","col_prod_sale":"rgba(0,0,0,0)","col_btn":"#fdf8f2","col_btn_bg":"#330101","col_label_sold_out":"#444444","col_label_sale":"#bf0711","col_label_low_stock":"#330101","col_label_custom":"#c05717","col_popup_text":"#330101","col_popup_background":"#fdf8f2","type_base_font":"pmn_caecilia_n4","type_heading_font":"pmn_caecilia_n7","type_nav_font":"pmn_caecilia_n4","type_logo_font":"pmn_caecilia_n7","font_size_base_int":15,"font_size_nav_int":32,"logo_size_int":24,"button_border_width":"1","content_header_overlap":75,"content_header_min_height_mob":240,"content_header_min_height_desktop":440,"content_header_enable_breadcrumbs":false,"product_image_align":true,"product_hover_image":true,"label_sale_show":true,"label_soldout_show":true,"label_remain_show":true,"prod_stock_warn_limit_int":6,"product_label_position":"tl","search_type":"product","live_search_show_vendor":false,"enable_transition_in":true,"enable_overlay_transition":false,"checkout_header_image":"","checkout_logo_position":"left","checkout_logo_size":"small","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fdf8f2","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","col_page_heading_text_over_image":"#ffffff","share_image":"","show_multiple_currencies":true,"currency_format":"money_with_currency_format","supported_currencies":"INR GBP CAD USD AUD EUR JPY","default_currency":"USD","sections":{"header":{"type":"header","settings":{"enable_sticky":true,"enabled_header_overlap":true,"logo_width":115,"enable_logo_shrink":true,"enable_inline_links":false,"menu_align_logo_left":false,"show_social_links":true,"contact_info_phone":"","contact_info_email":"","contact_info_in_mega":false,"show_locale_selector":true,"show_currency_selector":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":25}},"footer":{"type":"footer","settings":{"show_menu_headings":true,"show_social":false,"show_text_area":true,"show_payment_icons":true,"show_locale_selector":true,"show_currency_selector":true,"show_newsletter":false}},"product-template":{"type":"product-template","settings":{"description_position":"up","show_tax_and_shipping":true,"prod_show_brand":true,"prod_show_sku":false,"prod_show_sharing":true,"prod_show_breadcrumbs":true,"enable_ajax_form":"true","enable_payment_button":true,"show_pickup_availability":true,"show_backorder_text":true,"image_layout":"under","prod_lightbox":true,"prod_lightbox_zoom":true,"enable_video_looping":false,"header_title_show":false}},"1483632146786":{"type":"featured-collection","settings":{"products_per_row_int":4,"product_rows_int":1,"grid_show_vendor":false}},"1483635546290":{"type":"featured-blog","settings":{}},"1483636244998":{"type":"featured-collection","settings":{"products_per_row_int":4,"product_rows_int":1,"grid_show_vendor":false}},"banner-index":{"type":"banner-index","blocks":{"1566473796815":{"type":"image","settings":{"tint_color":"#25110d","tint_opacity":40,"color":"#ffffff"}},"1566473889087":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":12,"color":"#ffffff"}}},"block_order":["1566473796815","1566473889087"],"settings":{"enable_carousel":true,"slide_mode":"slide","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"head_img_height_fixed":true,"head_img_height_int":900}},"1484317010599":{"type":"rich-text","settings":{"color_bg":"#fdf8f2","color_text":"#4b0303","color_head":"#330101"}},"announcement":{"type":"announcement","settings":{"show_announcement":true,"announcement_home_only":true,"announcement_bar_bg_color":"#fcf0e0","announcement_bar_bg_text":"#132625"}},"1566470987491":{"type":"testimonials","blocks":{"1566470987491-0":{"type":"testimonial","settings":{"star_rating":5}},"1566470987491-1":{"type":"testimonial","settings":{"star_rating":5}},"1566470987491-2":{"type":"testimonial","settings":{"star_rating":5}}},"block_order":["1566470987491-0","1566470987491-1","1566470987491-2"],"settings":{"autoplay":true,"logo_height":65}},"1566474783388":{"type":"slideshow-with-text","blocks":{"1566474783388-0":{"type":"image","settings":{}},"1566474783388-1":{"type":"image","settings":{}}},"block_order":["1566474783388-0","1566474783388-1"],"settings":{"slide_mode":"slide","autoplay":true,"autoplay_speed":7,"slide_show_mobile_arrows":true,"color_bg":"#f3f4f8"}},"1568808735031":{"type":"featured-images","blocks":{"1568808735031-0":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":35,"size":"half","text_color":"#ffffff"}},"1568808735031-1":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":38,"size":"half","text_color":"#ffffff"}}},"block_order":["1568808735031-0","1568808735031-1"],"settings":{"skip_container":true}},"list-collections-template":{"type":"list-collections-template","blocks":{"1569231531942":{"type":"collection","settings":{}},"1569231545556":{"type":"collection","settings":{}},"1569231536434":{"type":"collection","settings":{}},"1569231540796":{"type":"collection","settings":{}}},"block_order":["1569231531942","1569231545556","1569231536434","1569231540796"],"settings":{"show_all_collections":false}},"popup":{"type":"popup","settings":{"mode":"enabled","popup_delay_seconds":5,"popup_dismiss_for_days":30,"position":"bottom-right","show_newsletter":true,"show_social_icons":true}},"16075281720162b4db":{"type":"background-video","settings":{"title_size":46,"enlarge_text":false,"text_alignment":"center center","height":"fixed","height_desktop":720,"height_mobile":520,"skip_container":true,"text_color":"#ffffff","tint_color":"#000000","tint_opacity":24}},"16075303044ff504d4":{"type":"slideshow","blocks":{"16075303044ff504d4-0":{"type":"image","settings":{"tint_color":"#000000","tint_opacity":0,"color":"#ffffff"}}},"block_order":["16075303044ff504d4-0"],"settings":{"enable_carousel":false,"slide_mode":"slide","autoplay":false,"autoplay_speed":1,"slide_show_mobile_arrows":true,"skip_container":true,"head_img_height_fixed":true,"head_img_height_int":700}}},"content_for_index":["1484317010599","1483632146786","16075281720162b4db","1566470987491","1566474783388","1483636244998","1568808735031","1483635546290","16075303044ff504d4"]}}}
+{
+  "current": {
+    "col_text": "#000000",
+    "col_headings": "#000000",
+    "col_links": "#5c6ac4",
+    "col_page_bg": "#ffffff",
+    "col_stars": "#eeaf2e",
+    "col_header_text": "#ffffff",
+    "col_header_text_overlap": "#ffffff",
+    "col_header_bg": "#000000",
+    "col_nav_links": "#ffffff",
+    "col_nav_bg": "#152242",
+    "col_page_heading_text": "#000000",
+    "col_page_heading_bg": "#ffffff",
+    "col_search_bg": "#ffffff",
+    "col_search_text": "#ffffff",
+    "col_search_headings": "#000000",
+    "col_alt_text": "#000000",
+    "col_alt_text_bg": "rgba(0,0,0,0)",
+    "col_prod_sale": "rgba(0,0,0,0)",
+    "col_btn": "#ffffff",
+    "col_btn_bg": "#000000",
+    "col_label_sold_out": "#ffffff",
+    "col_label_sale": "#202e78",
+    "col_label_low_stock": "#000639",
+    "col_label_custom": "#50248f",
+    "col_popup_text": "#000000",
+    "font_override": true,
+    "type_base_font": "futura_n4",
+    "type_heading_font": "din_neuzeit_grotesk_n3",
+    "type_nav_font": "neuzeit_s_n4",
+    "type_logo_font": "neuzeit_s_n4",
+    "font_size_base_int": 15,
+    "font_size_nav_int": 32,
+    "font_size_nav_inline_int": 21,
+    "logo_size_int": 24,
+    "button_shape": "sharp",
+    "button_border_width": "2",
+    "content_header_overlap": 0,
+    "content_header_min_height_mob": 100,
+    "content_header_min_height_desktop": 100,
+    "content_header_enable_breadcrumbs": false,
+    "product_image_align": true,
+    "product_hover_image": false,
+    "label_sale_show": false,
+    "label_soldout_show": true,
+    "label_remain_show": false,
+    "prod_stock_warn_limit_int": 5,
+    "product_label_position": "tl",
+    "social_twitter_url": "https:\/\/twitter.com\/rubenrojas?lang=en",
+    "social_facebook_url": "https:\/\/www.facebook.com\/rubenrojas",
+    "social_instagram_url": "https:\/\/www.instagram.com\/rubenrojas\/",
+    "social_youtube_url": "https:\/\/www.youtube.com\/channel\/UCbD0cSqe4Gf70FMFPZK160A",
+    "social_custom_icon_alt": "shopify:\/\/shop_images\/Ruben-logo-white_fc568f83-f1cd-45c7-8f16-8b63086116d7.png",
+    "social_custom_icon": "shopify:\/\/shop_images\/Ruben-Logo-black_4642c19c-0445-4d29-9937-22bee2cf5c06.png",
+    "social_custom_url": "https:\/\/rubenrojas.com",
+    "search_type": "product",
+    "live_search_show_vendor": false,
+    "favicon": "shopify:\/\/shop_images\/Ruben-Logo-black_4642c19c-0445-4d29-9937-22bee2cf5c06.png",
+    "enable_transition_in": true,
+    "enable_overlay_transition": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Ruben-Logo-black_4642c19c-0445-4d29-9937-22bee2cf5c06.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "col_page_heading_text_over_image": "#ffffff",
+    "share_image": "",
+    "show_multiple_currencies": true,
+    "currency_format": "money_with_currency_format",
+    "supported_currencies": "INR GBP CAD USD AUD EUR",
+    "default_currency": "USD",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "44675a8c-f5cb-42a0-842b-d7c26b9d30ca": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "menu_item": "",
+              "title1": "",
+              "subheading1": "",
+              "button_label1": "",
+              "cta_link1": "",
+              "title2": "",
+              "subheading2": "",
+              "button_label2": "",
+              "cta_link2": ""
+            }
+          },
+          "aa1efc46-cce8-4c26-b8f6-88678d2d5ec0": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "menu_item": "",
+              "title1": "",
+              "subheading1": "",
+              "button_label1": "",
+              "cta_link1": "",
+              "title2": "",
+              "subheading2": "",
+              "button_label2": "",
+              "cta_link2": ""
+            }
+          }
+        },
+        "block_order": [
+          "44675a8c-f5cb-42a0-842b-d7c26b9d30ca",
+          "aa1efc46-cce8-4c26-b8f6-88678d2d5ec0"
+        ],
+        "settings": {
+          "menu_bg_image": "shopify:\/\/shop_images\/Love-Ruben_9c272381-d766-4d3f-b532-e1d3facd0e4d.jpg",
+          "enable_sticky": true,
+          "enabled_header_overlap": false,
+          "logo": "shopify:\/\/shop_images\/Ruben-logo-white_fc568f83-f1cd-45c7-8f16-8b63086116d7.png",
+          "logo_width": 135,
+          "enable_logo_shrink": true,
+          "alt_logo": "shopify:\/\/shop_images\/Ruben-Logo-black_4642c19c-0445-4d29-9937-22bee2cf5c06.png",
+          "menu_linklist": "main-menu-new",
+          "menu_under_text": "",
+          "enable_inline_links": true,
+          "menu_align_logo_left": true,
+          "search_menu_title": "",
+          "search_menu_linklist": "",
+          "show_social_links": true,
+          "contact_info_phone": "",
+          "contact_info_email": "",
+          "contact_info_in_mega": false,
+          "show_locale_selector": true,
+          "show_currency_selector": true,
+          "text_color": "#ffffff",
+          "tint_color": "#000000",
+          "tint_opacity": 25
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_bg_image": "shopify:\/\/shop_images\/Love-bg.jpg",
+          "menu_linklist": "footer",
+          "menu_linklist_2": "",
+          "menu_linklist_3": "",
+          "footer_bg_color": "rgba(0,0,0,0)",
+          "show_menu_headings": false,
+          "show_social": true,
+          "show_text_area": false,
+          "footer_color_text": "#000000",
+          "text_area_heading": "",
+          "text_area_text": "",
+          "show_payment_icons": false,
+          "show_locale_selector": false,
+          "show_currency_selector": true,
+          "show_newsletter": false,
+          "newsletter_heading": "Subscribe to our newsletter",
+          "newsletter_text": "",
+          "newsletter_button_text": "Subscribe"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "hide_collection_header": false,
+          "products_per_row_int": 4,
+          "pagination_limit": 100,
+          "show_tags": false,
+          "coll_show_sort": true,
+          "coll_show_feat": false,
+          "grid_show_vendor": false,
+          "header_image": "shopify:\/\/shop_images\/RR-signing-print.png",
+          "header_image_position": "center-center",
+          "head_img_coll_handled": false,
+          "body_img_coll_handled": true
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "description_position": "ub",
+          "show_tax_and_shipping": true,
+          "prod_show_brand": false,
+          "prod_show_sku": false,
+          "prod_show_sharing": true,
+          "prod_show_breadcrumbs": true,
+          "enable_ajax_form": "true",
+          "enable_payment_button": false,
+          "show_pickup_availability": true,
+          "show_backorder_text": true,
+          "image_layout": "under",
+          "prod_lightbox": true,
+          "prod_lightbox_zoom": true,
+          "enable_video_looping": false,
+          "header_title_show": false
+        }
+      },
+      "1483635546290": {
+        "type": "featured-blog",
+        "disabled": true,
+        "settings": {
+          "heading": "",
+          "blog": ""
+        }
+      },
+      "banner-index": {
+        "type": "banner-index",
+        "blocks": {
+          "0fa2bf39-9f62-42c2-bdd3-95c82c05df5e": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC05046.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "color": "#ffffff",
+              "heading": "Slideshow",
+              "subheading": "Tell your story with images",
+              "button_1_text": "See more",
+              "button_1_url": "",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          },
+          "1483959039059": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/RR-Hero-New.jpg",
+              "image_url": "shopify:\/\/collections\/black-rainbow-collection",
+              "tint_color": "#000000",
+              "tint_opacity": 11,
+              "color": "#ffffff",
+              "heading": "MAKE A STATEMENT",
+              "subheading": "THE BLACK RAINBOW COLLECTION",
+              "button_1_text": "SHOP NOW",
+              "button_1_url": "shopify:\/\/collections\/black-rainbow-collection",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          },
+          "48707abd-3ea1-4679-99f1-30563e013e61": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Championship-hoodie-banner.png",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 7,
+              "color": "#ffffff",
+              "heading": "BE LEGENDARY",
+              "subheading": "INTRODUCING THE CHAMPIONSHIP HOODIE",
+              "button_1_text": "SHOP NOW",
+              "button_1_url": "shopify:\/\/products\/championship-hoodie",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "0fa2bf39-9f62-42c2-bdd3-95c82c05df5e",
+          "1483959039059",
+          "48707abd-3ea1-4679-99f1-30563e013e61"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-left-center",
+          "slide_mode": "fade",
+          "autoplay": false,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": false,
+          "head_img_height_fixed": false,
+          "head_img_height_int": 1000
+        }
+      },
+      "announcement": {
+        "type": "announcement",
+        "settings": {
+          "show_announcement": true,
+          "announcement_home_only": false,
+          "announcement_bar_text": "FREE SHIPPING ON CLOTHING ORDERS GREATER THAN $135",
+          "announcement_bar_link": "https:\/\/rubenrojas.com\/pages\/black-friday-sale-2021",
+          "announcement_bar_bg_color": "#ff8ebd",
+          "announcement_bar_bg_text": "#000000"
+        }
+      },
+      "1566482260946": {
+        "type": "featured-images",
+        "blocks": {
+          "1566482439149": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Shop_Women-New.jpg",
+              "tint_color": "#000000",
+              "tint_opacity": 10,
+              "link": "shopify:\/\/collections\/women",
+              "size": "third",
+              "title": "",
+              "subheading": "",
+              "cta_text": "SHOP WOMEN",
+              "text_color": "#ffffff"
+            }
+          },
+          "1566482260946-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/ShopMenNew.jpg",
+              "tint_color": "#000000",
+              "tint_opacity": 10,
+              "link": "shopify:\/\/collections\/men",
+              "size": "third",
+              "title": "",
+              "subheading": "",
+              "cta_text": "SHOP MEN",
+              "text_color": "#ffffff"
+            }
+          },
+          "a704148c-52d3-4bd0-bd8f-80802e183bb1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Humanity-print-website.jpg",
+              "tint_color": "#000000",
+              "tint_opacity": 10,
+              "link": "shopify:\/\/collections\/artwork",
+              "size": "third",
+              "title": "",
+              "subheading": "",
+              "cta_text": "SHOP ART",
+              "text_color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1566482439149",
+          "1566482260946-1",
+          "a704148c-52d3-4bd0-bd8f-80802e183bb1"
+        ],
+        "settings": {
+          "skip_container": true
+        }
+      },
+      "1566493567944": {
+        "type": "testimonials",
+        "disabled": true,
+        "blocks": {
+          "1566493567944-0": {
+            "type": "testimonial",
+            "settings": {
+              "star_rating": 5,
+              "testimonial": "Add customer reviews or press releases to showcase your store’s happy customers.",
+              "link": "",
+              "author_name": "Author’s name"
+            }
+          },
+          "1568803947076": {
+            "type": "testimonial",
+            "settings": {
+              "star_rating": 5,
+              "testimonial": "Add customer reviews or press releases to showcase your store’s happy customers.",
+              "link": "",
+              "author_name": "Author’s name"
+            }
+          }
+        },
+        "block_order": [
+          "1566493567944-0",
+          "1568803947076"
+        ],
+        "settings": {
+          "title": "Testimonials",
+          "autoplay": false,
+          "logo_height": 40
+        }
+      },
+      "1566494880243": {
+        "type": "video",
+        "disabled": true,
+        "settings": {
+          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "subheading": "",
+          "video_title": "Video",
+          "title_size": 60,
+          "text": "<p>Pair text with a video to draw attention to an important detail of your brand or product line.<\/p>",
+          "enlarge_text": false,
+          "text_alignment": "center center",
+          "image_position": "center center",
+          "skip_container": true,
+          "text_color": "#ffffff",
+          "tint_color": "#000000",
+          "tint_opacity": 0
+        }
+      },
+      "1566496449350": {
+        "type": "image-with-text",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/LTL-home.png",
+          "layout": "right",
+          "title": "FOR THE LOVE OF THE GAME",
+          "text": "",
+          "button_text": "Shop The Collection",
+          "button_link": "shopify:\/\/collections\/for-the-love-of-the-game",
+          "text_alignment": "center",
+          "color_bg": "#ffffff",
+          "color_text": "#3e5eab",
+          "color_head": "#139de1",
+          "skip_container": true
+        }
+      },
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "mode": "disabled",
+          "popup_delay_seconds": 5,
+          "popup_dismiss_for_days": 30,
+          "position": "center",
+          "title": "Sign up and save",
+          "text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers.<\/p>",
+          "show_newsletter": true,
+          "show_social_icons": true
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_terms_show": false,
+          "cart_terms_page": "",
+          "cart_note_show": true,
+          "show_tax_and_shipping": true,
+          "show_additional_checkout_buttons": true,
+          "show_backorder_text": true,
+          "header_image_position": "center-center"
+        }
+      },
+      "162439492940bf49f1": {
+        "type": "slideshow",
+        "blocks": {
+          "1624394929a70973c0-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ruben-Hero-Sand.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "color": "#ffffff",
+              "heading": "A NEW COLOR INSPIRED BY THE CALIFORNIA SANDS",
+              "subheading": "Check out the latest collection",
+              "button_1_text": "SHOP NOW",
+              "button_1_url": "shopify:\/\/collections\/all",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1624394929a70973c0-0"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-center",
+          "slide_mode": "slide",
+          "autoplay": true,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": true,
+          "skip_container": true,
+          "head_img_height_fixed": false,
+          "head_img_height_int": 850
+        }
+      },
+      "product-features": {
+        "type": "product-features",
+        "settings": {
+          "show": false,
+          "heading": "",
+          "icon_size": 25,
+          "color_icon": "#333333",
+          "color_text": "#333333",
+          "color_bg": "#fff8f4"
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "recommendations_title": "YOU MAY ALSO LOVE",
+          "show_recommendations": true,
+          "products_per_row_int": 4,
+          "grid_show_vendor": false
+        }
+      },
+      "page-template": {
+        "type": "page-template",
+        "settings": {
+          "header_image_position": "center-center"
+        }
+      },
+      "1624994489490e427d": {
+        "type": "featured-images",
+        "blocks": {
+          "1624994489490e427d-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Love-Ruben_9c272381-d766-4d3f-b532-e1d3facd0e4d.jpg",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "link": "",
+              "size": "full",
+              "title": "Love transcends all labels, colors, stigmas, you name it.",
+              "subheading": "",
+              "cta_text": "MEET RUBEN",
+              "text_color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1624994489490e427d-0"
+        ],
+        "settings": {
+          "skip_container": true
+        }
+      },
+      "162561035400e8697e": {
+        "type": "featured-images",
+        "disabled": true,
+        "blocks": {
+          "162561035315ef8012-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/love-background.jpg",
+              "tint_color": "#000000",
+              "tint_opacity": 0,
+              "link": "",
+              "size": "full",
+              "title": "Image text",
+              "subheading": "Hellooooooooo",
+              "cta_text": "",
+              "text_color": "#212b36"
+            }
+          }
+        },
+        "block_order": [
+          "162561035315ef8012-0"
+        ],
+        "settings": {
+          "skip_container": true
+        }
+      },
+      "1625778928bfa4c2cd": {
+        "type": "slideshow",
+        "disabled": true,
+        "blocks": {
+          "1625778928caf6de1c-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Its-A-New-Day.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "color": "#ffffff",
+              "heading": "Slideshow",
+              "subheading": "Tell your story with images",
+              "button_1_text": "",
+              "button_1_url": "",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          },
+          "1625778928caf6de1c-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Black-Couch-You-Belong-Here.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "color": "#ffffff",
+              "heading": "Slideshow",
+              "subheading": "Tell your story with images",
+              "button_1_text": "Shop",
+              "button_1_url": "",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          },
+          "63836bae-3950-410e-9ab8-6bdfb9f2f3cd": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Black-Couch-You-Belong-Here.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "color": "#ffffff",
+              "heading": "Slideshow",
+              "subheading": "Tell your story with images",
+              "button_1_text": "",
+              "button_1_url": "",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1625778928caf6de1c-1",
+          "1625778928caf6de1c-0",
+          "63836bae-3950-410e-9ab8-6bdfb9f2f3cd"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-center",
+          "slide_mode": "fade",
+          "autoplay": true,
+          "autoplay_speed": 1,
+          "slide_show_mobile_arrows": false,
+          "skip_container": true,
+          "head_img_height_fixed": true,
+          "head_img_height_int": 700
+        }
+      },
+      "16257791464e8b17ac": {
+        "type": "background-video",
+        "settings": {
+          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0169\/0425\/7590\/files\/Black-Couch-You-Belong-Here_7_1.mp4?v=1628734527",
+          "subheading": "THE INSPIRE COLLECTION",
+          "title": "",
+          "title_size": 40,
+          "text": "",
+          "enlarge_text": true,
+          "button_label": "SHOP NOW",
+          "button_link": "shopify:\/\/collections\/inspire-collection",
+          "text_alignment": "bottom center",
+          "height": "fixed",
+          "height_desktop": 1000,
+          "height_mobile": 380,
+          "skip_container": true,
+          "text_color": "#ffffff",
+          "tint_color": "#000000",
+          "tint_opacity": 29
+        }
+      },
+      "1626207078ef47ce71": {
+        "type": "featured-collection",
+        "disabled": true,
+        "settings": {
+          "title": "",
+          "collection": "for-the-love-of-the-game",
+          "products_per_row_int": 4,
+          "product_rows_int": 1,
+          "cta_text": "See more",
+          "grid_show_vendor": false
+        }
+      },
+      "1626222944dd6c2445": {
+        "type": "slideshow",
+        "blocks": {
+          "1626222944dd6c2445-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/RR-Hero-New.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "color": "#ffffff",
+              "heading": "LOVE TRANSCENDS ALL LABELS",
+              "subheading": "THE BLACK RAINBOW COLLECTION IS HERE",
+              "button_1_text": "SHOP NOW",
+              "button_1_url": "shopify:\/\/collections\/black-rainbow-collection",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1626222944dd6c2445-0"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-center",
+          "slide_mode": "slide",
+          "autoplay": true,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": true,
+          "skip_container": true,
+          "head_img_height_fixed": false,
+          "head_img_height_int": 700
+        }
+      },
+      "1626222961e1629cc3": {
+        "type": "featured-collection",
+        "disabled": true,
+        "settings": {
+          "title": "",
+          "collection": "black-rainbow-collection",
+          "products_per_row_int": 4,
+          "product_rows_int": 1,
+          "cta_text": "See more",
+          "grid_show_vendor": false
+        }
+      },
+      "page-contact-template": {
+        "type": "page-contact-template",
+        "settings": {
+          "header_image_position": "center-center"
+        }
+      },
+      "1626294922a84a5294": {
+        "type": "newsletter",
+        "settings": {
+          "heading": "SUBSCRIBE TO THE LOVE LETTER",
+          "text": "<p>Promotions, new products and sales - directly to your inbox<\/p>",
+          "button_text": "Subscribe",
+          "color_bg": "#000000"
+        }
+      },
+      "16262949739f556d29": {
+        "type": "featured-images",
+        "disabled": true,
+        "blocks": {
+          "16262949739f556d29-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Sets-hero.png",
+              "tint_color": "#000000",
+              "tint_opacity": 12,
+              "link": "",
+              "size": "full",
+              "title": "THE MORE LOVE THE BETTER",
+              "subheading": "",
+              "cta_text": "SHOP BUNDLES",
+              "text_color": "#ffffff"
+            }
+          },
+          "16262949739f556d29-1": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "link": "",
+              "size": "half",
+              "title": "Image text",
+              "subheading": "",
+              "cta_text": "See more",
+              "text_color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "16262949739f556d29-0",
+          "16262949739f556d29-1"
+        ],
+        "settings": {
+          "skip_container": true
+        }
+      },
+      "1628032205fa2ee49c": {
+        "type": "image-with-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/OG-Love-Herro.png",
+          "layout": "left",
+          "title": "THE ORIGINAL LOVE COLLECTION",
+          "text": "",
+          "button_text": "Shop NOW",
+          "button_link": "shopify:\/\/collections\/original-love-collection",
+          "text_alignment": "center",
+          "color_bg": "#ffffff",
+          "color_text": "#000000",
+          "color_head": "#212b36",
+          "skip_container": true
+        }
+      },
+      "1629843372d24dda7f": {
+        "type": "slideshow",
+        "blocks": {
+          "f83344e6-23f4-43ca-a666-2a70a261e8ec": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Sets-hero.png",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 15,
+              "color": "#ffffff",
+              "heading": "THE MORE LOVE THE BETTER",
+              "subheading": "",
+              "button_1_text": "SHOP BUNDLES",
+              "button_1_url": "shopify:\/\/collections\/clothing-bundle-set",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "f83344e6-23f4-43ca-a666-2a70a261e8ec"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-center",
+          "slide_mode": "slide",
+          "autoplay": false,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": false,
+          "skip_container": true,
+          "head_img_height_fixed": false,
+          "head_img_height_int": 700
+        }
+      },
+      "page-story-template": {
+        "type": "page-story-template",
+        "blocks": {
+          "1c8e2471-a894-4681-bd9b-960ecfcec2b0": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/Ruben-About-Hero.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 24,
+              "link1": "",
+              "size1": "full",
+              "title1": "INSPIRE OTHERS TO LIVE THROUGH LOVE",
+              "subheading1": "",
+              "cta_text1": "",
+              "text_color1": "#ffffff",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "",
+              "size2": "half",
+              "title2": "Image text",
+              "subheading2": "",
+              "cta_text2": "See more",
+              "text_color2": "#ffffff",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "",
+              "size3": "half",
+              "title3": "Image text",
+              "subheading3": "",
+              "cta_text3": "See more",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          },
+          "5b338937-1ee3-4e6a-864c-a709d94f7a9a": {
+            "type": "rich-text",
+            "settings": {
+              "title": "It all started with one word — LOVE",
+              "text": "<p>Love is a noun, a verb, and a way of life.<\/p><p>We wake up every day and choose love. We want to change the way people treat each other, the world, and themselves. There’s a lot of talk about love and making the world a better place, but we’re actually taking and inspiring action. We’re not selling another ‘love’ shirt or piece of ‘love’ art. We’re reminding people that they matter with our words and actions, and we’re inviting you to join us.<\/p><p>This is an active state of caring. This is a movement of people who operate out of love, not fear. This is acting from the heart. This is Live Through Love.<\/p>",
+              "link_text": "",
+              "link_url": "",
+              "color_bg": "#000000",
+              "color_text": "#ffffff",
+              "color_head": "#ffffff"
+            }
+          },
+          "861190ed-c772-4fd1-a1af-c47cbc207da6": {
+            "type": "image-with-text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/rubensmile.jpg",
+              "layout": "right",
+              "title": "MAKING AN IMPACT",
+              "text": "<p>By using the urban landscape as his canvas, Ruben encourages communities to change for the better through optimism and collaboration. These once vacant walls are now vibrant reminders that inspire those who see them to dream big, feel beautiful, live in possibility, and to love. Ruben’s murals can be seen in cities across the country and around the world from Paris to New York and Florida to Mississippi. <\/p>",
+              "button_text": "",
+              "button_link": "",
+              "text_alignment": "center",
+              "color_bg": "#f4f4f4",
+              "color_text": "#000000",
+              "color_head": "#000000",
+              "skip_container": true
+            }
+          },
+          "b553027b-ed53-4f16-94d6-ca3143a98956": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/We_Spread.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 6,
+              "link1": "",
+              "size1": "full",
+              "title1": "WE SPREAD OUR MESSAGE THROUGH SEVERAL OFFERINGS",
+              "subheading1": "",
+              "cta_text1": "",
+              "text_color1": "#000000",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "",
+              "size2": "half",
+              "title2": "Image text",
+              "subheading2": "",
+              "cta_text2": "See more",
+              "text_color2": "#ffffff",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "",
+              "size3": "half",
+              "title3": "Image text",
+              "subheading3": "",
+              "cta_text3": "See more",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          },
+          "09c6cd7c-2930-48a5-9a28-9546b069d162": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/Art-Mission.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 11,
+              "link1": "https:\/\/rubenrojas.com\/collections\/artwork",
+              "size1": "quarter",
+              "title1": "",
+              "subheading1": "",
+              "cta_text1": "ART",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/Clothing-mission.png",
+              "tint_color2": "#000000",
+              "tint_opacity2": 10,
+              "link2": "https:\/\/rubenrojas.com\/collections\/all",
+              "size2": "quarter",
+              "title2": "",
+              "subheading2": "",
+              "cta_text2": "CLOTHING",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/Murals-Mission.png",
+              "tint_color3": "#000000",
+              "tint_opacity3": 10,
+              "link3": "https:\/\/rubenrojas.com\/pages\/mural-locations",
+              "size3": "quarter",
+              "title3": "",
+              "subheading3": "",
+              "cta_text3": "MURALS",
+              "text_color3": "#ffffff",
+              "image4": "shopify:\/\/shop_images\/Book-Mission.png",
+              "tint_color4": "#000000",
+              "tint_opacity4": 10,
+              "link4": "https:\/\/rubenrojas.com\/pages\/book-1",
+              "size4": "quarter",
+              "title4": "",
+              "subheading4": "",
+              "cta_text4": "BOOK",
+              "text_color4": "#ffffff"
+            }
+          },
+          "79283db0-66e2-4255-a8ef-360495b93b3a": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "tint_color1": "#000000",
+              "tint_opacity1": 25,
+              "link1": "",
+              "size1": "full",
+              "title1": "BEYOND MURALS",
+              "subheading1": "Ruben’s portfolio of work extends past empty wall canvases. He is a TED speaker, helping spread the message of art creating impact, a product designer and also a corporate consultant.",
+              "cta_text1": "",
+              "text_color1": "#ffffff",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "",
+              "size2": "two-thirds",
+              "title2": "Image text",
+              "subheading2": "",
+              "cta_text2": "Get in touch",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/104438818_1620591548105766_5346203510104963607_n.jpg",
+              "tint_color3": "#000000",
+              "tint_opacity3": 49,
+              "link3": "shopify:\/\/pages\/contact",
+              "size3": "full",
+              "title3": "LET'S ALL SHARE IN THE LOVE",
+              "subheading3": "",
+              "cta_text3": "GET IN TOUCH",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1c8e2471-a894-4681-bd9b-960ecfcec2b0",
+          "5b338937-1ee3-4e6a-864c-a709d94f7a9a",
+          "861190ed-c772-4fd1-a1af-c47cbc207da6",
+          "b553027b-ed53-4f16-94d6-ca3143a98956",
+          "09c6cd7c-2930-48a5-9a28-9546b069d162",
+          "79283db0-66e2-4255-a8ef-360495b93b3a"
+        ],
+        "settings": {
+          "show_page_content": true,
+          "header_image_position": "center-center"
+        }
+      },
+      "page-story-template-artsy": {
+        "type": "page-story-template-artsy",
+        "blocks": {
+          "14477a88-21dc-44ae-b510-d52f23bb3dcb": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/ruben-book-standing.jpg",
+              "tint_color1": "#000000",
+              "tint_opacity1": 25,
+              "link1": "",
+              "size1": "full",
+              "title1": "IT ALL STARTED WITH ONE WORD — LOVE",
+              "subheading1": "",
+              "cta_text1": "SHOP NOW",
+              "text_color1": "#ffffff",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "",
+              "size2": "half",
+              "title2": "Image text",
+              "subheading2": "",
+              "cta_text2": "See more",
+              "text_color2": "#ffffff",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "",
+              "size3": "half",
+              "title3": "Image text",
+              "subheading3": "",
+              "cta_text3": "See more",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          },
+          "34f22af6-bba8-41f7-887a-03a14a105fdb": {
+            "type": "rich-text",
+            "settings": {
+              "title": "LIVE THROUGH LOVE: THE BOOK",
+              "text": "<p>Poetry, philosophy, and personal reflection. A collection of empowering messages for when you need them most.<\/p><p><br\/><\/p><p>“If there’s one thing I’ve learned in my journey, it’s that it’s easy to question our belonging, worth, and value. I believe that each and every one of us belongs here and brings so much value to those around us. By living through love: showing it, sharing it, and wearing it, we are supporting each other to shift the pendulum toward love and away from fear.” –Ruben Rojas<\/p>",
+              "link_text": "",
+              "link_url": "",
+              "color_bg": "#000000",
+              "color_text": "#ffffff",
+              "color_head": "#fdfdfd"
+            }
+          },
+          "f6b3463c-93c8-4c71-8ca5-62225c87499e": {
+            "type": "custom-html",
+            "settings": {
+              "skip_container": true,
+              "custom_html": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/zEwvmWH23Ak\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>"
+            }
+          },
+          "131fb874-7402-44f8-a72b-2a61378b3d77": {
+            "type": "image-with-text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Book_Open_2.png",
+              "layout": "right",
+              "title": "DISCOVER SELF-LOVE",
+              "text": "<p>Within the pages of this easy-to-understand book, you’ll discover timeless wisdom in the poetry of Ruben’s words. You’ll not only fall in love with Ruben’s philosophy, but you’ll fall in love with yourself, and that is a life lesson that will last forever. <\/p>",
+              "button_text": "",
+              "button_link": "",
+              "text_alignment": "center",
+              "color_bg": "#f4f4f4",
+              "color_text": "#454f5b",
+              "color_head": "#212b36",
+              "skip_container": true
+            }
+          },
+          "0b57ec39-d922-4a7a-bf37-5a9c1f2b81b7": {
+            "type": "image-with-text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Book-Open.png",
+              "layout": "left",
+              "title": "WRITE YOURSELF A LOVE LETTER",
+              "text": "<p>Dive deep and write those love letters to yourself. There are no rules, especially when it comes to defining your own self-love. When you live through love, that perfect imperfection blooms vibrantly, and you can’t help but genuinely smile when you see your own reflection.<\/p>",
+              "button_text": "",
+              "button_link": "",
+              "text_alignment": "center",
+              "color_bg": "#f4f4f4",
+              "color_text": "#454f5b",
+              "color_head": "#212b36",
+              "skip_container": true
+            }
+          },
+          "db437b75-4498-48b7-93f5-e0babc5a3a9f": {
+            "type": "custom-html",
+            "disabled": true,
+            "settings": {
+              "skip_container": false,
+              "custom_html": ""
+            }
+          }
+        },
+        "block_order": [
+          "14477a88-21dc-44ae-b510-d52f23bb3dcb",
+          "34f22af6-bba8-41f7-887a-03a14a105fdb",
+          "f6b3463c-93c8-4c71-8ca5-62225c87499e",
+          "131fb874-7402-44f8-a72b-2a61378b3d77",
+          "0b57ec39-d922-4a7a-bf37-5a9c1f2b81b7",
+          "db437b75-4498-48b7-93f5-e0babc5a3a9f"
+        ],
+        "settings": {
+          "show_page_content": true,
+          "header_image_position": "center-center"
+        }
+      },
+      "1629940268d9c2c613": {
+        "type": "background-video",
+        "disabled": true,
+        "settings": {
+          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0169\/0425\/7590\/files\/fire_background_loop2_videvo2_1.mp4?v=1629494981",
+          "subheading": "",
+          "title": "TURN UP THE HEAT WITH LOVE",
+          "title_size": 48,
+          "text": "",
+          "enlarge_text": false,
+          "button_label": "SHOP THE SET",
+          "button_link": "https:\/\/rubenrojas.com\/pages\/fuego-bundle?utm_source=Beautify%20List&utm_medium=email&utm_campaign=08%2F19%2F21%20-%20Fuego%20Drop%20%28XzKvek%29&_kx=GrsMtmh9TGTJRcdfZQ5Guv8NHXBez5YL1rEAOM3zI4jbiWNMh6fper_mR_ZSTCpP.KFXdHy",
+          "text_alignment": "center center",
+          "height": "fixed",
+          "height_desktop": 1000,
+          "height_mobile": 260,
+          "skip_container": true,
+          "text_color": "#ffffff",
+          "tint_color": "#000000",
+          "tint_opacity": 25
+        }
+      },
+      "page-story-projects-template": {
+        "type": "page-story-projects-template",
+        "blocks": {
+          "d3f3777b-7674-48bd-a7b3-e6dc62d93c88": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/love-house.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 25,
+              "link1": "shopify:\/\/pages\/love-house",
+              "size1": "third",
+              "title1": "Love House",
+              "subheading1": "",
+              "cta_text1": "Read More",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/Love-Lincoln.png",
+              "tint_color2": "#000000",
+              "tint_opacity2": 22,
+              "link2": "shopify:\/\/pages\/love-on-lincoln-1",
+              "size2": "third",
+              "title2": "Love on Lincoln",
+              "subheading2": "",
+              "cta_text2": "Read More",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/SummerofLove.png",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "shopify:\/\/pages\/love-on-lincoln",
+              "size3": "third",
+              "title3": "Summer of Love",
+              "subheading3": "",
+              "cta_text3": "Read More",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          },
+          "ce26fe44-b0c8-4536-b90a-cfa189bea603": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/Forgive.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 25,
+              "link1": "shopify:\/\/pages\/forgive-forgiven",
+              "size1": "third",
+              "title1": "Forgive\/Forgiven",
+              "subheading1": "",
+              "cta_text1": "Read More",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/YouBelong.png",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "shopify:\/\/pages\/you-belong-here",
+              "size2": "third",
+              "title2": "You Belong Here",
+              "subheading2": "",
+              "cta_text2": "Read More",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/Dreamer_cc68ca79-7107-41c8-a4f1-0c507931b11d.png",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "shopify:\/\/pages\/dreamer",
+              "size3": "third",
+              "title3": "Dreamer",
+              "subheading3": "",
+              "cta_text3": "Read More",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          },
+          "8760ac22-1f9b-4857-a461-6ef037b0a993": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/Now_4ever.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 25,
+              "link1": "shopify:\/\/pages\/now-forever",
+              "size1": "third",
+              "title1": "Now & Forever",
+              "subheading1": "",
+              "cta_text1": "Read More",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/Dowhatyoulove.png",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "shopify:\/\/pages\/do-what-you-love",
+              "size2": "third",
+              "title2": "Do What You Love",
+              "subheading2": "",
+              "cta_text2": "Read More",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/LoveRises.png",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "shopify:\/\/pages\/love-rises",
+              "size3": "third",
+              "title3": "Love Rises",
+              "subheading3": "",
+              "cta_text3": "Read More",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "d3f3777b-7674-48bd-a7b3-e6dc62d93c88",
+          "ce26fe44-b0c8-4536-b90a-cfa189bea603",
+          "8760ac22-1f9b-4857-a461-6ef037b0a993"
+        ],
+        "settings": {
+          "show_page_content": true,
+          "header_image_position": "center-center"
+        }
+      },
+      "page-story-projects-base-template": {
+        "type": "page-story-projects-base-template",
+        "blocks": {
+          "6f05125a-35ad-4ff8-afe9-7b6291c101ad": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Click on any of the icons below to read feature articles covering Ruben Rojas and his 'Live Through Love' Movment",
+              "text": "",
+              "link_text": "",
+              "link_url": "",
+              "color_bg": "#ffffff",
+              "color_text": "#000000",
+              "color_head": "#000000"
+            }
+          },
+          "a513904d-45e4-4e8f-9eed-4dd1e3e6b0a1": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": false,
+              "image1": "shopify:\/\/shop_images\/Medium.jpg",
+              "tint_color1": "#000000",
+              "tint_opacity1": 0,
+              "link1": "https:\/\/medium.com\/authority-magazine\/ruben-rojas-5-things-i-wish-someone-told-me-when-i-first-became-an-artist-ca51ed1869bf",
+              "size1": "quarter",
+              "title1": "",
+              "subheading1": "",
+              "cta_text1": "",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/Artist-Work-Ethic_52ea86b5-6426-4614-bac9-d58183b2120a.jpg",
+              "tint_color2": "#000000",
+              "tint_opacity2": 0,
+              "link2": "https:\/\/podcasts.apple.com\/us\/podcast\/artist-ruben-rojas\/id1570939201?i=1000534530033",
+              "size2": "quarter",
+              "title2": "",
+              "subheading2": "",
+              "cta_text2": "",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/AppNew_cbf6fdfc-308a-493a-892b-74c9e323c4bf.jpg",
+              "tint_color3": "#000000",
+              "tint_opacity3": 0,
+              "link3": "https:\/\/www.apparelnews.net\/news\/2021\/jul\/29\/ruben-rojas-falls-love-sharing-important-message-t\/",
+              "size3": "quarter",
+              "title3": "",
+              "subheading3": "",
+              "cta_text3": "",
+              "text_color3": "#ffffff",
+              "image4": "shopify:\/\/shop_images\/Eclair_dc0bf52e-a887-4a68-903e-4474c8c5da33.jpg",
+              "tint_color4": "#000000",
+              "tint_opacity4": 0,
+              "link4": "https:\/\/www.eclair-magazine.com\/ruben-rojas",
+              "size4": "quarter",
+              "title4": "",
+              "subheading4": "",
+              "cta_text4": "",
+              "text_color4": "#ffffff"
+            }
+          },
+          "e8283fc2-b087-4946-88ab-f403a032e493": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": false,
+              "image1": "shopify:\/\/shop_images\/mensj.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 0,
+              "link1": "https:\/\/www.mensjournal.com\/features\/neighborhood-heroes-urban-artist-and-muralist-ruben-rojas\/",
+              "size1": "quarter",
+              "title1": "",
+              "subheading1": "",
+              "cta_text1": "",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/latimes.png",
+              "tint_color2": "#000000",
+              "tint_opacity2": 0,
+              "link2": "https:\/\/www.latimes.com\/lifestyle\/story\/2020-05-29\/17-options-matching-mask-outfits-summers-newest-fashion-trend",
+              "size2": "quarter",
+              "title2": "",
+              "subheading2": "",
+              "cta_text2": "",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/abc7.png",
+              "tint_color3": "#000000",
+              "tint_opacity3": 0,
+              "link3": "https:\/\/abc7.com\/community-events\/la-muralist-spreads-message-you-cant-quarantine-love\/6093804\/?fbclid=IwAR1s4GzpH54lq6J8Ne8utg_6DSLKzN8hxe8dmyZqY2ULtpm0azA86UoFHWA",
+              "size3": "quarter",
+              "title3": "",
+              "subheading3": "",
+              "cta_text3": "",
+              "text_color3": "#ffffff",
+              "image4": "shopify:\/\/shop_images\/lisashow.png",
+              "tint_color4": "#000000",
+              "tint_opacity4": 0,
+              "link4": "https:\/\/www.byuradio.org\/episode\/d404a781-1111-4c65-aebb-4d4d818b2db6\/d404a781-1111-4c65-aebb-4d4d818b2db6?playhead=2100&autoplay=true",
+              "size4": "quarter",
+              "title4": "",
+              "subheading4": "",
+              "cta_text4": "",
+              "text_color4": "#ffffff"
+            }
+          },
+          "709d54fb-a7b0-4463-8f25-5d743dbf5ff6": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": false,
+              "image1": "shopify:\/\/shop_images\/inside.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 0,
+              "link1": "",
+              "size1": "quarter",
+              "title1": "",
+              "subheading1": "",
+              "cta_text1": "",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/smdp.png",
+              "tint_color2": "#000000",
+              "tint_opacity2": 0,
+              "link2": "https:\/\/www.smdp.com\/santa-monicas-mural-meistro\/175779",
+              "size2": "quarter",
+              "title2": "",
+              "subheading2": "",
+              "cta_text2": "",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/idla.png",
+              "tint_color3": "#000000",
+              "tint_opacity3": 0,
+              "link3": "https:\/\/www.identifyla.com\/thelatest\/fathers-day-gift-guide-2020",
+              "size3": "quarter",
+              "title3": "",
+              "subheading3": "",
+              "cta_text3": "",
+              "text_color3": "#ffffff",
+              "image4": "shopify:\/\/shop_images\/stupid.png",
+              "tint_color4": "#000000",
+              "tint_opacity4": 0,
+              "link4": "https:\/\/stupiddope.com\/2020\/04\/16\/creative-in-quarantine-with-bladezilla-x-life-through-love\/",
+              "size4": "quarter",
+              "title4": "",
+              "subheading4": "",
+              "cta_text4": "",
+              "text_color4": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "6f05125a-35ad-4ff8-afe9-7b6291c101ad",
+          "a513904d-45e4-4e8f-9eed-4dd1e3e6b0a1",
+          "e8283fc2-b087-4946-88ab-f403a032e493",
+          "709d54fb-a7b0-4463-8f25-5d743dbf5ff6"
+        ],
+        "settings": {
+          "show_page_content": true,
+          "header_image_position": "center-center"
+        }
+      },
+      "page-art-template": {
+        "type": "page-art-template",
+        "blocks": {
+          "2ff38814-fbe1-421e-9d65-6dec42be405c": {
+            "type": "rich-text",
+            "settings": {
+              "title": "ART IS LIFE. LIFE IS ART. All of the works on this page are one-of-a-kind originals by Ruben, inspired by his iconic murals and signature style. Sold pieces are for reference and can be commissioned for new work in that similar style. Due to the abstract nature of Ruben’s art, no two pieces will look alike.",
+              "text": "",
+              "link_text": "",
+              "link_url": "",
+              "color_bg": "#ffffff",
+              "color_text": "#000000",
+              "color_head": "#000000"
+            }
+          },
+          "8909cbb9-9525-4043-aced-3901a9a1e3d2": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/ruben-book-standing-wide.jpg",
+              "tint_color1": "#000000",
+              "tint_opacity1": 43,
+              "link1": "",
+              "size1": "full",
+              "title1": "Image text",
+              "subheading1": "",
+              "cta_text1": "See more",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/Kobe-bannre.png",
+              "tint_color2": "#000000",
+              "tint_opacity2": 41,
+              "link2": "",
+              "size2": "full",
+              "title2": "Image text",
+              "subheading2": "",
+              "cta_text2": "See more",
+              "text_color2": "#ffffff",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "",
+              "size3": "half",
+              "title3": "Image text",
+              "subheading3": "",
+              "cta_text3": "See more",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          },
+          "ec73385f-0179-48a8-8457-d8fd401689fd": {
+            "type": "image-with-text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/ruben-book-standing-wide.jpg",
+              "layout": "right",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to give focus to your chosen product, collection or blog post. Add details on availability, style or even provide a review.<\/p>",
+              "button_text": "Shop",
+              "button_link": "",
+              "text_alignment": "center",
+              "color_bg": "#f4f4f4",
+              "color_text": "#454f5b",
+              "color_head": "#212b36",
+              "skip_container": true
+            }
+          }
+        },
+        "block_order": [
+          "2ff38814-fbe1-421e-9d65-6dec42be405c",
+          "8909cbb9-9525-4043-aced-3901a9a1e3d2",
+          "ec73385f-0179-48a8-8457-d8fd401689fd"
+        ],
+        "settings": {
+          "show_page_content": true,
+          "header_image_position": "center-center"
+        }
+      },
+      "page-story-art-template": {
+        "type": "page-story-art-template",
+        "blocks": {
+          "8e0f67db-9287-435e-a1ed-2f53751609e5": {
+            "type": "rich-text",
+            "settings": {
+              "title": "ART IS LIFE. LIFE IS ART.",
+              "text": "<p>You’ve seen his murals. Now, bring his message home. All of the works on this page are prints of originals by Ruben, inspired by his iconic murals and signature style.<\/p>",
+              "link_text": "",
+              "link_url": "",
+              "color_bg": "#282727",
+              "color_text": "#ffffff",
+              "color_head": "#ffffff"
+            }
+          },
+          "4b599007-321d-4f98-a596-bf5e1fae7b78": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/kobe-block-small.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 25,
+              "link1": "",
+              "size1": "half",
+              "title1": "Kobe Collection",
+              "subheading1": "",
+              "cta_text1": "Shop Now",
+              "text_color1": "#ffffff",
+              "image2": "shopify:\/\/shop_images\/inspire-block-small.png",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "",
+              "size2": "half",
+              "title2": "Inspire Collection",
+              "subheading2": "",
+              "cta_text2": "Shop Now",
+              "text_color2": "#ffffff",
+              "image3": "shopify:\/\/shop_images\/Love-colored.png",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "",
+              "size3": "half",
+              "title3": "Signature Series",
+              "subheading3": "",
+              "cta_text3": "Shop Now",
+              "text_color3": "#ffffff",
+              "image4": "shopify:\/\/shop_images\/B_W.png",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Black & White",
+              "subheading4": "",
+              "cta_text4": "Shop Now",
+              "text_color4": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "8e0f67db-9287-435e-a1ed-2f53751609e5",
+          "4b599007-321d-4f98-a596-bf5e1fae7b78"
+        ],
+        "settings": {
+          "show_page_content": true,
+          "header_image_position": "center-center"
+        }
+      },
+      "page-story-template-mission": {
+        "type": "page-story-template-mission",
+        "blocks": {
+          "735360e0-7ae8-4b44-8744-4dcf25ff8380": {
+            "type": "rich-text",
+            "settings": {
+              "title": "MISSION",
+              "text": "<p>It all starts with one word: love. Love is a noun, a verb, and a way of life.<\/p><p><\/p><p>We wake up every day and choose love. We want to change the way people treat each other, the world, and themselves. There’s a lot of talk about love and making the world a better place, but we’re actually taking and inspiring action. We’re not selling another ‘love’ shirt or piece of ‘love’ art. We’re reminding people that they matter with our words and actions, and we’re inviting you to join us.<\/p><p><\/p><p>This is an active state of caring. This is a movement of people who operate out of love, not fear. This is acting from the heart. This is Live Through Love.<\/p>",
+              "link_text": "",
+              "link_url": "",
+              "color_bg": "#000000",
+              "color_text": "#ffffff",
+              "color_head": "#ffffff"
+            }
+          },
+          "af2afe46-9fdb-42fb-bcbb-4a3d30dff62b": {
+            "type": "gallery",
+            "disabled": true,
+            "settings": {
+              "skip_container": true,
+              "image1": "shopify:\/\/shop_images\/B_W.png",
+              "tint_color1": "#000000",
+              "tint_opacity1": 25,
+              "link1": "",
+              "size1": "full",
+              "title1": "Image text",
+              "subheading1": "",
+              "cta_text1": "See more",
+              "text_color1": "#ffffff",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "",
+              "size2": "half",
+              "title2": "Image text",
+              "subheading2": "",
+              "cta_text2": "See more",
+              "text_color2": "#ffffff",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "",
+              "size3": "half",
+              "title3": "",
+              "subheading3": "",
+              "cta_text3": "See more",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          },
+          "f31fcc53-128d-415f-9f48-c58d81234165": {
+            "type": "gallery",
+            "settings": {
+              "skip_container": false,
+              "tint_color1": "#000000",
+              "tint_opacity1": 25,
+              "link1": "",
+              "size1": "half",
+              "title1": "Image text",
+              "subheading1": "",
+              "cta_text1": "See more",
+              "text_color1": "#ffffff",
+              "tint_color2": "#000000",
+              "tint_opacity2": 25,
+              "link2": "",
+              "size2": "half",
+              "title2": "Image text",
+              "subheading2": "",
+              "cta_text2": "See more",
+              "text_color2": "#ffffff",
+              "tint_color3": "#000000",
+              "tint_opacity3": 25,
+              "link3": "",
+              "size3": "half",
+              "title3": "Image text",
+              "subheading3": "",
+              "cta_text3": "See more",
+              "text_color3": "#ffffff",
+              "tint_color4": "#000000",
+              "tint_opacity4": 25,
+              "link4": "",
+              "size4": "half",
+              "title4": "Image text",
+              "subheading4": "",
+              "cta_text4": "See more",
+              "text_color4": "#ffffff"
+            }
+          },
+          "fa34f13c-5363-4a0e-89c2-2b256273cc75": {
+            "type": "image-with-text",
+            "settings": {
+              "layout": "right",
+              "title": "Image with text",
+              "text": "",
+              "button_text": "Shop",
+              "button_link": "",
+              "text_alignment": "center",
+              "color_bg": "#f4f4f4",
+              "color_text": "#454f5b",
+              "color_head": "#212b36",
+              "skip_container": false
+            }
+          }
+        },
+        "block_order": [
+          "735360e0-7ae8-4b44-8744-4dcf25ff8380",
+          "af2afe46-9fdb-42fb-bcbb-4a3d30dff62b",
+          "f31fcc53-128d-415f-9f48-c58d81234165",
+          "fa34f13c-5363-4a0e-89c2-2b256273cc75"
+        ],
+        "settings": {
+          "show_page_content": true,
+          "header_image_position": "center-center"
+        }
+      },
+      "163466983383b42b4e": {
+        "type": "slideshow",
+        "blocks": {
+          "163466983383b42b4e-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Championship-hoodie-banner.png",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "color": "#ffffff",
+              "heading": "BE LEGENDARY",
+              "subheading": "SHOP THE CHAMPIONSHIP HOODIE WHILE SUPPLIES LAST",
+              "button_1_text": "BUY NOW",
+              "button_1_url": "shopify:\/\/products\/championship-hoodie",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          },
+          "e1a0f756-df09-454b-a2ca-267fa2dd1ab2": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ruben-Hero-Sand.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 17,
+              "color": "#ffffff",
+              "heading": "WALK WITH LOVE",
+              "subheading": "",
+              "button_1_text": "SHOP NOW",
+              "button_1_url": "",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "163466983383b42b4e-0",
+          "e1a0f756-df09-454b-a2ca-267fa2dd1ab2"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-left-center",
+          "slide_mode": "slide",
+          "autoplay": false,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": false,
+          "skip_container": true,
+          "head_img_height_fixed": false,
+          "head_img_height_int": 1000
+        }
+      },
+      "16377920476147bd20": {
+        "type": "slideshow",
+        "blocks": {
+          "16377920476147bd20-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/bag-hero.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 16,
+              "color": "#ffffff",
+              "heading": "CLASSIC. TIMELESS. ICONIC.",
+              "subheading": "THIS IS THE ULTIMATE LABEL:  THE LABEL OF LOVE",
+              "button_1_text": "SHOP NOW",
+              "button_1_url": "shopify:\/\/collections\/bags-totes",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "16377920476147bd20-0"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-right-center",
+          "slide_mode": "slide",
+          "autoplay": false,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": false,
+          "skip_container": true,
+          "head_img_height_fixed": false,
+          "head_img_height_int": 650
+        }
+      },
+      "1637792229e96eb06c": {
+        "type": "featured-images",
+        "disabled": true,
+        "blocks": {
+          "1637792229e96eb06c-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/lux-bag1.png",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "link": "shopify:\/\/products\/love-bag",
+              "size": "half",
+              "title": "THE BLACK RAINBOW WEEKENDER",
+              "subheading": "",
+              "cta_text": "SHOP THE BAG",
+              "text_color": "#ffffff"
+            }
+          },
+          "1637792229e96eb06c-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/weekender-bag.png",
+              "tint_color": "#000000",
+              "tint_opacity": 17,
+              "link": "shopify:\/\/products\/black-rainbow-carryall-tote",
+              "size": "half",
+              "title": "THE BLACK RAINBOW CARYALL",
+              "subheading": "",
+              "cta_text": "SHOP THE TOTE",
+              "text_color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1637792229e96eb06c-0",
+          "1637792229e96eb06c-1"
+        ],
+        "settings": {
+          "skip_container": true
+        }
+      },
+      "16377923077427c8b1": {
+        "type": "slideshow",
+        "blocks": {
+          "16377923077427c8b1-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Love-skate-decks.png",
+              "image_url": "shopify:\/\/products\/love-skate-board",
+              "tint_color": "#000000",
+              "tint_opacity": 25,
+              "color": "#ffffff",
+              "heading": "DROP IN WITH LOVE",
+              "subheading": "Hand-painted 1 of 1 skatedecks",
+              "button_1_text": "SHOP NOW",
+              "button_1_url": "shopify:\/\/products\/love-skate-board",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "16377923077427c8b1-0"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-center-bottom",
+          "slide_mode": "slide",
+          "autoplay": true,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": true,
+          "skip_container": true,
+          "head_img_height_fixed": false,
+          "head_img_height_int": 700
+        }
+      },
+      "163781156873539df6": {
+        "type": "slideshow",
+        "disabled": true,
+        "blocks": {
+          "163781156873539df6-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/RubenBlackFriday-Hero.png",
+              "image_url": "https:\/\/rubenrojas.com\/pages\/black-friday-sale-2021",
+              "tint_color": "#000000",
+              "tint_opacity": 20,
+              "color": "#ffffff",
+              "heading": "",
+              "subheading": "",
+              "button_1_text": "ENTER HERE",
+              "button_1_url": "https:\/\/rubenrojas.com\/pages\/black-friday-sale-2021",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "163781156873539df6-0"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-center-bottom",
+          "slide_mode": "slide",
+          "autoplay": false,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": false,
+          "skip_container": true,
+          "head_img_height_fixed": false,
+          "head_img_height_int": 450
+        }
+      },
+      "16378128643ed3c851": {
+        "type": "image-with-text",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/model-on-street.jpg",
+          "layout": "right",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection or blog post. Add details on availability, style or even provide a review.<\/p>",
+          "button_text": "Shop",
+          "button_link": "",
+          "text_alignment": "center",
+          "color_bg": "#000000",
+          "color_text": "#454f5b",
+          "color_head": "#212b36",
+          "skip_container": false
+        }
+      },
+      "1637813690b8a5e0fc": {
+        "type": "slideshow",
+        "blocks": {
+          "1637813690b8a5e0fc-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/monogram-sett.jpg",
+              "image_url": "",
+              "tint_color": "#000000",
+              "tint_opacity": 17,
+              "color": "#ffffff",
+              "heading": "LIVE THROUGH LOVE",
+              "subheading": "AND DO IT IN LUXURY",
+              "button_1_text": "SHOP NOW",
+              "button_1_url": "shopify:\/\/collections\/all",
+              "button_2_text": "",
+              "button_2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1637813690b8a5e0fc-0"
+        ],
+        "settings": {
+          "enable_carousel": false,
+          "slide_inner_position": "inner-center",
+          "slide_mode": "slide",
+          "autoplay": true,
+          "autoplay_speed": 7,
+          "slide_show_mobile_arrows": true,
+          "skip_container": true,
+          "head_img_height_fixed": true,
+          "head_img_height_int": 950
+        }
+      }
+    },
+    "content_for_index": [
+      "1637813690b8a5e0fc",
+      "163781156873539df6",
+      "1628032205fa2ee49c",
+      "16377920476147bd20",
+      "1637792229e96eb06c",
+      "16377923077427c8b1",
+      "1629940268d9c2c613",
+      "162439492940bf49f1",
+      "1566494880243",
+      "1566482260946",
+      "1626222944dd6c2445",
+      "1626222961e1629cc3",
+      "16257791464e8b17ac",
+      "163466983383b42b4e",
+      "1566493567944",
+      "1483635546290",
+      "16262949739f556d29",
+      "1566496449350",
+      "1626207078ef47ce71",
+      "1629843372d24dda7f",
+      "1624994489490e427d",
+      "162561035400e8697e",
+      "1625778928bfa4c2cd",
+      "1626294922a84a5294",
+      "16378128643ed3c851"
+    ]
+  },
+  "presets": {
+    "SwimClub": {
+      "col_text": "#293b65",
+      "col_headings": "#152242",
+      "col_links": "#5c6ac4",
+      "col_page_bg": "#ffffff",
+      "col_stars": "#eeaf2e",
+      "col_header_text": "#152242",
+      "col_header_text_overlap": "#ffffff",
+      "col_header_bg": "#ffffff",
+      "col_nav_links": "#ffffff",
+      "col_nav_bg": "#152242",
+      "col_page_heading_text": "#152242",
+      "col_page_heading_bg": "#eeeeee",
+      "col_search_bg": "#ffffff",
+      "col_search_text": "#212b36",
+      "col_search_headings": "#000000",
+      "col_alt_text": "#1c1d1d",
+      "col_alt_text_bg": "rgba(0,0,0,0)",
+      "col_prod_sale": "rgba(0,0,0,0)",
+      "col_btn": "#ffffff",
+      "col_btn_bg": "#152242",
+      "col_label_sold_out": "#ffffff",
+      "col_label_sale": "#202e78",
+      "col_label_low_stock": "#000639",
+      "col_label_custom": "#50248f",
+      "type_base_font": "futura_n4",
+      "type_heading_font": "din_neuzeit_grotesk_n3",
+      "type_nav_font": "neuzeit_s_n4",
+      "type_logo_font": "neuzeit_s_n4",
+      "font_size_base_int": 15,
+      "font_size_nav_int": 32,
+      "font_size_nav_inline_int": 15,
+      "logo_size_int": 24,
+      "button_shape": "sharp",
+      "button_border_width": "2",
+      "content_header_overlap": 0,
+      "content_header_min_height_mob": 240,
+      "content_header_min_height_desktop": 380,
+      "content_header_enable_breadcrumbs": false,
+      "product_image_align": true,
+      "product_hover_image": true,
+      "label_sale_show": true,
+      "label_soldout_show": true,
+      "label_remain_show": true,
+      "prod_stock_warn_limit_int": 5,
+      "product_label_position": "tl",
+      "search_type": "product",
+      "live_search_show_vendor": false,
+      "enable_transition_in": true,
+      "enable_overlay_transition": true,
+      "checkout_header_image": "",
+      "checkout_logo_position": "center",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#197bbd",
+      "checkout_button_color": "#197bbd",
+      "checkout_error_color": "#e32c2b",
+      "col_page_heading_text_over_image": "#ffffff",
+      "share_image": "",
+      "show_multiple_currencies": true,
+      "currency_format": "money_with_currency_format",
+      "supported_currencies": "INR GBP CAD USD AUD EUR",
+      "default_currency": "USD",
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "44675a8c-f5cb-42a0-842b-d7c26b9d30ca": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "44675a8c-f5cb-42a0-842b-d7c26b9d30ca"
+          ],
+          "settings": {
+            "enable_sticky": true,
+            "enabled_header_overlap": true,
+            "logo_width": 125,
+            "enable_logo_shrink": true,
+            "enable_inline_links": true,
+            "menu_align_logo_left": false,
+            "show_social_links": true,
+            "contact_info_in_mega": false,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "text_color": "#ffffff",
+            "tint_color": "#000000",
+            "tint_opacity": 25
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "show_menu_headings": true,
+            "show_social": false,
+            "show_text_area": true,
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_newsletter": true
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "products_per_row_int": 3,
+            "pagination_limit": 16,
+            "show_tags": true,
+            "coll_show_sort": true,
+            "coll_show_feat": false,
+            "grid_show_vendor": false,
+            "header_image_position": "center-center",
+            "head_img_coll_handled": false
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "description_position": "up",
+            "show_tax_and_shipping": true,
+            "prod_show_brand": false,
+            "prod_show_sku": false,
+            "prod_show_sharing": true,
+            "prod_show_breadcrumbs": true,
+            "enable_ajax_form": "true",
+            "enable_payment_button": true,
+            "show_pickup_availability": true,
+            "show_backorder_text": true,
+            "image_layout": "under",
+            "prod_lightbox": true,
+            "prod_lightbox_zoom": true,
+            "enable_video_looping": false,
+            "header_title_show": false
+          }
+        },
+        "1483632146786": {
+          "type": "featured-collection",
+          "settings": {
+            "products_per_row_int": 3,
+            "product_rows_int": 1,
+            "grid_show_vendor": false
+          }
+        },
+        "1483635546290": {
+          "type": "featured-blog",
+          "settings": {
+          }
+        },
+        "banner-index": {
+          "type": "banner-index",
+          "blocks": {
+            "1483959039059": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 30,
+                "color": "#ffffff"
+              }
+            },
+            "1484143749669": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 48,
+                "color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "1483959039059",
+            "1484143749669"
+          ],
+          "settings": {
+            "enable_carousel": false,
+            "slide_mode": "fade",
+            "autoplay": true,
+            "autoplay_speed": 7,
+            "slide_show_mobile_arrows": true,
+            "head_img_height_fixed": true,
+            "head_img_height_int": 850
+          }
+        },
+        "1484317010599": {
+          "type": "rich-text",
+          "settings": {
+            "color_bg": "#152242",
+            "color_text": "#e6f2ff",
+            "color_head": "#ffffff"
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "show_announcement": false,
+            "announcement_home_only": false,
+            "announcement_bar_bg_color": "#ffe2d1",
+            "announcement_bar_bg_text": "#132625"
+          }
+        },
+        "1566482260946": {
+          "type": "featured-images",
+          "blocks": {
+            "1566482439149": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 29,
+                "size": "third",
+                "text_color": "#ffffff"
+              }
+            },
+            "1566482260946-1": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 20,
+                "size": "third",
+                "text_color": "#ffffff"
+              }
+            },
+            "1566482260946-0": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 0,
+                "size": "third",
+                "text_color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "1566482439149",
+            "1566482260946-1",
+            "1566482260946-0"
+          ],
+          "settings": {
+            "skip_container": true
+          }
+        },
+        "1566493567944": {
+          "type": "testimonials",
+          "blocks": {
+            "1566493567944-0": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            },
+            "1568803947076": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            }
+          },
+          "block_order": [
+            "1566493567944-0",
+            "1568803947076"
+          ],
+          "settings": {
+            "title": "Testimonials",
+            "autoplay": false,
+            "logo_height": 40
+          }
+        },
+        "1566493825980": {
+          "type": "slideshow-with-text",
+          "blocks": {
+            "1566493825980-0": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "1566493825980-1": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1566493825980-0",
+            "1566493825980-1"
+          ],
+          "settings": {
+            "slide_mode": "slide",
+            "autoplay": true,
+            "autoplay_speed": 7,
+            "slide_show_mobile_arrows": true,
+            "color_bg": "#eeeeee"
+          }
+        },
+        "1566494880243": {
+          "type": "video",
+          "settings": {
+            "title_size": 60,
+            "enlarge_text": false,
+            "text_alignment": "center center",
+            "image_position": "center center",
+            "skip_container": true,
+            "text_color": "#ffffff",
+            "tint_color": "#000000",
+            "tint_opacity": 0
+          }
+        },
+        "1566496449350": {
+          "type": "image-with-text",
+          "settings": {
+            "layout": "right",
+            "text_alignment": "center",
+            "color_bg": "#eeeeee",
+            "color_text": "#454f5b",
+            "color_head": "#212b36",
+            "skip_container": true
+          }
+        },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "mode": "disabled",
+            "popup_delay_seconds": 5,
+            "popup_dismiss_for_days": 30,
+            "position": "center",
+            "show_newsletter": true,
+            "show_social_icons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_terms_show": false,
+            "cart_terms_page": "",
+            "cart_note_show": true,
+            "show_tax_and_shipping": true,
+            "show_additional_checkout_buttons": true,
+            "show_backorder_text": true,
+            "header_image_position": "center-center"
+          }
+        }
+      },
+      "content_for_index": [
+        "1484317010599",
+        "1483632146786",
+        "1566482260946",
+        "1566493825980",
+        "1566493567944",
+        "1566494880243",
+        "1483635546290",
+        "1566496449350"
+      ]
+    },
+    "Driftwood": {
+      "col_text": "#2a2928",
+      "col_headings": "#ff7c24",
+      "col_links": "#ff7c24",
+      "col_page_bg": "#fdfbfa",
+      "col_stars": "#e2af36",
+      "col_header_text": "#2a2928",
+      "col_header_text_overlap": "#ffffff",
+      "col_header_bg": "#ffffff",
+      "col_nav_links": "#ffffff",
+      "col_nav_bg": "#2a2928",
+      "col_page_heading_text": "#2a2928",
+      "col_page_heading_bg": "#ece9e7",
+      "col_search_bg": "#fdfbfa",
+      "col_search_text": "#25110e",
+      "col_search_headings": "#25110e",
+      "col_alt_text": "#25110e",
+      "col_alt_text_bg": "rgba(0,0,0,0)",
+      "col_prod_sale": "rgba(0,0,0,0)",
+      "col_btn": "#ff7c24",
+      "col_btn_bg": "#ffffff",
+      "col_label_sold_out": "#25110e",
+      "col_label_sale": "#ac353b",
+      "col_label_low_stock": "#454f5b",
+      "col_label_custom": "#a94400",
+      "col_popup_text": "#2a2928",
+      "type_base_font": "montserrat_n4",
+      "type_heading_font": "pacifico_n4",
+      "type_nav_font": "montserrat_n4",
+      "type_logo_font": "pacifico_n4",
+      "font_size_base_int": 15,
+      "font_size_nav_int": 32,
+      "font_size_nav_inline_int": 15,
+      "logo_size_int": 24,
+      "button_border_width": "2",
+      "content_header_overlap": 0,
+      "content_header_min_height_mob": 200,
+      "content_header_min_height_desktop": 480,
+      "content_header_enable_breadcrumbs": false,
+      "product_image_align": true,
+      "product_hover_image": true,
+      "label_sale_show": true,
+      "label_soldout_show": true,
+      "label_remain_show": true,
+      "prod_stock_warn_limit_int": 5,
+      "product_label_position": "tl",
+      "search_type": "product",
+      "live_search_show_vendor": false,
+      "enable_transition_in": true,
+      "enable_overlay_transition": true,
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#197bbd",
+      "checkout_button_color": "#197bbd",
+      "checkout_error_color": "#e32c2b",
+      "col_page_heading_text_over_image": "#ffffff",
+      "share_image": "",
+      "show_multiple_currencies": true,
+      "currency_format": "money_with_currency_format",
+      "supported_currencies": "GBP CAD USD AUD EUR JPY",
+      "default_currency": "USD",
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "4ef644de-5d0f-4176-a6f5-19dd593a7ac4": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "4ef644de-5d0f-4176-a6f5-19dd593a7ac4"
+          ],
+          "settings": {
+            "enable_sticky": true,
+            "enabled_header_overlap": true,
+            "logo_width": 125,
+            "enable_logo_shrink": true,
+            "enable_inline_links": true,
+            "menu_align_logo_left": false,
+            "show_social_links": true,
+            "contact_info_in_mega": false,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "text_color": "#ffffff",
+            "tint_color": "#2a2928",
+            "tint_opacity": 24
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "show_menu_headings": true,
+            "show_social": false,
+            "show_text_area": true,
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_newsletter": false
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "description_position": "up",
+            "show_tax_and_shipping": true,
+            "prod_show_brand": false,
+            "prod_show_sku": true,
+            "prod_show_sharing": true,
+            "prod_show_breadcrumbs": true,
+            "enable_ajax_form": "true",
+            "enable_payment_button": true,
+            "show_pickup_availability": true,
+            "show_backorder_text": true,
+            "image_layout": "under",
+            "prod_lightbox": true,
+            "prod_lightbox_zoom": true,
+            "enable_video_looping": false,
+            "header_title_show": false
+          }
+        },
+        "1483632146786": {
+          "type": "featured-collection",
+          "settings": {
+            "products_per_row_int": 3,
+            "product_rows_int": 1,
+            "grid_show_vendor": false
+          }
+        },
+        "1483635546290": {
+          "type": "featured-blog",
+          "settings": {
+          }
+        },
+        "banner-index": {
+          "type": "banner-index",
+          "blocks": {
+            "1588171097617": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 24,
+                "color": "#ffffff"
+              }
+            },
+            "1483959039059": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 27,
+                "color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "1588171097617",
+            "1483959039059"
+          ],
+          "settings": {
+            "enable_carousel": true,
+            "slide_mode": "fade",
+            "autoplay": true,
+            "autoplay_speed": 7,
+            "slide_show_mobile_arrows": true,
+            "head_img_height_fixed": true,
+            "head_img_height_int": 800
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "show_announcement": false,
+            "announcement_home_only": false,
+            "announcement_bar_text": "",
+            "announcement_bar_bg_color": "#ffe2d1",
+            "announcement_bar_bg_text": "#132625"
+          }
+        },
+        "1568220025039": {
+          "type": "image-with-text",
+          "settings": {
+            "layout": "left",
+            "text_alignment": "center",
+            "color_bg": "#000000",
+            "color_text": "#ffffff",
+            "color_head": "#ff7c24",
+            "skip_container": true
+          }
+        },
+        "1568221256952": {
+          "type": "testimonials",
+          "blocks": {
+            "1568221256952-0": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            },
+            "1568221256952-1": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            },
+            "1568221256952-2": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            },
+            "1568221923940": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            }
+          },
+          "block_order": [
+            "1568221256952-0",
+            "1568221256952-1",
+            "1568221256952-2",
+            "1568221923940"
+          ],
+          "settings": {
+            "autoplay": true,
+            "logo_height": 60
+          }
+        },
+        "1568285493882": {
+          "type": "featured-collection",
+          "settings": {
+            "products_per_row_int": 3,
+            "product_rows_int": 1,
+            "grid_show_vendor": false
+          }
+        },
+        "1568294173115": {
+          "type": "featured-collection",
+          "settings": {
+            "products_per_row_int": 2,
+            "product_rows_int": 1,
+            "grid_show_vendor": false
+          }
+        },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "mode": "enabled",
+            "popup_delay_seconds": 5,
+            "popup_dismiss_for_days": 30,
+            "position": "center",
+            "show_newsletter": true,
+            "show_social_icons": true
+          }
+        },
+        "1607515424f903c549": {
+          "type": "slideshow-with-text",
+          "blocks": {
+            "1607515424f903c549-1": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "33e74540-4d7f-49e4-b9e8-1828218cf521": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "1607515424f903c549-0": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1607515424f903c549-1",
+            "33e74540-4d7f-49e4-b9e8-1828218cf521",
+            "1607515424f903c549-0"
+          ],
+          "settings": {
+            "slide_mode": "slide",
+            "autoplay": true,
+            "autoplay_speed": 6,
+            "slide_show_mobile_arrows": true,
+            "color_bg": "#ece9e7"
+          }
+        },
+        "1607515457aa8d5d58": {
+          "type": "slideshow",
+          "blocks": {
+            "1607515457aa8d5d58-0": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#2a2928",
+                "tint_opacity": 16,
+                "color": "#ffffff"
+              }
+            },
+            "1607515457aa8d5d58-1": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#2a2928",
+                "tint_opacity": 24,
+                "color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "1607515457aa8d5d58-0",
+            "1607515457aa8d5d58-1"
+          ],
+          "settings": {
+            "enable_carousel": false,
+            "slide_mode": "slide",
+            "autoplay": true,
+            "autoplay_speed": 8,
+            "slide_show_mobile_arrows": true,
+            "skip_container": true,
+            "head_img_height_fixed": true,
+            "head_img_height_int": 700
+          }
+        },
+        "16075154972a95bc96": {
+          "type": "slideshow",
+          "blocks": {
+            "16075154972a95bc96-0": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 0,
+                "color": "#ffffff",
+                "heading": "",
+                "subheading": "",
+                "button_1_text": "",
+                "button_2_text": ""
+              }
+            }
+          },
+          "block_order": [
+            "16075154972a95bc96-0"
+          ],
+          "settings": {
+            "enable_carousel": false,
+            "slide_mode": "slide",
+            "autoplay": false,
+            "autoplay_speed": 7,
+            "slide_show_mobile_arrows": false,
+            "skip_container": true,
+            "head_img_height_fixed": true,
+            "head_img_height_int": 700
+          }
+        }
+      },
+      "content_for_index": [
+        "1483632146786",
+        "1568285493882",
+        "1568220025039",
+        "1568221256952",
+        "1607515457aa8d5d58",
+        "1568294173115",
+        "1607515424f903c549",
+        "1483635546290",
+        "16075154972a95bc96"
+      ]
+    },
+    "CloudBreak": {
+      "col_text": "#333029",
+      "col_headings": "#333029",
+      "col_links": "#fe7259",
+      "col_page_bg": "#ffffff",
+      "col_stars": "#f7c346",
+      "col_header_text": "#333029",
+      "col_header_text_overlap": "#ffffff",
+      "col_header_bg": "#ffffff",
+      "col_nav_links": "#333029",
+      "col_nav_bg": "#ffffff",
+      "col_page_heading_text": "#333029",
+      "col_page_heading_bg": "#ff8458",
+      "page_use_contrast_logo": false,
+      "col_search_bg": "#ff8458",
+      "col_search_text": "#ffffff",
+      "col_search_headings": "#ffffff",
+      "col_alt_text": "#333029",
+      "col_alt_text_bg": "rgba(0,0,0,0)",
+      "col_prod_sale": "rgba(0,0,0,0)",
+      "col_btn": "#ffffff",
+      "col_btn_bg": "#000000",
+      "col_label_sold_out": "#565656",
+      "col_label_sale": "#ffffff",
+      "col_label_low_stock": "#000000",
+      "col_label_custom": "#0b3d65",
+      "type_base_font": "basic_commercial_n4",
+      "type_heading_font": "basic_commercial_n4",
+      "type_nav_font": "basic_commercial_soft_rounded_n4",
+      "type_logo_font": "basic_commercial_n7",
+      "font_size_base_int": 17,
+      "font_size_nav_int": 48,
+      "logo_size_int": 24,
+      "button_shape": "sharp",
+      "content_header_overlap": 0,
+      "content_header_enable_breadcrumbs": false,
+      "product_image_align": true,
+      "product_hover_image": true,
+      "label_sale_show": true,
+      "label_soldout_show": true,
+      "label_remain_show": true,
+      "prod_stock_warn_limit_int": 5,
+      "product_label_position": "tl",
+      "search_type": "product",
+      "live_search_show_vendor": false,
+      "enable_transition_in": true,
+      "enable_overlay_transition": true,
+      "checkout_header_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#197bbd",
+      "checkout_button_color": "#197bbd",
+      "checkout_error_color": "#e32c2b",
+      "col_page_heading_text_over_image": "#ffffff",
+      "share_image": "",
+      "show_multiple_currencies": true,
+      "currency_format": "money_with_currency_format",
+      "supported_currencies": "GBP CAD USD AUD EUR JPY",
+      "default_currency": "USD",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "enable_sticky": true,
+            "enabled_header_overlap": true,
+            "logo_width": 125,
+            "enable_logo_shrink": true,
+            "enable_inline_links": false,
+            "menu_align_logo_left": false,
+            "show_social_links": false,
+            "contact_info_in_mega": false,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "text_color": "#ffffff",
+            "tint_color": "#000000",
+            "tint_opacity": 25
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "show_menu_headings": true,
+            "show_social": false,
+            "show_text_area": true,
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_newsletter": false
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "description_position": "up",
+            "show_tax_and_shipping": true,
+            "prod_show_brand": false,
+            "prod_show_sku": false,
+            "prod_show_sharing": true,
+            "prod_show_breadcrumbs": true,
+            "enable_ajax_form": "true",
+            "enable_payment_button": true,
+            "show_pickup_availability": true,
+            "show_backorder_text": true,
+            "image_layout": "under",
+            "prod_lightbox": true,
+            "prod_lightbox_zoom": true,
+            "enable_video_looping": false,
+            "header_title_show": false
+          }
+        },
+        "1483632146786": {
+          "type": "featured-collection",
+          "settings": {
+            "products_per_row_int": 3,
+            "product_rows_int": 2,
+            "grid_show_vendor": false
+          }
+        },
+        "1483635546290": {
+          "type": "featured-blog",
+          "settings": {
+          }
+        },
+        "1483636244998": {
+          "type": "featured-collection",
+          "settings": {
+            "products_per_row_int": 3,
+            "product_rows_int": 2,
+            "grid_show_vendor": false
+          }
+        },
+        "banner-index": {
+          "type": "banner-index",
+          "blocks": {
+            "25039bb3-e59f-41bd-86d0-8f9b21ebbe2f": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 15,
+                "color": "#ffffff"
+              }
+            },
+            "1569834942946": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 25,
+                "color": "#ffffff"
+              }
+            },
+            "1567762328783": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 40,
+                "color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "25039bb3-e59f-41bd-86d0-8f9b21ebbe2f",
+            "1569834942946",
+            "1567762328783"
+          ],
+          "settings": {
+            "enable_carousel": false,
+            "slide_mode": "slide",
+            "autoplay": true,
+            "autoplay_speed": 8,
+            "slide_show_mobile_arrows": true,
+            "head_img_height_fixed": true,
+            "head_img_height_int": 700
+          }
+        },
+        "1485871096463": {
+          "type": "featured-images",
+          "blocks": {
+            "1485871096463-0": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 12,
+                "size": "half",
+                "text_color": "#ffffff"
+              }
+            },
+            "1485871096463-1": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 11,
+                "size": "half",
+                "text_color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "1485871096463-0",
+            "1485871096463-1"
+          ],
+          "settings": {
+            "skip_container": true
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "show_announcement": false,
+            "announcement_home_only": false,
+            "announcement_bar_bg_color": "#ffe2d1",
+            "announcement_bar_bg_text": "#132625"
+          }
+        },
+        "1567701568443": {
+          "type": "slideshow-with-text",
+          "blocks": {
+            "1567701568443-0": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "1567701568443-1": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1567701568443-0",
+            "1567701568443-1"
+          ],
+          "settings": {
+            "slide_mode": "fade",
+            "autoplay": true,
+            "autoplay_speed": 7,
+            "slide_show_mobile_arrows": true,
+            "color_bg": "#ff8458"
+          }
+        },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "mode": "enabled",
+            "popup_delay_seconds": 5,
+            "popup_dismiss_for_days": 30,
+            "position": "bottom-left",
+            "show_newsletter": true,
+            "show_social_icons": true
+          }
+        },
+        "16075324323e13bc92": {
+          "type": "featured-product",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "show_quantity": false,
+            "enable_ajax_form": "true",
+            "enable_payment_button": true,
+            "show_backorder_text": true,
+            "image_layout": "beside",
+            "show_all_images": true,
+            "enable_video_looping": false
+          }
+        },
+        "1607532697c1347a22": {
+          "type": "background-video",
+          "settings": {
+            "subheading": "",
+            "title": "",
+            "title_size": 60,
+            "text": "",
+            "enlarge_text": false,
+            "button_label": "",
+            "text_alignment": "center center",
+            "height": "fixed",
+            "height_desktop": 800,
+            "height_mobile": 500,
+            "skip_container": true,
+            "text_color": "#ffffff",
+            "tint_color": "#000000",
+            "tint_opacity": 25
+          }
+        }
+      },
+      "content_for_index": [
+        "1483632146786",
+        "1485871096463",
+        "1483636244998",
+        "1607532697c1347a22",
+        "16075324323e13bc92",
+        "1567701568443",
+        "1483635546290"
+      ]
+    },
+    "Seasons": {
+      "col_text": "#4b0303",
+      "col_headings": "#330101",
+      "col_links": "#c05717",
+      "col_page_bg": "#ffffff",
+      "col_stars": "#f7c346",
+      "col_header_text": "#330101",
+      "col_header_text_overlap": "#ffffff",
+      "col_header_bg": "#fdf8f2",
+      "col_nav_links": "#fdf8f2",
+      "col_nav_bg": "#25110d",
+      "col_page_heading_text": "#330101",
+      "col_page_heading_bg": "#fcf0e0",
+      "col_search_bg": "#fdf8f2",
+      "col_search_text": "#4b0303",
+      "col_search_headings": "#330101",
+      "col_alt_text": "#4b0303",
+      "col_alt_text_bg": "rgba(0,0,0,0)",
+      "col_prod_sale": "rgba(0,0,0,0)",
+      "col_btn": "#fdf8f2",
+      "col_btn_bg": "#330101",
+      "col_label_sold_out": "#444444",
+      "col_label_sale": "#bf0711",
+      "col_label_low_stock": "#330101",
+      "col_label_custom": "#c05717",
+      "col_popup_text": "#330101",
+      "col_popup_background": "#fdf8f2",
+      "type_base_font": "pmn_caecilia_n4",
+      "type_heading_font": "pmn_caecilia_n7",
+      "type_nav_font": "pmn_caecilia_n4",
+      "type_logo_font": "pmn_caecilia_n7",
+      "font_size_base_int": 15,
+      "font_size_nav_int": 32,
+      "logo_size_int": 24,
+      "button_border_width": "1",
+      "content_header_overlap": 75,
+      "content_header_min_height_mob": 240,
+      "content_header_min_height_desktop": 440,
+      "content_header_enable_breadcrumbs": false,
+      "product_image_align": true,
+      "product_hover_image": true,
+      "label_sale_show": true,
+      "label_soldout_show": true,
+      "label_remain_show": true,
+      "prod_stock_warn_limit_int": 6,
+      "product_label_position": "tl",
+      "search_type": "product",
+      "live_search_show_vendor": false,
+      "enable_transition_in": true,
+      "enable_overlay_transition": false,
+      "checkout_header_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fdf8f2",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#197bbd",
+      "checkout_button_color": "#197bbd",
+      "checkout_error_color": "#e32c2b",
+      "col_page_heading_text_over_image": "#ffffff",
+      "share_image": "",
+      "show_multiple_currencies": true,
+      "currency_format": "money_with_currency_format",
+      "supported_currencies": "INR GBP CAD USD AUD EUR JPY",
+      "default_currency": "USD",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "enable_sticky": true,
+            "enabled_header_overlap": true,
+            "logo_width": 115,
+            "enable_logo_shrink": true,
+            "enable_inline_links": false,
+            "menu_align_logo_left": false,
+            "show_social_links": true,
+            "contact_info_phone": "",
+            "contact_info_email": "",
+            "contact_info_in_mega": false,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "text_color": "#ffffff",
+            "tint_color": "#000000",
+            "tint_opacity": 25
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "show_menu_headings": true,
+            "show_social": false,
+            "show_text_area": true,
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_newsletter": false
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "description_position": "up",
+            "show_tax_and_shipping": true,
+            "prod_show_brand": true,
+            "prod_show_sku": false,
+            "prod_show_sharing": true,
+            "prod_show_breadcrumbs": true,
+            "enable_ajax_form": "true",
+            "enable_payment_button": true,
+            "show_pickup_availability": true,
+            "show_backorder_text": true,
+            "image_layout": "under",
+            "prod_lightbox": true,
+            "prod_lightbox_zoom": true,
+            "enable_video_looping": false,
+            "header_title_show": false
+          }
+        },
+        "1483632146786": {
+          "type": "featured-collection",
+          "settings": {
+            "products_per_row_int": 4,
+            "product_rows_int": 1,
+            "grid_show_vendor": false
+          }
+        },
+        "1483635546290": {
+          "type": "featured-blog",
+          "settings": {
+          }
+        },
+        "1483636244998": {
+          "type": "featured-collection",
+          "settings": {
+            "products_per_row_int": 4,
+            "product_rows_int": 1,
+            "grid_show_vendor": false
+          }
+        },
+        "banner-index": {
+          "type": "banner-index",
+          "blocks": {
+            "1566473796815": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#25110d",
+                "tint_opacity": 40,
+                "color": "#ffffff"
+              }
+            },
+            "1566473889087": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 12,
+                "color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "1566473796815",
+            "1566473889087"
+          ],
+          "settings": {
+            "enable_carousel": true,
+            "slide_mode": "slide",
+            "autoplay": true,
+            "autoplay_speed": 7,
+            "slide_show_mobile_arrows": true,
+            "head_img_height_fixed": true,
+            "head_img_height_int": 900
+          }
+        },
+        "1484317010599": {
+          "type": "rich-text",
+          "settings": {
+            "color_bg": "#fdf8f2",
+            "color_text": "#4b0303",
+            "color_head": "#330101"
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "show_announcement": true,
+            "announcement_home_only": true,
+            "announcement_bar_bg_color": "#fcf0e0",
+            "announcement_bar_bg_text": "#132625"
+          }
+        },
+        "1566470987491": {
+          "type": "testimonials",
+          "blocks": {
+            "1566470987491-0": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            },
+            "1566470987491-1": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            },
+            "1566470987491-2": {
+              "type": "testimonial",
+              "settings": {
+                "star_rating": 5
+              }
+            }
+          },
+          "block_order": [
+            "1566470987491-0",
+            "1566470987491-1",
+            "1566470987491-2"
+          ],
+          "settings": {
+            "autoplay": true,
+            "logo_height": 65
+          }
+        },
+        "1566474783388": {
+          "type": "slideshow-with-text",
+          "blocks": {
+            "1566474783388-0": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "1566474783388-1": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1566474783388-0",
+            "1566474783388-1"
+          ],
+          "settings": {
+            "slide_mode": "slide",
+            "autoplay": true,
+            "autoplay_speed": 7,
+            "slide_show_mobile_arrows": true,
+            "color_bg": "#f3f4f8"
+          }
+        },
+        "1568808735031": {
+          "type": "featured-images",
+          "blocks": {
+            "1568808735031-0": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 35,
+                "size": "half",
+                "text_color": "#ffffff"
+              }
+            },
+            "1568808735031-1": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 38,
+                "size": "half",
+                "text_color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "1568808735031-0",
+            "1568808735031-1"
+          ],
+          "settings": {
+            "skip_container": true
+          }
+        },
+        "list-collections-template": {
+          "type": "list-collections-template",
+          "blocks": {
+            "1569231531942": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "1569231545556": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "1569231536434": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "1569231540796": {
+              "type": "collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1569231531942",
+            "1569231545556",
+            "1569231536434",
+            "1569231540796"
+          ],
+          "settings": {
+            "show_all_collections": false
+          }
+        },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "mode": "enabled",
+            "popup_delay_seconds": 5,
+            "popup_dismiss_for_days": 30,
+            "position": "bottom-right",
+            "show_newsletter": true,
+            "show_social_icons": true
+          }
+        },
+        "16075281720162b4db": {
+          "type": "background-video",
+          "settings": {
+            "title_size": 46,
+            "enlarge_text": false,
+            "text_alignment": "center center",
+            "height": "fixed",
+            "height_desktop": 720,
+            "height_mobile": 520,
+            "skip_container": true,
+            "text_color": "#ffffff",
+            "tint_color": "#000000",
+            "tint_opacity": 24
+          }
+        },
+        "16075303044ff504d4": {
+          "type": "slideshow",
+          "blocks": {
+            "16075303044ff504d4-0": {
+              "type": "image",
+              "settings": {
+                "tint_color": "#000000",
+                "tint_opacity": 0,
+                "color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "16075303044ff504d4-0"
+          ],
+          "settings": {
+            "enable_carousel": false,
+            "slide_mode": "slide",
+            "autoplay": false,
+            "autoplay_speed": 1,
+            "slide_show_mobile_arrows": true,
+            "skip_container": true,
+            "head_img_height_fixed": true,
+            "head_img_height_int": 700
+          }
+        }
+      },
+      "content_for_index": [
+        "1484317010599",
+        "1483632146786",
+        "16075281720162b4db",
+        "1566470987491",
+        "1566474783388",
+        "1483636244998",
+        "1568808735031",
+        "1483635546290",
+        "16075303044ff504d4"
+      ]
+    }
+  }
+}
